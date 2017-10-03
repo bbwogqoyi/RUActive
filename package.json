@@ -1,0 +1,22 @@
+{
+  "name": "ruactive",
+  "version": "1.0.0",
+  "description": "Rhodes University - Information Systems 3 System Development Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbwogqoyi/RUActive.git"
+  },
+  "keywords": [
+    "OX"
+  ],
+  "author": "Original eXceptions",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bbwogqoyi/RUActive/issues"
+  },
+  "homepage": "https://github.com/bbwogqoyi/RUActive#readme"
+}
