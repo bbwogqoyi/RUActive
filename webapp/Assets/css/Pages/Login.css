@@ -1,5 +1,6 @@
 .login{
     margin-top: 3%;
+    margin-bottom: 5%;
 }
 
 .login .logo_login{
@@ -15,7 +16,7 @@
 .login .login_form{
     background-color: grey;
     border: 1px solid grey;
-    border-radius: 10%;
+    border-radius: 7%;
     width: 27%;
     margin: auto;
     margin-top: 5%;
@@ -30,10 +31,10 @@
 .login_form #login-form button{
     margin: auto;
     width: 100%;
-    background-color: #3D2454;
+    background-color: #652D90;
     color: white;
     font-size: 21px;
-    border-color:#3D2454;
+    border-color:#652D90;
     cursor: pointer;
     margin-top: 5%;
 }
@@ -67,3 +68,4 @@ body .form-control::placeholder{
     font-family: FontAwesome;
     font-size: 20px;
 }
+

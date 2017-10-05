@@ -1,0 +1,27 @@
+.ru_nav ul {
+    list-style-type: none;
+    margin:  0 auto;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.ru_nav ul li {
+    float: left;
+}
+
+.ru_nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.ru_nav ul li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.ru_nav ul .active {
+    background-color: #652D90;
+}

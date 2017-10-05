@@ -1,0 +1,212 @@
+#home .wall{
+    margin-top: 2%;
+    text-align: center;
+    margin:  0 auto;
+}
+#home .wall .logo_name{
+    font-size: 45px;
+    color: black;
+    font-weight: bold;
+}
+
+#home .wall img{
+    width: 200px;
+    height: 200px;
+    border-radius: 70%;
+    cursor: pointer;
+    border-color: transparent;
+}
+#home .message_board{
+    background-color: #333333;
+    padding: 10px;
+    margin:  0 auto;
+}
+#home .message_board .head{
+    font-weight: bold;
+    color: white;
+    font-size: 24px;
+}
+
+#home .announcements{
+    background-color: grey;
+    font-size: 11px;
+    border-radius: 25px;
+    padding: 15px;
+    padding-bottom: 2px;
+}
+
+#home .announcements p{
+    color: white;
+}
+
+#home .announcements .date_time{
+    opacity: 0.8;
+    float: right;
+    font-weight: lighter;
+}
+
+#home .latest_event{
+    background-color: #58595B;
+    height: 200px;
+    margin:  0 auto;
+}
+#home .head{
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0;
+    padding-left: 10px;
+}
+#home .latest_event table{
+    width: 100%;
+    height: 100%;
+}
+
+#home .event_upt{
+    color: black;
+}
+
+#home .date, #home .place{
+    background-color: darkgray;
+}
+#home .time, #home .sport{
+    background-color: grey;
+}
+
+#home .latest_event tr{
+    height: 30px;
+    
+}
+
+#home .latest_event td{
+    padding-left: 10px;
+}
+
+#home #status{
+    margin: 0;
+}
+
+#home #status #update{
+    font-weight: normal;
+}
+
+.ongoing{
+    color: green;
+}
+.waiting{
+    color: orange;
+}
+.finished{
+    color: red;
+}
+
+#home .latest_event .Event_Image{
+    background-color: grey;
+    float: left;
+    margin:  0 auto;
+    width: 60%;
+}
+
+#home .latest_event .Event_Update{
+    float: left;
+    width: 40%;
+}
+ 
+#home .latest_event .Event_Image img{
+    height: 170px;
+    width: 170px;
+}
+
+#home .latest_event .Event_Image .team_1, #home .latest_event .Event_Image .team_detail, #home .latest_event .Event_Image .team_2{
+    float: left; 
+    width: 33.333%;
+    height: 200px;
+    text-align: center;
+}
+
+#home .latest_event .Event_Image .team_detail{
+    height: 90%;
+}
+#home .latest_event .Event_Image .team_detail #VS{
+    color: #151515;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#home .latest_event .Event_Image .team_detail .name{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#home .latest_event .Event_Image .team_detail #team_1{
+    color: orange;
+}
+
+#home .latest_event .Event_Image .team_detail #team_2{
+    color: blue;
+}
+
+#home .latest_event .Event_Image .team_1, #home .latest_event .Event_Image .team_2{
+    padding-top: 2%;
+}
+
+@media only screen and (max-width: 768px){
+    #home .latest_event{
+        height: 100%;
+    }
+    #home .latest_event .Event_Image{
+        float: none;
+        height: 100%;
+        margin:  0 auto;
+        width: 100%;
+    }
+    #home .latest_event .Event_Image .team_1, #home .latest_event .Event_Image .team_detail, #home .latest_event .Event_Image .team_2{
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+    #home .latest_event .Event_Update{
+        float: none;
+        width: 100%;
+    }
+
+}
+@media only screen and (min-width: 2000px){
+    #home .wall{
+        margin-top: 2%;
+        text-align: center;
+        height: 500px;
+    }
+    #home .latest_event .Event_Image .team_detail{
+        height: 100%;
+    }
+    #home .latest_event .Event_Image .team_1, #home .latest_event .Event_Image .team_2{
+        padding-top: 1%;
+    }
+    #home .wall img{
+        width: 300px;
+        height: 300px;
+        border-radius: 70%;
+        cursor: pointer;
+        border-color: transparent;
+    }
+    #home .latest_event{
+        background-color: #58595B;
+        height: 400px;
+        margin:  0 auto;
+    }
+    #home .latest_event .Event_Image{
+        height: 100%;
+    }
+    #home .latest_event .Event_Update{
+        height: 100%;
+    }
+    #home .latest_event td{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    
+    footer{
+        bottom: 0;
+    }
+}
