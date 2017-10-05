@@ -1,0 +1,78 @@
+Arts Major
+Arts Minor
+Barratt Lecture Theatre 1
+Barratt Lecture Theatre 2
+Barratt Lecture Theatre 3
+Barratt Seminar Room 1
+Barratt Foyer
+Botany Major
+Botany Minor
+Barratt Reception
+Barratt Seminar Room 2
+Barratt Servery Area
+St Peters Cafeteria
+Council Chamber
+St Mary's And All The Angels
+Chemistry Foyer
+Chemistry Major
+Chemistry Minor
+Chemistry S34
+Commerce Room 333
+Management Room 329
+Commerce Room 338
+Management Room 340
+Eden Grove Concourse
+Senior Common Room
+Economics a
+Economics b
+Economics c
+Eden Grove Transport
+Eden Grove Lecture Theatre - Blue
+Eden Grove Foyer
+Eden Grove Lecture Theatre - Red
+Eden Grove Seminar Room 1
+Eden Grove Seminar Room 2
+Eden Grove Seminar Room 3
+Eden Grove Exhibition Area
+Fountain Quad
+Great Hall
+Great Hall Verandah
+Geology C11
+General Lecture Theatre
+Geography G10
+Geography G11
+Hangar
+Hangar Seminar Room 1
+Hangar Seminar Room 2
+Hke Lecture Venue
+Kaif Quad
+Drostdy Lawns
+St Peter's Lawns
+Linguistics Room 01
+Linguistics Room 04
+Oppidan Reading Room
+Ornee Cottage Room 1
+Ornee Cottage Room 2
+Physics 14
+Physics 18
+Physics 19
+Physics Lower
+Physics Upper
+Facilities Spare Office In Politics
+Psychology Major
+Sociology a
+Sociology b
+St Peter's Room 36
+St Peter's Room 34
+Union Lawns
+Union Steve Biko 1
+Union Steve Biko 2
+Union Steve Biko 3
+Union Steve Biko 4
+Union Steve Biko 5
+Zoology Minor 01
+Zoology Minor 02
+Zoology 109
+Zoology 216
+Zoology Foyer
+Zoology Major
