@@ -1,0 +1,196 @@
+.profile {
+    font-family: trebuchet ms;
+    color: #652D90; 
+    padding: 15px;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 auto; }
+@media only screen and (min-width: 760px) {
+    .profile {
+        width: 90%; 
+    } 
+}
+.profile .propic {
+    text-align: center;
+    float: none;
+    width: 100%; 
+}
+.profile .propic img {
+    height: 150px;
+    width: 150px;
+    border-radius: 70%;
+    border: 1px solid #652D90; 
+}
+
+.profile .propic.top{
+    display: block;
+    margin-bottom: 15px;
+}
+.profile .propic.bottom{
+    display: none;
+}
+@media only screen and (min-width: 770px) {
+    .profile .propic.top{
+        display: none;
+    }
+    .profile .propic.bottom{
+        display: block;
+    }
+    .profile .propic {
+        float: left;
+        height: 300px;
+        width: 400px;
+        padding-top: 2%; }
+        .profile .propic img {
+        height: 270px;
+        width: 270px; } 
+    }
+.profile .personal_details {
+    text-align: center;
+    float: none; 
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;}
+    @media only screen and (min-width: 770px) {
+    .profile .personal_details {
+        text-align: left;
+        width: auto; 
+        float: left;
+        width: 50%;
+        margin: 0 auto;
+        overflow: hidden;
+        padding: 15px;
+    } 
+}
+
+body hr{
+    border-color: #652D90; 
+}
+
+.Logged_Navigate{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin:  0 auto;
+    padding: 10px;
+}
+.Logged_Navigate .Navigate{
+    height: 100%;
+    width: 90%;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+
+}
+.Logged_Navigate .Navs{
+    float: left;
+    height: 300px;
+    width: 33%;
+    border-radius: 70%;
+    border-color: #652D90;
+    text-align: center;
+}
+
+body .Logged_Navigate .Navs img{
+    height: 300px;
+    width: 300px;
+    border-radius: 70%;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 780px){
+    .Logged_Navigate{
+        height: 100%;
+    }
+    .Logged_Navigate .Navigate{
+        width: 100%;
+    }
+    .Logged_Navigate .Navs{
+        float: none;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        margin:  0 auto;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+    body .Logged_Navigate .Navs img{
+        height: 200px;
+        width: 200px;
+    }
+    .Logged_Navigate .Navs #users, .Logged_Navigate .Navs #venues, .Logged_Navigate .Navs #messages{
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: 1500px){
+    .Logged_Navigate .Navs{
+        height: 500px;
+    }
+    body .Logged_Navigate .Navs img{
+        height: 500px;
+        width: 500px;
+    }
+    .profile .propic{
+        width: 820px;
+        text-align: center;
+    }
+
+    .profile{
+        margin-top: 25px;
+        height: 400px;
+    }
+    .Logged_Navigate .Navigate{
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .profile{
+        margin-top: 25px;
+        height: 100%;
+    }
+
+    .Logged_Navigate .Navigate{
+        margin-top: 40px;
+        margin-bottom: 40px;  
+    }
+}
+
+body .personal_details .form-control{
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-bottom-color: #652D90;
+    border-radius: 0%;
+    cursor: pointer; 
+}
+
+.personal_details #Update{
+    background-color: green;
+    color: white;
+    display: none;
+}
+.personal_details #Cancel{
+    background-color: red;
+    color: white;
+    display: none;
+    margin-left: 10px;
+}
+.personal_details #Edit{
+    background-color: #652D90;
+    color: white;
+}
+
+.personal_details button{
+    margin-top: 10px;
+    cursor: pointer;
+    float: left;
+}
+

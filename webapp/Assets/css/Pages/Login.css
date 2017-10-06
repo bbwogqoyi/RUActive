@@ -63,6 +63,18 @@ body .form-control{
     border-radius: 0%;
     cursor: pointer; 
 }
+
+body #login-form input:focus{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: transparent;
+    color: white;
+    box-shadow: 0 0 0;
+    height: auto;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom-color: black;
+}
 body .form-control::placeholder{
     color: white;
     font-family: FontAwesome;

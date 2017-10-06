@@ -1,3 +1,4 @@
+
 .ru_nav ul {
     list-style-type: none;
     margin:  0 auto;
@@ -8,6 +9,24 @@
 
 .ru_nav ul li {
     float: left;
+}
+
+.ru_nav ul li .Logo {
+    border-radius: 70%;
+	padding: 0;
+}
+.ru_nav ul .Logo a{
+	padding: 0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+
+
+.ru_nav ul li img{
+	height: 50px;
+	width: 50px;
+	
 }
 
 .ru_nav ul li a {
