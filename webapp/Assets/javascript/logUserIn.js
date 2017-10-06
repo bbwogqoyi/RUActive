@@ -24,5 +24,5 @@ function login(){
 }
 
 function moveToNextPage(){
-  location.href = "index.html"
+  location.href = "profile.html"
 }
