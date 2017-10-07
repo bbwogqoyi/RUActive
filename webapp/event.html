@@ -28,7 +28,7 @@
 
         <!-- Info -->
         <div class="info player">
-            <h3>Add Player</h3>
+            <h3>Add Events</h3>
             <p>This form serves to assist the user in the process of adding one or more events to the Competition Schedule.</p>
         </div>
 
@@ -44,43 +44,49 @@
                 <div class = "form-group row"> <!-- Event Type -->
                     <label for = "id_event_type" class = "col-sm-2 col-form-label">Event Type</label>
                     <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "id_event_type" name = "#" placeholder = "#">
+                        <select class="form-control" id="id_event_type">
+                          <option>Social</option>
+                          <option>Death</option>
+                          <option>Competetive</option>
+                        </select>
                     </div>
                 </div>
                 <div class = "form-group row"> <!-- Sports Code -->
                     <label for = "id_sports_code" class = "col-sm-2 col-form-label">Sports Code</label>
                     <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "id_sports_code" name = "#" placeholder = "#">
+                      <select class="form-control" id="id_sports_code">
+                        <option>Soccer</option>
+                        <option>Rugby</option>
+                        <option>swimming</option>
+                      </select>
                     </div>
                 </div>
                 <div class = "form-group row"> <!-- Date -->
                     <label for = "id_event_date" class = "col-sm-2 col-form-label">Date</label>
                     <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "id_event_date" name = "#" placeholder = "#">
+                        <input type = "date" class = "form-control" id = "id_event_date" name = "#" placeholder = "#">
                     </div>
                 </div>
                 <div class = "form-group row"> <!-- Venue -->
                     <label for = "id_event_venue" class = "col-sm-2 col-form-label">Venue</label>
-                    <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "id_event_venue" name = "#" placeholder = "#">
-                    </div>
+                      <div class = "col-sm-10">
+                  <select class="form-control" id="id_event_venue">
+                      <option>Great</option>
+                      <option>Tennis Court</option>
+                      <option>Mullins</option>
+                    </select>
                 </div>
+              </div>
                 <div class = "form-group row"> <!-- Duration -->
                     <label for = "id_event_duration" class = "col-sm-2 col-form-label">Duration</label>
                     <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "id_event_duration" name = "#" placeholder = "#">
+                        <input type = "time" class = "form-control" id = "id_event_duration" name = "#" placeholder = "#">
                     </div>
                 </div>
                 <div class = "form-group row"> <!-- Registration Deadline -->
                     <label for = "id_reg_date" class = "col-sm-2 col-form-label">Registration Deadline</label>
                     <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "id_reg_date" name = "#" placeholder = "#">
-                    </div>
-                </div>
-                <div class = "form-group row"> <!-- Team Limit -->
-                    <label for = "id_team_limit" class = "col-sm-2 col-form-label">Team Limit</label>
-                    <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "id_team_limit" name = "#" placeholder = "#">
+                        <input type = "date" class = "form-control" id = "id_reg_date" name = "#" placeholder = "#">
                     </div>
                 </div>
                 <div class = "form-group row"> <!-- Maximum Team Players -->
@@ -92,12 +98,18 @@
                 <div class = "form-group row"> <!-- Description -->
                     <label for = "id_event_desc" class = "col-sm-2 col-form-label">Description</label>
                     <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "id_event_desc" name = "#" placeholder = "#">
+                      <textarea id="id_event_desc" class = "form-control" rows="4" cols="50"> </textarea>
+                    </div>
+                </div>
+                <div class = "form-group row"> <!-- Description -->
+                    <label for = "hasFixtures" class = "col-sm-2 col-form-label">Has fixtures</label>
+                    <div class = "col-sm-2">
+                          <input id="hasFixtures" class="form-control" type="checkbox" name="vehicle" value="Bike"><br>
                     </div>
                 </div>
                 <div class="button event">
                     <button onclick="submitForm()" type="button" class="btn btn-primary btn-lg">Add Event</button>
-                </div>          
+                </div>
             </form>
         </div>
     </div>
