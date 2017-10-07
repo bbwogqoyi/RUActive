@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "myFont";
+    src: url('../lemonmilk.otf');
+}
+
+.ru_nav{
+    font-family: myFont;
+}
+
 body .add.player{
     width: 70%;
 }
