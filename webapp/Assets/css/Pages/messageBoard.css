@@ -7,19 +7,19 @@
     font-family: myFont;
 }
 
-body .add.residence{
+body .add.messageBoard{
     width: 70%;
 }
 
-body .add.residence .form.residence{
+body .add.messageBoard .form.messageBoard{
     padding-left: 150px;
 }
 
-body .add.residence .info.residence{
+body .add.messageBoard .info.messageBoard{
     padding-left: 50px;
 }
 
-body .add.residence .button.residence{
+body .add.messageBoard .button.messageBoard{
     right: 60px;
 }
 
@@ -28,16 +28,16 @@ body .add .form .form-group .form-control#exp_id{
 }
 
 @media only screen and (max-width: 1017px){
-    body .add.residence{
+    body .add.messageBoard{
         width: 80%;
     }
-    body .add.residence .form.residence{
+    body .add.messageBoard .form.messageBoard{
         padding-left: 100px;
     }
-    body .add.residence .button.residence{
+    body .add.messageBoard .button.messageBoard{
         right: 40px;
     }
-    body .add.residence .form.residence .form-control{
+    body .add.messageBoard .form.messageBoard .form-control{
         margin-right: 1px;
     }
     
