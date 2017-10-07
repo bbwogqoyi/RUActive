@@ -13,3 +13,21 @@ function userRoleLookUp(num){
   }
   return role;
 }
+
+
+function expertise(exp){
+  var role = -1;
+  //position = parseInt(num);
+  switch(exp){
+    case Novice Player:
+      role = 1; break;
+    case Competent Playe:
+      role  = 2; break;
+    case RU First Team Player:
+      role = 3; break;
+    case Provincial/National Player:
+      role = 4; break;
+  }
+  return role;
+
+}
