@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "myFont";
+    src: url('../lemonmilk.otf');
+}
+
+.ru_nav{
+    font-family: myFont;
+}
+
+body .add.residence{
+    width: 70%;
+}
+
+body .add.residence .form.residence{
+    padding-left: 150px;
+}
+
+body .add.residence .info.residence{
+    padding-left: 50px;
+}
+
+body .add.residence .button.residence{
+    right: 60px;
+}
+
+body .add .form .form-group .form-control#exp_id{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1017px){
+    body .add.residence{
+        width: 80%;
+    }
+    body .add.residence .form.residence{
+        padding-left: 100px;
+    }
+    body .add.residence .button.residence{
+        right: 40px;
+    }
+    body .add.residence .form.residence .form-control{
+        margin-right: 1px;
+    }
+    
+
+
+}
