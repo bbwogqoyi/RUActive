@@ -7,19 +7,19 @@
     font-family: myFont;
 }
 
-body .add.player{
+body .add.event{
     width: 70%;
 }
 
-body .add.player .form.player{
+body .add.event .form.event{
     padding-left: 150px;
 }
 
-body .add.player .info.player{
+body .add.event .info.event{
     padding-left: 50px;
 }
 
-body .add.player .button.player{
+body .add.event .button.event{
     right: 60px;
 }
 
@@ -28,16 +28,16 @@ body .add .form .form-group .form-control#exp_id{
 }
 
 @media only screen and (max-width: 1017px){
-    body .add.player{
+    body .add.event{
         width: 80%;
     }
-    body .add.player .form.player{
+    body .add.event .form.event{
         padding-left: 100px;
     }
-    body .add.player .button.player{
+    body .add.event .button.event{
         right: 40px;
     }
-    body .add.player .form.player .form-control{
+    body .add.event .form.event .form-control{
         margin-right: 1px;
     }
     
