@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>RUActive | Events</title>
+    <title>RUActive | Add Venue</title>
     <link rel="stylesheet" href="Assets/css/Modules/footer.css"/> <!-- Footer CSS -->
     <link rel="stylesheet" href="Assets/css/Modules/header.css"/> <!-- Header CSS -->
-    <link rel="stylesheet" href="Assets/css/Pages/event.css"/> <!-- Pages/Event CSS -->
+    <link rel="stylesheet" href="Assets/css/Pages/event.css"/> <!-- Pages/Venue CSS -->
     <link rel="stylesheet" href="Assets/css/main.css"/> <!-- Main CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Font -->
     <link rel="icon" href="Assets/images/2.png" type="image/png"> <!-- Favicon -->
@@ -24,79 +24,38 @@
     </div>
 
     <!-- Form Section-->
-    <div class = "add event">
+    <div class = "add venue">
 
         <!-- Info -->
-        <div class="info player">
-            <h3>Add Player</h3>
-            <p>This form serves to assist the user in the process of adding one or more events to the Competition Schedule.</p>
+        <div class="info venue">
+            <h3>Add Venue</h3>
+            <p>This form serves to assist the user in the process of adding one or more venues to the Competition Schedule.</p>
         </div>
 
         <!-- Form -->
+        <div class = "form venue">
             <form class = "form event">
-                <div class = "form-group row"> <!-- Event Name -->
-                    <label for = "#" class = "col-sm-2 col-form-label">Event Name</label>
+                <div class = "form-group row"> <!-- Name -->
+                    <label for = "#" class = "col-sm-2 col-form-label">Name</label>
                     <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "#" name = "#" placeholder = "#">
+                        <input type = "text" class = "form-control" id = "#" name = "#" placeholder = "Great Field">
                     </div>
                 </div>
-                <div class = "form-group row"> <!-- Event Type -->
-                    <label for = "#" class = "col-sm-2 col-form-label">Event Type</label>
+                <div class = "form-group row"> <!-- Location -->
+                    <label for = "#" class = "col-sm-2 col-form-label">Location</label>
                     <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "#" name = "#" placeholder = "#">
+                        <input type = "text" class = "form-control" id = "#" name = "#" placeholder = "Location">
                     </div>
                 </div>
-                <div class = "form-group row"> <!-- Sports Code -->
-                    <label for = "#" class = "col-sm-2 col-form-label">Sports Code</label>
+                <div class = "form-group row"> <!-- Capacity -->
+                    <label for = "#" class = "col-sm-2 col-form-label">Capacity</label>
                     <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "#" name = "#" placeholder = "#">
-                    </div>
-                </div>
-                <div class = "form-group row"> <!-- Date -->
-                    <label for = "#" class = "col-sm-2 col-form-label">Date</label>
-                    <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "#" name = "#" placeholder = "#">
-                    </div>
-                </div>
-                <div class = "form-group row"> <!-- Venue -->
-                    <label for = "#" class = "col-sm-2 col-form-label">Venue</label>
-                    <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "#" name = "#" placeholder = "#">
-                    </div>
-                </div>
-                <div class = "form-group row"> <!-- Duration -->
-                    <label for = "#" class = "col-sm-2 col-form-label">Duration</label>
-                    <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "#" name = "#" placeholder = "#">
-                    </div>
-                </div>
-                <div class = "form-group row"> <!-- Registration Deadline -->
-                    <label for = "#" class = "col-sm-2 col-form-label">Registration Deadline</label>
-                    <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "#" name = "#" placeholder = "#">
-                    </div>
-                </div>
-                <div class = "form-group row"> <!-- Team Limit -->
-                    <label for = "#" class = "col-sm-2 col-form-label">Team Limit</label>
-                    <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "#" name = "#" placeholder = "#">
-                    </div>
-                </div>
-                <div class = "form-group row"> <!-- Maximum Team Players -->
-                    <label for = "#" class = "col-sm-2 col-form-label">Maximum Team Players</label>
-                    <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "#" name = "#" placeholder = "#">
-                    </div>
-                </div>
-                <div class = "form-group row"> <!-- Description -->
-                    <label for = "#" class = "col-sm-2 col-form-label">Description</label>
-                    <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "#" name = "#" placeholder = "#">
+                        <input type = "text" class = "form-control" id = "#" name = "#" placeholder = "1000">
                     </div>
                 </div>
                 <div class = "form-group row"> <!-- Button -->
                     <div class = "col-sm-10 col-sm-offset-2">
-                        <button type="submit" class="btn btn-primary">Add Event</button>
+                        <button type="submit" class="btn btn-primary">Add Venue</button>
                     </div>
                 </div>            
             </form>
