@@ -7,7 +7,7 @@
     <title>RUActive | Add Venue</title>
     <link rel="stylesheet" href="Assets/css/Modules/footer.css"/> <!-- Footer CSS -->
     <link rel="stylesheet" href="Assets/css/Modules/header.css"/> <!-- Header CSS -->
-    <link rel="stylesheet" href="Assets/css/Pages/event.css"/> <!-- Pages/Venue CSS -->
+    <link rel="stylesheet" href="Assets/css/Pages/venue.css"/> <!-- Pages/Venue CSS -->
     <link rel="stylesheet" href="Assets/css/main.css"/> <!-- Main CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Font -->
     <link rel="icon" href="Assets/images/2.png" type="image/png"> <!-- Favicon -->
@@ -36,29 +36,29 @@
         <div class = "form venue">
             <form class = "form event">
                 <div class = "form-group row"> <!-- Name -->
-                    <label for = "#" class = "col-sm-2 col-form-label">Name</label>
+                    <label for = "id_venue_name" class = "col-sm-2 col-form-label">Name</label>
                     <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "#" name = "#" placeholder = "Great Field">
+                        <input type = "text" class = "form-control" id = "id_venue_name" name = "#" placeholder = "Great Field">
                     </div>
                 </div>
                 <div class = "form-group row"> <!-- Location -->
-                    <label for = "#" class = "col-sm-2 col-form-label">Location</label>
+                    <label for = "id_venue_location" class = "col-sm-2 col-form-label">Location</label>
                     <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "#" name = "#" placeholder = "Location">
+                        <input type = "text" class = "form-control" id = "id_venue_location" name = "#" placeholder = "Location">
                     </div>
                 </div>
                 <div class = "form-group row"> <!-- Capacity -->
-                    <label for = "#" class = "col-sm-2 col-form-label">Capacity</label>
+                    <label for = "id_venue_capacity" class = "col-sm-2 col-form-label">Capacity</label>
                     <div class = "col-sm-10">
-                        <input type = "text" class = "form-control" id = "#" name = "#" placeholder = "1000">
+                        <input type = "text" class = "form-control" id = "id_venue_capacity" name = "#" placeholder = "1000">
                     </div>
-                </div>
-                <div class = "form-group row"> <!-- Button -->
-                    <div class = "col-sm-10 col-sm-offset-2">
-                        <button type="submit" class="btn btn-primary">Add Venue</button>
-                    </div>
-                </div>            
+                </div>           
             </form>
+
+            <!-- Button -->
+            <div class="button residence">
+                <button onclick="submitForm()" type="button" class="btn btn-primary btn-lg">Add Venue</button>
+            </div>
         </div>
     </div>
 
