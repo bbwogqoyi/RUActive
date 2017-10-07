@@ -1,0 +1,37 @@
+body .add.player{
+    width: 70%;
+}
+
+body .add.player .form.player{
+    padding-left: 150px;
+}
+
+body .add.player .info.player{
+    padding-left: 50px;
+}
+
+body .add.player .button.player{
+    right: 60px;
+}
+
+body .add .form .form-group .form-control#exp_id{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1017px){
+    body .add.player{
+        width: 80%;
+    }
+    body .add.player .form.player{
+        padding-left: 100px;
+    }
+    body .add.player .button.player{
+        right: 40px;
+    }
+    body .add.player .form.player .form-control{
+        margin-right: 1px;
+    }
+    
+
+
+}

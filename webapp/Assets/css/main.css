@@ -8,3 +8,44 @@ body{
 body p{
     word-wrap: break-word;
 }
+
+body .add{
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    background-color: rgba(0,0,0,0.4);
+    padding: 15px 30px 15px 30px;
+}
+
+body .add .form{
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+
+}
+body .add .form .form-group .form-control{
+    width: 400px;
+
+}
+
+body .add .form .form-group label{
+    text-align: right;
+}
+
+body .add .button{
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+}
+
+body .add .button button{
+    width: 400px;
+    cursor: pointer;
+    background-color: #652D90;
+    color: white;
+    border-color: #652D90;
+}
