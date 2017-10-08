@@ -5,19 +5,21 @@ function login(){
 
   console.log(username);
   console.log(password);
-  
+
   if(username !== null && username !== "" && password !== null && password !== ""){
 
-  if(document.getElementById('xip_RUActive_Users_Staff_Student_ID')==null)
+  if(document.getElementById('xip_Staff_Student_ID')==null)
   moveToNextPage();
 
  else{
   document.getElementById('xip_Staff_Student_ID').value = username;
-  document.getElementById('xip_Password').value = password
-  document.getElementById('caspioform').submit(); 
+  document.getElementById('xip_Password').value = password;
+  document.getElementById('caspioform').submit();
+  moveToNextPage();
+
  }
- 
-  
+
+
   }
   else{
 	  if(username == "" && password != "" ) alert("username is empty");
@@ -29,6 +31,7 @@ function login(){
 
 function moveToNextPage(){
   setTimeout(function(){
+
   location.href = "profile.html";
   }, 200);
 }
