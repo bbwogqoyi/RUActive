@@ -8,6 +8,9 @@ body{
 body p{
     word-wrap: break-word;
 }
+body button{
+    cursor: pointer;
+}
 
 body .add{
     overflow: hidden;
@@ -49,40 +52,126 @@ body .add .button button{
     color: white;
     border-color: #652D90;
 }
-body .report{
+
+body .Tool{
+    background-color: white;
+    border-color: #652D90;
+    color:#652D90;
+}
+
+body .Tool:hover{
+    background-color: #652D90;
+    border-color: #652D90;
+    color: white;    
+}
+
+body .Add{
+    background-color: #652D90;
+    border-color: #652D90;
+    color: white;
+}
+body .Add:hover{
+    background-color: white;
+    border-color: #652D90;
+    color:#652D90
+}
+
+body .Cancel{
+    background-color: red;
+    color: white;
+    border-color: red;
+}
+
+body .Update{
+    background-color: green;
+    color: white;
+    border-color: green;    
+}
+body .Update:hover{
+    background-color: white;
+    color: green;
+    border-color: green;    
+}
+
+body .Cancel:hover{
+    background-color: white;
+    color: red;
+    border-color: red;
+}
+
+body .add .added{
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    width:100%
 }
 
-body .left_side {
-    text-align: right;
-    font-weight: bold;
-    padding: 10px;
-    width: 40%;
+body .add .added .details{
+    float: left;
+    width: 85%;
+}
+body .add .added p{
+    margin: 0;
 }
 
-body .right_side {
-    text-align: left;
-    padding: 10px;
-    width: 60%;
+body .add .added button{
+    float: right;
+}
+
+body select, body input{
+    cursor: pointer;
+    border: none;
+}
+body select:focus, body input:focus{
+    border-color: #652D90;
+}
+
+body select option:hover{
+    background-color: #652D90;
 }
 
 
-.info h1{
-    font-weight: bold;
-    color: white;
-    display: inline;
+.Show {
+    font-family: trebuchet ms;
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.6); }
+
+.Show .show_info {
+    margin: auto;
+    padding: 17px;
+    border: 1px solid #652D90;
+    width: 90%;
+    background-color: grey;
+    margin-top: 10%;
+    margin-bottom: 5%; 
+    border-radius: 25px;
 }
 
-.info #event_name{
-    font-weight: bold;
-    color: black;
-    display: inline;
+@media only screen and (min-width: 760px) {
+    .Show .show_info {
+        width: 75%;
+        background-color: grey;
+    }
+    
+    
 }
 
-.info p{
-    color: black;
-    display: inline
+.show_info .close {
+    color: #fcfcfc;
+    float: right;
+    font-size: 28px;
+    font-weight: bold; 
 }
+.show_info .close:hover, .show_info .close :focus {
+    color: #652D90;
+    text-decoration: none;
+    cursor: pointer; 
+}
+          

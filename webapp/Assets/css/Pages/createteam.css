@@ -1,0 +1,41 @@
+body .player{
+    width: 70%;
+}
+
+body .combo .team{
+    margin: 10px;
+}
+
+body .combo .added.player{
+    width: 100%;
+}
+
+#p_form{
+    display: none;
+}
+
+body .player_team{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    padding: 5px 11px 5px 11px;
+    background-color: grey;
+    width: 100%;
+}
+
+
+body .add.combo{
+    padding: 0;
+}
+
+body .add.combo {
+    padding: 0;
+}
+
+body .form.player{
+    padding-left: 150px;
+}
+
+body .info.player{
+    padding-left: 50px;
+}

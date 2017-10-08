@@ -1,58 +1,124 @@
-// document.getElementById("f_name").value= "Jack";
-// document.getElementById("l_name").value= "Jill";
-// document.getElementById("user_id").value= "1";
-// document.getElementById("email").value= "jack@jill.com";
-// document.getElementById("phone").value= "0123456789";
+var modalShow = function(){
+    //Computation VIDEO and TRAINER page
 
-
-document.getElementById("f_name").disabled = true;
-document.getElementById("l_name").disabled = true;
-document.getElementById("user_id").disabled = true;
-document.getElementById("email").disabled = true;
-document.getElementById("phone").disabled = true;
-document.getElementById("currentPwd").style.display = "none";
-document.getElementById("pwd").style.display = "none";
-document.getElementById("confirmPwd").style.display = "none";
-
-document.getElementById("currentPwdLabel").style.display = "none";
-document.getElementById("pwdLabel").style.display = "none";
-document.getElementById("confirmPwdLabel").style.display = "none";
-
-
-function CanEdit(){
-    document.getElementById("Edit").style.display = "none";
-    document.getElementById("Update").style.display = "block";
-    document.getElementById("Cancel").style.display = "block";
-    document.getElementById("f_name").disabled = false;
-    document.getElementById("l_name").disabled = false;
-    document.getElementById("phone").disabled = false;
-    document.getElementById("currentPwd").style.display = "block";
-    document.getElementById("pwd").style.display = "block";
-    document.getElementById("confirmPwd").style.display = "block";
-
-    document.getElementById("currentPwdLabel").style.display = "block";
-    document.getElementById("pwdLabel").style.display = "block";
-    document.getElementById("confirmPwdLabel").style.display = "block";
+    //Function for getting the right information to pop up.
+    var modal;
+    var close = document.getElementsByClassName("close")[0];
+    var Info_Open;
+    var Info_ID;
+    var path = window.location.pathname;
+    var page = path.split("/").pop();
     
+    modal = document.getElementsByClassName("Show")[0];
+  
+   
+
+
+    //Opening Trainer Info
+    $('#adding').click(function(){
+        //var trainerid = $(this).attr("id").split("_");
+        Opening('p_form');
+        
+    });
+
+    //Opening Info 
+    function Opening(openingID){
+        Info_ID = openingID;
+        Info_Open = '#'+Info_ID;
+        $(Info_Open).css("display","block");
+        modal.style.display = "block";
+
+    }
+
+    //Closing Info
+
+
+   //closing modal
+   function closing(){
+        modal.style.display = "none";
+        
+        $(Info_Open).css("display","none");
+    }
+
+
+    $('.close').click(function(){
+         closing();
+         clearing();
+    });
+
+    $(window).click(function(event){
+         if(event.target == modal){
+             closing();
+             clearing();
+         }
+    });
+    $('#cancel_add').click(function(){
+        closing();
+        clearing();
+    })
+
+    function clearing(){
+        document.getElementsByClassName("add_forms")[0].reset();
+    }
 }
 
-function CancelEdit(){
-    document.getElementById("Update").style.display = "none";
-    document.getElementById("Cancel").style.display = "none";
-    document.getElementById("Edit").style.display = "block";
-    document.getElementById("f_name").disabled = true;
-    document.getElementById("l_name").disabled = true;
-    document.getElementById("email").disabled = true;
-    document.getElementById("phone").disabled = true;
-    document.getElementById("currentPwd").style.display = "none";
-    document.getElementById("pwd").style.display = "none";
-    document.getElementById("confirmPwd").style.display = "none";
 
-    document.getElementById("currentPwdLabel").style.display = "none";
-    document.getElementById("pwdLabel").style.display = "none";
-    document.getElementById("confirmPwdLabel").style.display = "none";    
-    
+var CreateTeam = function(){
+    var l_player = 0;
+    function AddPlayer(added_fragment){
+        var players = document.getElementsByClassName("player_team");
+        l_player = players.length;
+        if(l_player >= 1){
+            var pos = "p_"+l_player;
+            console.log(added_fragment);
+            console.log(pos);
+            $("#"+pos).after('<div class="player_team" id="p_'+(l_player+1)+'"><div class="details" id="d_'+(l_player+1)+'"><p class="p_t" id="info_'+(l_player+1)+'">'+added_fragment+'</p></div><button type="button" class="btn btn-primary btn-sm Cancel" id="btn_'+(l_player+1)+'"><i class="fa fa-times" aria-hidden="true"></i> Remove</button></div>');
+            l_player = document.getElementsByClassName("player_team").length;
+            pos = "p_"+l_player; 
+            
+            if(l_player%2 == 0){
+                document.getElementById(pos).style.background = "grey"; 
+            }
+            else{
+                document.getElementById(pos).style.background = "#333";
+            }
+        }
+        else{
+            var newPlayer = document.getElementsByClassName("added player")[0];
+            newPlayer.innerHTML = '<div class="player_team" id="p_1"><div class="details" id="d_1"><p class="p_t" id="info_1">'+added_fragment+'</p></div><button type="button" class="btn btn-primary btn-sm Cancel" id="btn_1"><i class="fa fa-times" aria-hidden="true"></i> Remove</button></div>';
+            document.getElementById("p_1").style.background = "#333";
+        }
+    }
+
+    $('#add_player').click(function(){
+        var f_name = document.getElementById("pf_name").value;
+        var l_name = document.getElementById("pl_name").value;
+        var student_id = document.getElementById("student_id").value;
+        var gender = document.getElementById("gender").value;
+        var expr_id = document.getElementById("exp_id").value;
+        
+        var fragment = student_id + " " + f_name + " " + l_name + " " + gender + " " + expr_id;
+        var post = f_name + " " + l_name;
+        console.log(post);
+        AddPlayer(post);
+        if (typeof(Storage) !== "undefined") {
+            localStorage.setItem("player"+l_player,fragment);
+        } else {
+            // Sorry! No Web Storage support..
+        }
+        
+
+    });
+
+    $('button').click(function(){
+        console.log("Why aren't you working?")
+        var p_remove = $(this).attr("id").split("_");
+        var pos = p_remove[1];
+        if(p_remove[0] == "btn") $("#p_"+pos).remove();
+    });
 }
 
-function UpdateEdit(){
-}
+$(document).ready(modalShow);
+$(document).ready(CreateTeam);
+
+
