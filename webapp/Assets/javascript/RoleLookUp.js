@@ -34,6 +34,18 @@ function expertiseLookup(exp){
 
 }
 
+function eventTypeLookup(exp){
+  var role = -1;
+  //position = parseInt(num);
+  switch(exp){
+    case "Social":
+      role = 1; break;
+    case "Competitive":
+      role  = 2; break;
+  }
+  return role;
+}
+
 function getSessionUser(){
   var caspio_form = document.getElementById('caspioform');
   var caspioIds = ['EditRecordFirst_Name', 'EditRecordLast_Name', 'EditRecordEmail', 'EditRecordPhone'];
@@ -48,4 +60,5 @@ function getSessionUser(){
 
   console.log(JSON.stringify(sessionUser));
   document.getElementById('currentUserDiv').remove();
+
 }
