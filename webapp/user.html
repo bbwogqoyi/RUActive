@@ -21,7 +21,7 @@
             <li style="float:right"><a href="#help">Help</a></li>
         </ul>
     </div>
-    
+
     <!-- Form Section-->
     <div class = "add user">
 
@@ -30,10 +30,16 @@
             <h3>Add User</h3>
             <p>This form serves to assist the user in the process of adding one or more users to the Inter-Res Sports Registration System.</p>
         </div>
-    
+
             <!-- Form -->
             <div class = "form user">
                 <form>
+                  <div class = "form-group row"> <!-- First Name -->
+                      <label for = "id_studentId" class = "col-sm-2 col-form-label">student_id</label>
+                      <div class = "col-sm-10">
+                          <input type = "text" class = "form-control" id = "id_studentId" name = "#" placeholder = "John">
+                      </div>
+                  </div>
                     <div class = "form-group row"> <!-- First Name -->
                         <label for = "id_first_name" class = "col-sm-2 col-form-label">First Name</label>
                         <div class = "col-sm-10">
@@ -64,18 +70,25 @@
                             <input type ="password" class="form-control" id="id_password" name="#" placeholder="password">
                         </div>
                     </div>
+                    <div class = "form-group row"> <!-- Password -->
+                        <label for = "id_confirmPwd" class = "col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type ="password" class="form-control" id="id_confirmPwd" name="#" placeholder="password">
+                        </div>
+                    </div>
                     <div class = "form-group row"> <!-- User Role -->
                         <label for = "id_user_role" class = "col-sm-2 col-form-label">User Role</label>
                         <div class="col-sm-10">
                             <select class="form-control" id="id_user_role">
-                                <option>Sports Representative</option>
+                                <option>Sport Rep</option>
                                 <option>Warden</option>
                                 <option>Sports Code</option>
+                                <option>Sports Admin</option>
                             </select>
                         </div>
-                    </div>             
+                    </div>
                 </form>
-    
+
                 <!-- Button -->
                 <div class="button residence">
                     <button onclick="submitForm()" type="button" class="btn btn-primary btn-lg">Add User</button>
@@ -87,7 +100,34 @@
     <footer>
         <p>Copyright &copy 2017, Original Xception. All Rights Reserved.</p>
     </footer>
-<script src="Assets/javascript/Editing_Updating.js" type="text/javascript"></script>    
+
+    <div class="">
+      <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
+        <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa95000becfa987f07d4be09102");}catch(v_e){;}</script>
+        <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa95000becfa987f07d4be09102">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
+        <div id="cbaaa95000becfa987f07d4be09102"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
+    </div>
+
+<script >
+
+function submitForm(){
+var caspio_form = document.getElementById('caspioform');
+var profile = ['id_studentId','id_email','id_user_role','id_password', 'id_confirmPwd','id_first_name', 'id_last_name', 'id_phone'];
+
+var caspioIds = ['InsertRecordStaff_Student_ID', 'InsertRecordEmail','InsertRecordUser_Role','InsertRecordPassword', 'InsertRecordPassword@Confirm'
+,'InsertRecordFirst_Name','InsertRecordLast_Name','InsertRecordPhone'];
+
+ for(var i=0; i<caspioIds.length; i+=1){
+   var current_value = document.getElementById(profile[i]).value;
+   if(i === 2) current_value = userRoleLookUp(current_value);
+   document.getElementById(caspioIds[i]).value = current_value;
+ }
+
+//caspio_form.submit();
+}
+</script>
+
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
