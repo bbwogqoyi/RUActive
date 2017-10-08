@@ -1,3 +1,5 @@
+'use strict'
+
 function userRoleLookUp(num){
   var role = 'unknown';
   position = parseInt(num);
@@ -30,4 +32,20 @@ function expertiseLookup(exp){
   }
   return role;
 
+}
+
+function getSessionUser(){
+  var caspio_form = document.getElementById('caspioform');
+  var caspioIds = ['EditRecordFirst_Name', 'EditRecordLast_Name', 'EditRecordEmail', 'EditRecordPhone'];
+
+  var sessionUser = {};
+  for (var elem in caspioIds) {
+    sessionUser[elem] = document.getElementById(elem).value;  
+  }
+  
+  var role = document.getElementById('EditRecordUser_Role').value;
+  sessionUser['EditRecordUser_Role'] = userRoleLookUp(role);
+
+  console.log(JSON.stringify(sessionUser));
+  document.getElementById('currentUserDiv').remove();
 }
