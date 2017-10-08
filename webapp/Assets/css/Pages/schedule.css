@@ -109,7 +109,7 @@ td, th {
 }
 
 .left_side {
-    text-align: right;
+    text-align: left;
     font-weight: bold;
     padding: 10px;
     width: 40%;
@@ -153,6 +153,12 @@ table#anotherid tr:nth-child(odd) {
     background-color: #e6e6e6;
 }
 
-#meat{
-    background-color: 
+.meat{
+    background-color: purple;
+}
+
+.someWall{
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
 }
