@@ -123,27 +123,32 @@
     </div>
 
     <script type="text/javascript">
+      $('button').click(function(){
+        console.log("Why aren't you working?")
+        var p_remove = $(this).attr("id").split("_");
+        var pos = p_remove[1];
+        if(p_remove[0] == "btn") $("#p_"+pos).remove();
+      });
+      ourside = ['id_event','id_res'];
+      caspioIds = ['InsertRecordEvent_Name', 'InsertRecordResidence_Name' ];
 
-    ourside = ['id_event','id_res'];
-    caspioIds = ['InsertRecordEvent_Name', 'InsertRecordResidence_Name' ];
-
-    function getInputFields(){
-      var w =   document.getElementById(caspioIds[0]).options;
-      populate(w,ourside[0])
-      var s =   document.getElementById(caspioIds[1]).options;
-      populate(s,ourside[1])
-      document.getElementById(ourside[2]).value = 0;
-    }
-
-    function populate (w, id){
-      for (var i = 0; i < w.length; i+=1) {
-        var elmOption = document.createElement('option');
-
-        elmOption.text = w[i].text;
-        elmOption.value = w[i].value;
-        document.getElementById(id).add(elmOption);
+      function getInputFields(){
+        var w =   document.getElementById(caspioIds[0]).options;
+        populate(w,ourside[0])
+        var s =   document.getElementById(caspioIds[1]).options;
+        populate(s,ourside[1])
+        document.getElementById(ourside[2]).value = 0;
       }
-    }
+
+      function populate (w, id){
+        for (var i = 0; i < w.length; i+=1) {
+          var elmOption = document.createElement('option');
+
+          elmOption.text = w[i].text;
+          elmOption.value = w[i].value;
+          document.getElementById(id).add(elmOption);
+        }
+      }
     </script>
 
 
