@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"> <!-- Bootstrap -->
     <link rel="stylesheet" href="Assets/css/hideDiv.css"/>  <!-- Hide Divs -->
 </head>
-<body>
+<body onload="getUsers()">
     <!-- Navigation -->
     <div class="ru_nav">
         <ul>
@@ -60,8 +60,7 @@
                     <label for = "id_res_warden" class = "col-sm-2 col-form-label">Warden</label>
                     <div class="col-sm-10">
                         <select class="form-control" id="id_res_warden">
-                            <option>John Doe</option>
-                            <option>Sarah Smith</option>
+
                         </select>
                     </div>
                 </div>
@@ -69,8 +68,7 @@
                     <label for = "id_res_sports_rep" class = "col-sm-2 col-form-label">Sports Representative</label>
                     <div class="col-sm-10">
                         <select class="form-control" id="id_res_sports_rep">
-                            <option>John Doe</option>
-                            <option>Sarah Smith</option>
+
                         </select>
                     </div>
                 </div>
@@ -78,7 +76,7 @@
 
             <!-- Button -->
             <div class="button residence">
-                <button onclick="submitForm()" type="button" class="btn btn-primary btn-lg">Add Residence</button>
+                <button onclick="submitForm()"  type="button" class="btn btn-primary btn-lg">Add Residence</button>
             </div>
         </div>
     </div>
@@ -88,14 +86,52 @@
       <p>Copyright &copy 2017, Original Xception. All Rights Reserved.</p>
     </footer>
 
-    <div class="">
+    <div  class="">
       <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
       <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa95000447977645b3646a6afb3");}catch(v_e){;}</script>
       <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa95000447977645b3646a6afb3">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
       <div id="cbaaa95000447977645b3646a6afb3"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
     </div>
 
-    
+    <script src="Assets/javascript/RoleLookUp.js" charset="utf-8"></script>
+    <script type="text/javascript">
+    var ourside = ['id_res_name', 'id_res_logo','id_res_points'
+    , 'id_res_warden', 'id_res_sports_rep'];
+
+    var caspioIds = ['InsertRecordName', 'InsertRecordInsignia_Url','InsertRecordPoints'
+    ,'InsertRecordResidence_Warden', 'InsertRecordResidence_SportsRep'];
+
+
+    function getUsers(){
+      var w =   document.getElementById(caspioIds[3]).options;
+      populate(w,ourside[3])
+      var s =   document.getElementById(caspioIds[4]).options;
+      populate(s,ourside[4])
+      document.getElementById(ourside[2]).value = 0;
+    }
+
+    function populate (w, id){
+      for (var i = 0; i < w.length; i+=1) {
+        var elmOption = document.createElement('option');
+
+        elmOption.text = w[i].text;;
+        elmOption.value = w[i].value;;
+        document.getElementById(id).add(elmOption);
+      }
+
+}
+    function submitForm(){
+    var caspio_form = document.getElementById('caspioform');
+
+     for(var i=0; i<caspioIds.length; i+=1){
+       var current_value = document.getElementById(profile[i]).value;
+       document.getElementById(caspioIds[i]).value = current_value;
+     }
+
+   caspio_form.submit();
+   }
+    </script>
+
 
 </body>
 </html>

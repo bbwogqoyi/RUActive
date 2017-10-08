@@ -35,10 +35,15 @@ table {
 .left_side {
     text-align: right;
     font-weight: bold;
+    text-align: right;
+    padding: 10px;
+    width: 40%;
 }
 
 .right_side {
     text-align: left;
+    padding: 10px;
+    width: 60%;
 }
 
 tr:nth-child(even) {
@@ -58,4 +63,24 @@ tr:nth-child(odd) {
 
 body .button.player{
     padding: 25px;
+}
+
+#something{
+    color: white;
+}
+
+#event_name{
+    font-family: myFont;
+}
+
+h1 {
+    display: inline;
+}
+
+p{
+    display: inline;
+}
+
+#event_name2{
+    font-weight: bold;
 }

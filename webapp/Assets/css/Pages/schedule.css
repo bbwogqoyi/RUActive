@@ -1,0 +1,164 @@
+@font-face {
+    font-family: "myFont";
+    src: url('../lemonmilk.otf');
+}
+
+.search{
+    font-family: myFont;
+}
+
+.ru_nav{
+    font-family: myFont;
+}
+
+.left_side{
+    font-family: myFont;
+}
+
+body .add.event{
+    width: 70%;
+}
+
+body .add.event .form.event{
+    padding-left: 150px;
+}
+
+body .add.event .info.event{
+    padding-left: 50px;
+}
+
+body .add.event .button.event{
+    right: 60px;
+}
+
+body .add .form .form-group .form-control#exp_id{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1017px){
+    body .add.event{
+        width: 80%;
+    }
+    body .add.event .form.event{
+        padding-left: 100px;
+    }
+    body .add.event .button.event{
+        right: 40px;
+    }
+    body .add.event .form.event .form-control{
+        margin-right: 1px;
+    }
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    padding: 10px;
+}
+
+.left_side {
+    text-align: right;
+    font-weight: bold;
+}
+
+.right_side {
+    text-align: left;
+}
+
+.search{
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: #4d4d4d;
+}
+
+.information{
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 50%;
+    float: left;
+}
+
+#previous_button{
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 50%;
+    float: left;
+}
+
+.img_results{
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 50%;
+    float: left;
+}
+
+#next_button{
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 50%;
+    float: left;
+}
+
+.left_side {
+    text-align: left;
+    font-weight: bold;
+    padding: 10px;
+    width: 40%;
+}
+
+.right_side {
+    text-align: left;
+    padding: 10px;
+    width: 60%;
+}
+
+.header{
+    background-color: #333333;
+    text-align: center;
+    padding: 15px;
+    color: black;
+    font-family: myFont;
+}
+
+.event_details{
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 50%;
+    float: left;
+}
+
+.event_list{
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 50%;
+    float: left;
+}
+
+table#anotherid tr:nth-child(even) {
+    background-color: #b3b3b3;
+}
+
+table#anotherid tr:nth-child(odd) {
+    background-color: #e6e6e6;
+}
+
+.meat{
+    background-color: purple;
+}
+
+.someWall{
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
