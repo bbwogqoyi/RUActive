@@ -1,0 +1,46 @@
+@font-face {
+    font-family: "myFont";
+    src: url('../lemonmilk.otf');
+}
+
+.ru_nav{
+    font-family: myFont;
+}
+
+body .add.venue{
+    width: 70%;
+}
+
+body .add.venue .form.venue{
+    padding-left: 150px;
+}
+
+body .add.venue .info.venue{
+    padding-left: 50px;
+}
+
+body .add.venue .button.venue{
+    right: 60px;
+}
+
+body .add .form .form-group .form-control#exp_id{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1017px){
+    body .add.venue{
+        width: 80%;
+    }
+    body .add.venue .form.venue{
+        padding-left: 100px;
+    }
+    body .add.venue .button.venue{
+        right: 40px;
+    }
+    body .add.venue .form.venue .form-control{
+        margin-right: 1px;
+    }
+    
+
+
+}
