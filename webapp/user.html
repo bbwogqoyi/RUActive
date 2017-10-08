@@ -119,7 +119,9 @@ var caspioIds = ['InsertRecordStaff_Student_ID', 'InsertRecordEmail','InsertReco
 
  for(var i=0; i<caspioIds.length; i+=1){
    var current_value = document.getElementById(profile[i]).value;
-   if(i === 2) current_value = userRoleLookUp(current_value);
+   if(i === 2) {
+     current_value = userRoleLookUp(current_value);
+   }
    document.getElementById(caspioIds[i]).value = current_value;
  }
 
