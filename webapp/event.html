@@ -55,7 +55,7 @@
         <div class = "form-group row"> <!-- Sports Code -->
           <label for = "id_sports_code" class = "col-sm-2 col-form-label">Sports Code</label>
           <div class = "col-sm-10">
-            <input type = "text" class = "form-control" id = "id_sports_code" name = "#" placeholder = "#">
+            <input disabled type = "text" class = "form-control" id = "id_sports_code" name = "#" placeholder = "#">
           </div>
         </div>
         <div class = "form-group row"> <!-- Date -->
@@ -137,73 +137,72 @@
 
     <div class="hide">
       <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
-  <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950003a2237dd5b57437d821b");}catch(v_e){;}</script>
-  <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950003a2237dd5b57437d821b">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
-  <div id="cbaaa950003a2237dd5b57437d821b"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
+      <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950003a2237dd5b57437d821b");}catch(v_e){;}</script>
+      <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950003a2237dd5b57437d821b">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
+      <div id="cbaaa950003a2237dd5b57437d821b"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
     </div>
 
-
-
-    <script src="Assets/javascript/getReportData.js">
-    </script>
+    <script src="Assets/javascript/getReportData.js"></script>
     <script type="text/javascript">
-    function getVenues(){
-      var type = document.getElementById('id_facility_type').value;
-      var isSportsVenue = type;
-      switch(type) {
-        case "Central Venues":
-        isSportsVenue = 'No';
-        break;
-        case "Sports Venues":
-        isSportsVenue = 'Yes';
-        break;
-      }
-      document.getElementById('id_event_venue').innerHTML ="";
-      var venueDiv = document.getElementById('venueDiv');
-      var allvenues = stripCaspioReport(venueDiv);
-      for (var i = 0; i < allvenues.length; i+=1) {
-        var elmOption = document.createElement('option');
-        if(allvenues[i]['issportvenue'] === isSportsVenue)
-        {elmOption.text = allvenues[i]['name'];
-        elmOption.value = allvenues[i]['venue id'];
-        document.getElementById('id_event_venue').add(elmOption);
-      }
-    }
-  }
+      // if user is not authenticated redirect to login page
+      $(document).ready(function(){
+        var a = IsAuthenticated();
+        if(!IsAuthenticated()) location.href = "login.html";
+      });
 
-  function submitForm(){
-
-    var caspio_form = document.getElementById('caspioform');
-    var profile = ['id_event_name', 'id_event_desc', 'id_sports_code','id_event_date','id_reg_date','hasFixtures', 'id_event_type', 'id_event_venue','id_max_players'];
-    var caspioIds = ['InsertRecordName', 'InsertRecordDescription','InsertRecordSport','InsertRecordEvent_Date', 'InsertRecordRegistration_Deadline','InsertRecordhasFixtures'
-    ,'InsertRecordEvent_Type', 'InsertRecordEvent_Venue', 'InsertRecordMaximum_players'];
-
-     for(var i=0; i<caspioIds.length; i+=1){
-       var current_value = document.getElementById(profile[i]).value;
-       if(i === 5){
-         if(document.getElementById(profile[i]).checked){document.getElementById(caspioIds[i]).checked = 'true';
-           continue;
-          }
-         else {
-           document.getElementById(caspioIds[i]).checked = "false";
-           continue;
+      function getVenues(){
+        var type = document.getElementById('id_facility_type').value;
+        var isSportsVenue = type;
+        switch(type) {
+          case "Central Venues":
+          isSportsVenue = 'No';
+          break;
+          case "Sports Venues":
+          isSportsVenue = 'Yes';
+          break;
         }
-       }
-       if(i ===3 ||i === 4)
-       {
-        current_value = current_value.split('-').reverse().join('/');
-       }
+        document.getElementById('id_event_venue').innerHTML ="";
+        var venueDiv = document.getElementById('venueDiv');
+        var allvenues = stripCaspioReport(venueDiv);
+        for (var i = 0; i < allvenues.length; i+=1) {
+          var elmOption = document.createElement('option');
+          if(allvenues[i]['issportvenue'] === isSportsVenue){
+            elmOption.text = allvenues[i]['name'];
+            elmOption.value = allvenues[i]['venue id'];
+            document.getElementById('id_event_venue').add(elmOption);
+      }}}
 
-       if(i == 6) current_value = eventTypeLookup(current_value);
-       document.getElementById(caspioIds[i]).value = current_value;
-     }
+      function submitForm(){
+        var caspio_form = document.getElementById('caspioform');
+        var profile = ['id_event_name', 'id_event_desc', 'id_event_venue','id_max_players'];
+        var caspioIds = ['InsertRecordName', 'InsertRecordDescription', 'InsertRecordEvent_Venue', 'InsertRecordMaximum_players'];
 
-   caspio_form.submit();
-   }
+        for(var i=0; i<caspioIds.length; i+=1){
+          var current_value = document.getElementById(profile[i]).value;
+        }
+        if(document.getElementById('hasFixtures').checked){
+          document.getElementById('InsertRecordhasFixtures').checked = 'true';
+        } else {
+          document.getElementById('InsertRecordhasFixtures').checked = 'false';
+        }
 
+        var input_dates = ['id_event_date','id_reg_date'];
+        var new_dates = ['InsertRecordEvent_Date', 'InsertRecordRegistration_Deadline'];
+        for (var i=0; i<event_dates.length; i+=1) //(i ===3 ||i === 4)
+        {
+          var current_value = document.getElementById(input_dates[i]).value;
+          current_value = current_value.split('-').reverse().join('/');
+          document.getElementById(new_dates[i]).value = current_value;
+        }
+        var current_value = document.getElementById('id_event_type').value;
+        current_value = eventTypeLookup(current_value);
+        document.getElementById('InsertRecordEvent_Type').value = current_value;
 
+        //var user = getSessionUser();
+        //document.getElementById('InsertRecordSport').value=;
+
+        caspio_form.submit();
+      }
     </script>
-
-
   </body>
   </html>
