@@ -1,8 +1,4 @@
-document.getElementById("f_name").value= "Jack";
-document.getElementById("l_name").value= "Jill";
-document.getElementById("user_id").value= "1";
-document.getElementById("email").value= "jack@jill.com";
-document.getElementById("phone").value= "0123456789";
+
 
 
 document.getElementById("f_name").disabled = true;

@@ -98,25 +98,42 @@
 
       var alldata = stripCaspioReport(latest_event_div)[0];
 
+	  var alldata = stripCaspioReport(latest_event_div);
+      var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      var currdate = new Date();
+      var currtime = currdate.getTime();
+      var tmp = new Date("01/01/3000");
+      var tmptime = tmp.getTime();
+      var chosenid = 0;
+      for(var i = 0;i<alldata.length;i++){
+        var tmp1 = alldata[i]['event date'];
+        var tmp1formatted = new Date((monthNames.indexOf(tmp1.substring(3, tmp1.length-5))+1)+'/'+tmp1.substring(0, 2)+'/'+tmp1.substring(tmp1.length-4, tmp1.length));//requires format mm/dd/yyyy
+        var tmp1time = tmp1formatted.getTime();
+        if(tmp1time >= currtime && tmp1time <= tmptime){
+            tmptime = tmp1time;
+            chosenid = i;
+        }
+      }
+	  
       var template = `<tr class="event_upt date">
                         <td><strong>NAME:</strong> </td>
-                        <td class="info">${alldata['name']}</td>
+                        <td class="info">${alldata[chosenid]['name']}</td>
                     </tr>
                     <tr class="event_upt date">
                         <td><strong>DATE:</strong> </td>
-                        <td class="info">${alldata['event date']}</td>
+                        <td class="info">${alldata[chosenid]['event date']}</td>
                     </tr>
                     <tr class="event_upt time">
                         <td><strong>TIME:</strong> </td>
-                        <td class="info">${'--time here--'}</td>
+                        <td class="info">${alldata[chosenid]['event start time']}</td>
                     </tr>
                     <tr class="event_upt place">
                         <td><strong>PLACE:</strong> </td>
-                        <td class="info">${alldata['event venue']}</td>
+                        <td class="info">${alldata[chosenid]['event venue']}</td>
                     </tr>
                     <tr class="event_upt sport">
                         <td><strong>SPORT:</strong> </td>
-                        <td class="info">${alldata['sport']}</td>
+                        <td class="info">${alldata[chosenid]['sport']}</td>
                     </tr>`;
       document.getElementById('table_event').innerHTML = template;
 
