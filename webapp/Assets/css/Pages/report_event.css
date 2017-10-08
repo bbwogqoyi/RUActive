@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "myFont";
+    src: url('../lemonmilk.otf');
+}
+
+.ru_nav{
+    font-family: myFont;
+}
+
+body .add.r_event{
+    width: 70%;
+    padding: 0px;
+}
+
+body .add.r_event .form.r_event{
+    padding-left: 150px;
+}
+
+body .add.r_event .info.r_event{
+    padding-left: 50px;
+}
+
+@media only screen and (max-width: 1017px){
+    body .add.r_event{
+        width: 80%;
+    }
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.left_side {
+    text-align: right;
+    font-weight: bold;
+}
+
+.right_side {
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #b3b3b3;
+}
+
+tr:nth-child(odd) {
+    background-color: #e6e6e6;
+}
+
+.report.r_event{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    width:100%
+}
+
+body .button.player{
+    padding: 25px;
+}

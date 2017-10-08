@@ -49,3 +49,40 @@ body .add .button button{
     color: white;
     border-color: #652D90;
 }
+body .report{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    width:100%
+}
+
+body .left_side {
+    text-align: right;
+    font-weight: bold;
+    padding: 10px;
+    width: 40%;
+}
+
+body .right_side {
+    text-align: left;
+    padding: 10px;
+    width: 60%;
+}
+
+
+.info h1{
+    font-weight: bold;
+    color: white;
+    display: inline;
+}
+
+.info #event_name{
+    font-weight: bold;
+    color: black;
+    display: inline;
+}
+
+.info p{
+    color: black;
+    display: inline
+}
