@@ -61,10 +61,14 @@ function issueSessionToken(){
   sessionStorage.setItem('user', JSON.stringify(sessionUser));
 }
 
+function getSessionUser(){
+  return JSON.parse( sessionStorage.getItem('user') );
+}
+
 function IsAuthenticated(){
   // Get saved data from sessionStorage
   var user = sessionStorage.getItem('user');
-  return !isEmpty()
+  return !isEmpty(user);
 }
 
 function login(){
@@ -85,6 +89,9 @@ function login(){
 function logOut(){
   // Remove saved data from sessionStorage
   sessionStorage.removeItem('user');
+  // Remove all saved data from sessionStorage
+  sessionStorage.clear();
+  // delete the caspio cookie
   location.href = "https://c0abd423.caspio.com/folderlogout";
   setTimeout(function(){
     location.href = "index.html";
