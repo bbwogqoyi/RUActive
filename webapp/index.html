@@ -73,16 +73,16 @@
 
     <div id="announcement_div" class="hide">
       <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
-      <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950000da39d438ee94929ad77");}catch(v_e){;}</script>
-      <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950000da39d438ee94929ad77">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
-      <div id="cbaaa950000da39d438ee94929ad77"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
+      <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950007da10177fc3c461ca97c");}catch(v_e){;}</script>
+      <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950007da10177fc3c461ca97c">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
+      <div id="cbaaa950007da10177fc3c461ca97c"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
     </div>
 
     <div id="latest_event_div" class="hide">
       <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
-    <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950003a2237dd5b57437d821b");}catch(v_e){;}</script>
-    <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950003a2237dd5b57437d821b">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
-    <div id="cbaaa950003a2237dd5b57437d821b"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
+      <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950005a69a22a2708474e9e6a");}catch(v_e){;}</script>
+      <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950005a69a22a2708474e9e6a">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
+      <div id="cbaaa950005a69a22a2708474e9e6a"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
     </div>
 
     <script>
@@ -92,7 +92,7 @@
       var alldata = stripCaspioReport(announcement_div);
 
       for (var idx=0; idx<alldata.length; idx+=1) {
-        var template = `<p>${alldata[idx]['sender']} - ${alldata[idx]['message body']}<strong class="date_time">${alldata[idx]['reciever']}</strong></p>`;
+        var template = `<p><strong>${alldata[idx]['date posted']}</strong> - <strong>${alldata[idx]['sender']}</strong> </br>${alldata[idx]['message body']}</p>`;
         document.getElementById('announcements_id').innerHTML += template;
       }
 
