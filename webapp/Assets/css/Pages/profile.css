@@ -2,7 +2,7 @@
     display: none;
 }
 
-.profile {
+.prof_nav{
     font-family: trebuchet ms;
     height: 100%;
     overflow: hidden;
@@ -12,9 +12,17 @@
     width: 90%;
     background-color: grey;
     border: 2px solid #652D90;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
+
+.prof_nav .ru_nav.navigate li{
+    padding-left: 11px;
+}
+
+.profile {
+    }
 @media only screen and (min-width: 760px) {
-    .profile {
+    .prof_nav{
         margin-top: 15%;
         margin-bottom: 15%;
         width: 90%;
@@ -22,6 +30,8 @@
         border: 2px solid #652D90;
         height: 50%;
         border-radius: 25px;
+    }
+    .profile {
     } 
 }
 
