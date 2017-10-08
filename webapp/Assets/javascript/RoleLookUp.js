@@ -31,3 +31,17 @@ function expertiseLookup(exp){
   return role;
 
 }
+
+
+function eventTypeLookup(exp){
+  var role = -1;
+  //position = parseInt(num);
+  switch(exp){
+    case "Social":
+      role = 1; break;
+    case "Competitive":
+      role  = 2; break;
+  }
+  return role;
+
+}

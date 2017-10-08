@@ -13,6 +13,7 @@
   <link rel="icon" href="Assets/images/2.png" type="image/png"> <!-- Favicon -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"> <!-- Bootstrap -->
   <link rel="stylesheet" href="Assets/css/hideDiv.css"/>  <!-- Hide Divs -->
+  <script src="Assets/javascript/RoleLookUp.js">  </script>
 </head>
 <body>
   <!-- Navigation -->
@@ -46,8 +47,8 @@
           <div class = "col-sm-10">
             <select class="form-control" id="id_event_type">
               <option>Social</option>
-              <option>Death</option>
-              <option>Competetive</option>
+              <option>Death Event</option>
+              <option>Competitive</option>
             </select>
           </div>
         </div>
@@ -58,7 +59,7 @@
           </div>
         </div>
         <div class = "form-group row"> <!-- Date -->
-          <label for = "id_event_date" class = "col-sm-2 col-form-label">Date</label>
+          <label for = "id_event_date"  data-date-format="DD MMMM YYYY" class = "col-sm-2 col-form-label">Date</label>
           <div class = "col-sm-10">
             <input type = "date" class = "form-control" id = "id_event_date" name = "#" placeholder = "#">
           </div>
@@ -67,7 +68,8 @@
         <div class = "form-group row"> <!-- Date -->
           <label for = "id_facility_type" class = "col-sm-2 col-form-label">Facility Types</label>
           <div class = "col-sm-10">
-            <select class="form-control" id="id_facility_type">
+            <select onchange="getVenues()" class="form-control" id="id_facility_type">
+              <option>----None----</option>
               <option>Sports Venues</option>
               <option>Central Venues</option>
             </select>
@@ -78,7 +80,7 @@
           <label for = "id_event_venue" class = "col-sm-2 col-form-label">Venue</label>
           <div class = "col-sm-10">
             <select class="form-control" id="id_event_venue">
-              <option>----None----</option>
+              <option >----None----</option>
             </select>
           </div>
         </div>
@@ -89,7 +91,7 @@
           </div>
         </div>
         <div class = "form-group row"> <!-- Registration Deadline -->
-          <label for = "id_reg_date" class = "col-sm-2 col-form-label">Registration Deadline</label>
+          <label for = "id_reg_date"  data-date-format="DD MMMM YYYY" class = "col-sm-2 col-form-label">Registration Deadline</label>
           <div class = "col-sm-10">
             <input type = "date" class = "form-control" id = "id_reg_date" name = "#" placeholder = "#">
           </div>
@@ -125,33 +127,83 @@
   </footer>
 
 
-  <div id="venueDiv">
+  <div id="venueDiv" class="show">
     <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
     <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950000da39d438ee94929ad77");}catch(v_e){;}</script>
     <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950000da39d438ee94929ad77">
       Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
-    <div id="cbaaa950000da39d438ee94929ad77"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
+      <div id="cbaaa950000da39d438ee94929ad77"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
     </div>
 
+    <div class="">
+      <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
+  <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950003a2237dd5b57437d821b");}catch(v_e){;}</script>
+  <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950003a2237dd5b57437d821b">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
+  <div id="cbaaa950003a2237dd5b57437d821b"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
+    </div>
 
 
 
     <script src="Assets/javascript/getReportData.js">
     </script>
     <script type="text/javascript">
-    var venueDiv = document.getElementById('venueDiv');
-    var allvenues = stripCaspioReport(venueDiv);
-    var type = document.getElementById('id_facility_type').value;
-    
-    for (var i = 0; i < allvenues.length; i+=1) {
-      var elmOption = document.createElement('option');
-
-      elmOption.text = allvenues[i]['name'];
-      elmOption.value = allvenues[i]['venue id'];
-      document.getElementById('id_event_venue').add(elmOption);
+    function getVenues(){
+      var type = document.getElementById('id_facility_type').value;
+      var isSportsVenue = type;
+      switch(type) {
+        case "Central Venues":
+        isSportsVenue = 'No';
+        break;
+        case "Sports Venues":
+        isSportsVenue = 'Yes';
+        break;
+      }
+      document.getElementById('id_event_venue').innerHTML ="";
+      var venueDiv = document.getElementById('venueDiv');
+      var allvenues = stripCaspioReport(venueDiv);
+      for (var i = 0; i < allvenues.length; i+=1) {
+        var elmOption = document.createElement('option');
+        if(allvenues[i]['issportvenue'] === isSportsVenue)
+        {elmOption.text = allvenues[i]['name'];
+        elmOption.value = allvenues[i]['venue id'];
+        document.getElementById('id_event_venue').add(elmOption);
+      }
+    }
   }
+
+  function submitForm(){
+
+    var caspio_form = document.getElementById('caspioform');
+    var profile = ['id_event_name', 'id_event_desc', 'id_sports_code','id_event_date','id_reg_date','hasFixtures', 'id_event_type', 'id_event_venue','id_max_players'];
+    var caspioIds = ['InsertRecordName', 'InsertRecordDescription','InsertRecordSport','InsertRecordEvent_Date', 'InsertRecordRegistration_Deadline','InsertRecordhasFixtures'
+    ,'InsertRecordEvent_Type', 'InsertRecordEvent_Venue', 'InsertRecordMaximum_players'];
+
+     for(var i=0; i<caspioIds.length; i+=1){
+       var current_value = document.getElementById(profile[i]).value;
+       if(i === 5){
+         if(document.getElementById(profile[i]).checked){document.getElementById(caspioIds[i]).checked = 'true';
+           continue;
+          }
+         else {
+           document.getElementById(caspioIds[i]).checked = "false";
+           continue;
+        }
+       }
+       if(i ===3 ||i === 4)
+       {
+        current_value = current_value.split('-').reverse().join('/');
+       }
+
+       if(i == 6) current_value = eventTypeLookup(current_value);
+       document.getElementById(caspioIds[i]).value = current_value;
+     }
+
+   caspio_form.submit();
+   }
 
 
     </script>
+
+
   </body>
   </html>
