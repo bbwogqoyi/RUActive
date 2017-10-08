@@ -1,6 +1,8 @@
+'use strict';
+
 function userRoleLookUp(num){
   var role = 'unknown';
-  position = parseInt(num);
+  var position = parseInt(num);
   switch(position){
     case 1:
       role = 'Sport Admin '; break;
@@ -13,7 +15,6 @@ function userRoleLookUp(num){
   }
   return role;
 }
-
 
 function expertiseLookup(exp){
   var role = -1;
@@ -29,9 +30,7 @@ function expertiseLookup(exp){
       role = 4; break;
   }
   return role;
-
 }
-
 
 function eventTypeLookup(exp){
   var role = -1;
@@ -43,5 +42,55 @@ function eventTypeLookup(exp){
       role  = 2; break;
   }
   return role;
+}
 
+function issueSessionToken(){
+  var caspio_form = document.getElementById('caspioform');
+  var caspioIds = ['EditRecordFirst_Name', 'EditRecordLast_Name', 'EditRecordEmail', 'EditRecordPhone'];
+
+  var sessionUser = {};
+  for(var i=0; i<caspioIds.length; i+=1){
+    var elem = caspioIds[i];
+    sessionUser[elem] = document.getElementById(elem).value; 
+  }
+  
+  var role = document.getElementById('EditRecordUser_Role').value;
+  sessionUser['EditRecordUser_Role'] = userRoleLookUp(role);
+
+  // Save data to sessionStorage
+  sessionStorage.setItem('user', JSON.stringify(sessionUser));
+}
+
+function IsAuthenticated(){
+  // Get saved data from sessionStorage
+  var user = sessionStorage.getItem('user');
+  return !isEmpty()
+}
+
+function login(){
+  var username = document.getElementById('lg_username').value;
+  var password = document.getElementById('lg_password').value;
+
+  if( !isEmpty(username) && !isEmpty(password) ){
+    document.getElementById('xip_Staff_Student_ID').value = username;
+    document.getElementById('xip_Password').value = password;
+    document.getElementById('caspioform').submit();
+  } else {
+    if(username == "" && password != "" ) alert("username is empty");
+    if(password == "" && username != "") alert("password is empty");
+    if(username == "" && password =="") alert("username and password is empty");
+  }
+}
+
+function logOut(){
+  // Remove saved data from sessionStorage
+  sessionStorage.removeItem('user');
+  location.href = "https://c0abd423.caspio.com/folderlogout";
+  setTimeout(function(){
+    location.href = "index.html";
+  }, 200);
+}
+
+function isEmpty(identifier){
+  return (identifier === null || identifier === "")
 }
