@@ -16,6 +16,21 @@ function userRoleLookUp(num){
   return role;
 }
 
+function userRoleLookUp_Rev(num){
+  var role = 'unknown';
+  switch(num){
+    case 'Sports Admin':
+      role = 1 ; break;
+    case 'Sports Code':
+      role = 2 ; break;
+    case 'Warden' :
+      role = 3; break;
+    case 'Sport Rep':
+      role = 4; break;
+  }
+  return role;
+}
+
 function expertiseLookup(exp){
   var role = -1;
   //position = parseInt(num);
@@ -51,9 +66,9 @@ function issueSessionToken(){
   var sessionUser = {};
   for(var i=0; i<caspioIds.length; i+=1){
     var elem = caspioIds[i];
-    sessionUser[elem] = document.getElementById(elem).value; 
+    sessionUser[elem] = document.getElementById(elem).value;
   }
-  
+
   var role = document.getElementById('EditRecordUser_Role').value;
   sessionUser['EditRecordUser_Role'] = userRoleLookUp(role);
 
