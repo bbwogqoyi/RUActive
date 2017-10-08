@@ -32,13 +32,13 @@ function login(){
 function moveToNextPage(){
   setTimeout(function(){
 
-  location.href = "profile.html";
+  location.href = "event.html";
   }, 200);
 }
 
 function logOut(){
   location.href = "https://c0abd423.caspio.com/folderlogout";
   setTimeout(function(){
-    location.href = "index.html";
+    location.href = "event.html";
   }, 200);
 }
