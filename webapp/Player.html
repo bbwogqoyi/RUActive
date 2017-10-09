@@ -24,10 +24,17 @@
   <div class="add player">
     <div class="info player">
       <h3>Add Player</h3>
-      <p>This form serves to assist the user in the process of adding one or more players to a specific team</p>
+      <p>This form serves to assist the user in the process of adding one or more players to a specific team.</p>
     </div>
     <div class="form player">
       <form>
+        <div class="form-group row">
+          <label for="exp_id" class="col-sm-2 col-form-label">Team</label>
+          <div class="col-sm-10">
+            <select class="form-control" id="team_id">
+            </select>
+          </div>
+        </div>
         <div class="form-group row">
           <label for="student_id" class="col-sm-2 col-form-label">Student ID</label>
           <div class="col-sm-10">
@@ -56,17 +63,6 @@
             </select>
           </div>
         </div>
-        <div class="form-group row">
-          <label for="exp_id" class="col-sm-2 col-form-label">Expertise</label>
-          <div class="col-sm-10">
-            <select class="form-control" id="exp_id">
-              <option>Novice Player</option>
-              <option>Competent Player</option>
-              <option>RU First Team Player</option>
-              <option>Provincial/National Player</option>
-            </select>
-          </div>
-        </div>
       </form>
       <div class="button player">
         <button onclick="submitForm()" type="button" class="btn btn-primary btn-lg">Add Player</button>
@@ -78,35 +74,50 @@
     <p>Copyright &copy 2017, Original Xception. All Rights Reserved.</p>
   </footer>
 
-  <div class="hide">
-    <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
-    <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950003c6a5ab9ff0e4753904c");}catch(v_e){;}</script>
-    <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950003c6a5ab9ff0e4753904c">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
-    <div id="cbaaa950003c6a5ab9ff0e4753904c"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
-  </div>
-
-  <div id="playerDiv" class="">
+  <div class="">
     <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
     <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa95000d1f1f32e90554deeb9ee");}catch(v_e){;}</script>
     <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa95000d1f1f32e90554deeb9ee">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
     <div id="cbaaa95000d1f1f32e90554deeb9ee"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
-  </div> 
+  </div>
+
+  <div id="teamDiv" class="hide">
+    <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
+    <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950001cf919cd0b4941988fab");}catch(v_e){;}</script>
+    <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950001cf919cd0b4941988fab">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
+    <div id="cbaaa950001cf919cd0b4941988fab"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
+  </div>
 
   <script src="Assets/javascript/RoleLookUp.js" charset="utf-8"></script>
+  <script src="Assets/javascript/getReportData.js" charset="utf-8"></script>
   <script type="text/javascript">
-  function submitForm(){
-  var caspio_form = document.getElementById('caspioform');
-  var profile = ['student_id', 'f_name', 'l_name','gender', 'exp_id'];
-  var caspioIds = ['InsertRecordStudent_ID', 'InsertRecordFirst_Name','InsertRecordLast_Name','InsertRecordGender', 'InsertRecordExpertise'];
+    var user = getSessionUser();
+    var teamDiv = document.getElementById('teamDiv');
+    var teams = stripCaspioReport(teamDiv);
+    for (var i = 0; i < teams.length; i+=1) {
+      var current = teams[i];
+      if(current['residence name'] === user['EditRecordResidence']){
+        var elmOption = document.createElement('option');
+        elmOption.text = current['team name'];
+        elmOption.value = current['team id'];
+        document.getElementById('team_id').add(elmOption);
+      }
+    }
 
-   for(var i=0; i<caspioIds.length; i+=1){
-     var current_value = document.getElementById(profile[i]).value;
-     if(i === 4) current_value = expertiseLookup(current_value);
-     document.getElementById(caspioIds[i]).value = current_value;
-   }
 
- caspio_form.submit();
- }
+    function submitForm(){
+      var caspio_form = document.getElementById('caspioform');
+      var profile = ['student_id', 'f_name', 'l_name','gender', 'exp_id'];
+      var caspioIds = ['InsertRecordStudent_ID', 'InsertRecordFirst_Name','InsertRecordLast_Name','InsertRecordGender', 'InsertRecordExpertise'];
+
+      for(var i=0; i<caspioIds.length; i+=1){
+        var current_value = document.getElementById(profile[i]).value;
+        if(i === 4) current_value = expertiseLookup(current_value);
+        document.getElementById(caspioIds[i]).value = current_value;
+      }
+
+      caspio_form.submit();
+    }
   </script>
 
 

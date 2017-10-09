@@ -61,12 +61,11 @@ function eventTypeLookup(exp){
 
 function issueSessionToken(){
   var caspio_form = document.getElementById('caspioform');
-  var caspioIds = ['EditRecordStaff_Student_ID','EditRecordFirst_Name', 'EditRecordLast_Name', 'EditRecordEmail', 'EditRecordPhone'];
+  var caspioIds = ['EditRecordStaff_Student_ID','EditRecordFirst_Name', 'EditRecordLast_Name', 'EditRecordEmail', 'EditRecordPhone', 'EditRecordSports', 'EditRecordResidence'];
 
   var sessionUser = {};
   for(var i=0; i<caspioIds.length; i+=1){
     var elem = caspioIds[i];
-    console.log(elem);
     sessionUser[elem] = document.getElementById(elem).value;
   }
 
