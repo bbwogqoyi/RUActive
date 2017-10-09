@@ -14,8 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-<!-- <body  onload="getInputFields()"> -->
-<body>
+<body  onload="getInputFields()">
     <div class="ru_nav">
         <ul>
             <li class="Logo"><a href="#home"><img src="Assets/images/2.png"  alt="RUACTIVE Logo"></a></li>
@@ -58,19 +57,19 @@
             </div>
         </div>
         <div class="added player">
-            <!-- <div class="player_team" id="p_1">
+          <div class="player_team" id="p_1">
                 <div class="details" id="d_1">
                     <p class="p_t" id="info_1">Just testing my code. Don't say shit right about my shit.</p>
                 </div>
                 <button type="button" class="btn btn-primary btn-sm Cancel" id="btn_1"><i class="fa fa-times" aria-hidden="true"></i> Remove</button>
-            </div> -->
-        </div>
-        <div class="finalizing">
-            <div class="final btn">
-                <button type="button" class="btn btn-primary btn-lg Cancel" id="btn_1"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
-                <button type="button" class="btn btn-primary btn-lg Update" id="btn_1"><i class="fa fa-check" aria-hidden="true"></i> Finalize</button>
             </div>
         </div>
+        <div class="finalizing">
+          <div class="final btn">
+              <button type="button" class="btn btn-primary btn-lg Cancel" id="btn_1"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
+              <button type="button" class="btn btn-primary btn-lg Update" id="btn_1"><i class="fa fa-check" aria-hidden="true"></i> Finalize</button>
+          </div>
+      </div>
     </div>
 
     <div class="Show">
@@ -101,7 +100,9 @@
                     <label for="gender" class="col-sm-2 col-form-label">Gender</label>
                     <div class="col-sm-10">
                         <select class="form-control slct" id="gender">
-
+                          <option>Male</option>
+                          <option>Female</option>
+                          <option>Other</option>
                         </select>
                     </div>
                 </div>
@@ -109,7 +110,10 @@
                     <label for="exp_id" class="col-sm-2 col-form-label">Expertise</label>
                     <div class="col-sm-10">
                         <select class="form-control slct" id="exp_id">
-
+                          <option>Novice Player</option>
+                          <option>Competent Player</option>
+                          <option>RU First Team Player</option>
+                          <option>Provincial/National Player</option>
                         </select>
                     </div>
                 </div>
@@ -121,39 +125,46 @@
         </div>
     </div>
 
-    <!-- <div class="hide">
+    <div class="hide">
       <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
       <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950003295986d4518484cacf9");}catch(v_e){;}</script>
       <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950003295986d4518484cacf9">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
       <div id="cbaaa950003295986d4518484cacf9"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
 
-    </div> -->
+    </div>
 
-    <!-- <script type="text/javascript">
+    <script type="text/javascript">
+      $('button').click(function(){
+        var p_remove = $(this).attr("id").split("_");
+        var pos = p_remove[1];
+        if(p_remove[0] == "btn") $("#p_"+pos).remove();
+      });
+      ourside = ['id_event','id_res'];
+      caspioIds = ['InsertRecordEvent_Name', 'InsertRecordResidence_Name' ];
 
-    ourside = ['id_event','id_res'];
-    caspioIds = ['InsertRecordEvent_Name', 'InsertRecordResidence_Name' ];
-
-    function getInputFields(){
-      var w =   document.getElementById(caspioIds[0]).options;
-      populate(w,ourside[0])
-      var s =   document.getElementById(caspioIds[1]).options;
-      populate(s,ourside[1])
-      document.getElementById(ourside[2]).value = 0;
-    }
-
-    function populate (w, id){
-      for (var i = 0; i < w.length; i+=1) {
-        var elmOption = document.createElement('option');
-
-        elmOption.text = w[i].text;
-        elmOption.value = w[i].value;
-        document.getElementById(id).add(elmOption);
+      function getInputFields(){
+        var w =   document.getElementById(caspioIds[0]).options;
+        populate(w,ourside[0])
+        var s =   document.getElementById(caspioIds[1]).options;
+        populate(s,ourside[1])
+        //document.getElementById(ourside[2]).value = 0;
       }
-    }
-    </script> -->
 
+      function populate (w, id){
+        for (var i = 0; i < w.length; i+=1) {
+          var elmOption = document.createElement('option');
 
+          elmOption.text = w[i].text;
+          elmOption.value = w[i].value;
+          document.getElementById(id).add(elmOption);
+        }
+      }
+
+      function removePlayer(id){
+        console.log("here");
+        document.getElementById('p_'+id).remove();
+      }      
+    </script>
 
     <footer>
         <p>Copyright &copy 2017, Original Xception. All Rights Reserved.</p>

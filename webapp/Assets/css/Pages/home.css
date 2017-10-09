@@ -1,3 +1,15 @@
+/* Font */
+@font-face {
+    font-family: "myFont";
+    src: url('../lemonmilk.otf');
+}
+
+.ru_nav, .logo_name, .head, .team_detail{
+    font-family: myFont;
+}
+
+/* Other */
+
 #home .wall{
     text-align: center;
     margin:  0 auto;
@@ -8,30 +20,30 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    height: 400px;
+    height: 450px;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 #home .wall .Logo_placement{
     position: absolute;
     z-index: 100;
-    top: 10%;
+    top: 35%;
     left: 2%;
 }
 #home .wall .logo_name{
     font-size: 45px;
     color: black;
-    font-weight: bold;
 }
 
 #home .wall img{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 70%;
     cursor: pointer;
     border-color: transparent;
 }
 #home .message_board{
-    background-color: #333333;
+    background-color: #1a1a1a;
     padding: 10px;
     margin:  0 auto;
 }
@@ -137,12 +149,12 @@
 #home .latest_event .Event_Image .team_1, #home .latest_event .Event_Image .team_detail, #home .latest_event .Event_Image .team_2{
     float: left; 
     width: 33.333%;
-    height: 100%;
+    height:185px;
     text-align: center;
 }
 
 #home .latest_event .Event_Image .team_detail{
-    height: 90%;
+    height: 100%;
 }
 #home .latest_event .Event_Image .team_detail #VS{
     color: #151515;
@@ -194,9 +206,9 @@
     #home .latest_event .Event_Image .team_1, #home .latest_event .Event_Image .team_2{
         padding-top: 1%;
     }
-    #home .wall img{
-        width: 300px;
-        height: 300px;
+
+    #home .wall .Logo_placement{
+        top: 25%;
     }
 }
 
