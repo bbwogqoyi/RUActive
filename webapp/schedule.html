@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>RUActive | Results Page</title>
+  <title>RUActive | Competition Schdeule</title>
   <link rel="stylesheet" href="Assets/css/Modules/footer.css"/> <!-- Footer CSS -->
   <link rel="stylesheet" href="Assets/css/Modules/header.css"/> <!-- Header CSS -->
   <link rel="stylesheet" href="Assets/css/Pages/schedule.css"/> <!-- Pages/Schedule CSS -->
@@ -15,15 +15,15 @@
   <link rel="stylesheet" href="Assets/css/hideDiv.css"/>  <!-- Hide Divs -->
   <script src="Assets/javascript/RoleLookUp.js">  </script>
 </head>
-<body>
+<body onload="getEvents()">
   <!-- Navigation -->
   <div class="ru_nav">
     <ul>
-        <li><a href="#home" accesskey='u'>RUACTIVE</a></li>
+        <li><a href="index.html" accesskey='u'>RUACTIVE</a></li>
         <li><a class="active" href="schedule.html" accesskey='s'>Schedule</a></li>
         <li><a href="results_page.html" accesskey='e'>Results</a></li>
         <li><a href="#ranking" accesskey='r'>Ranking</a></li>
-        <li style="float:right" accesskey='h'><a href="#help">Help</a></li>
+        <li style="float:right" accesskey='h'><a href="Assets/manual.pdf">Help</a></li>
     </ul>
   </div>
 
@@ -34,16 +34,12 @@
       <tr>
         <td class = "left_side">
           <div class = "form-group row"> <!-- Residence -->
-            <label for = "id_res" class = "col-sm-2 col-form-label">Event Name</label>
-            <div class = "col-sm-10">
-              <input type = "text" class = "form-control" id = "id_res" name = "#" placeholder = "Event Name">
-            </div>
+
           </div>
         </td>
         <td>
         <!-- Search Button -->
         <div class= "button player">
-          <button onclick="submitForm()" type="button" class="btn btn-primary btn-lg Tool">Search</button>
         </div>
         </td>
       </tr>
@@ -55,41 +51,19 @@
     <div class="compt_info">
       <div class="ev_cpt">
         <div class="compt_date">
-          <h5 class="date head">XXXXXXXX</h5>
+          <h5 class="date head" id="date"></h5>
         </div>
         <div class="compt_details">
-          <table class="table_event">
-              <th class="head" colspan="2">
-                  Event Details
-              </th>
-              <tr class="event_det type">
-                  <td><strong>TYPE:</strong> </td>
-                  <td class="info">XXXX</td>
-              </tr>
-              <tr class="event_det sport">
-                  <td><strong>SPORT:</strong> </td>
-                  <td class="info">XXXXX</td>
-              </tr>
-              <tr class="event_det date">
-                  <td><strong>DATE:</strong> </td>
-                  <td class="info">XXXXX</td>
-              </tr>
-              <tr class="event_det time">
-                  <td><strong>TIME:</strong> </td>
-                  <td class="info">XXXXXX</td>
-              </tr>
-              <tr class="event_det place">
-                  <td><strong>PLACE:</strong> </td>
-                  <td class="info">XXXXX</td>
-              </tr>
+          <table id="meee"class="table_event">
+
           </table>
         </div>
         <div class="nav_btn">
           <table class="table_btn">
             <tr>
               <td colspan="2">
-                  <button type="button" class="btn btn-primary btn-lg Add" id="prev">PREVIOUS</button>
-                  <button type="button" class="btn btn-primary btn-lg Add" id="next">NEXT</button>
+                  <button type="button" class="btn btn-primary btn-lg Add" id="prev" onclick="moveback()">PREVIOUS</button>
+                  <button type="button" class="btn btn-primary btn-lg Add" id="next" onclick="eventsidebar()">NEXT</button>
               </td>
             </tr>
           </table>
@@ -97,67 +71,9 @@
       </div>
     </div>
     <div class="compt_list">
-      <table class="names_times">
-        <tr class="active c_bg" id="c_d_1">
-          <td class="compt_type">X</td>
-          <td class="compt_name">XXXXXXXXXXXXXXX</td>
-          <td class="compt_time">XXXXXXX</td>
-        </tr>
-        <tr class="c_bg" id="c_d_2">
-          <td class="compt_type">X</td>
-          <td class="compt_name">XXXXXXXXXXXXXXX</td>
-          <td class="compt_time">XXXXXXX</td>
-        </tr>
-        <tr class="c_bg" id="c_d_3">
-          <td class="compt_type">X</td>
-          <td class="compt_name">XXXXXXXXXXXXXXX</td>
-          <td class="compt_time">XXXXXXX</td>
-        </tr>
-        <tr class="c_bg" id="c_d_4">
-          <td class="compt_type">X</td>
-          <td class="compt_name">XXXXXXXXXXXXXXX</td>
-          <td class="compt_time">XXXXXXX</td>
-        </tr>
-        <tr class="c_bg" id="c_d_5">
-          <td class="compt_type">X</td>
-          <td class="compt_name">XXXXXXXXXXXXXXX</td>
-          <td class="compt_time">XXXXXXX</td>
-        </tr>
-        <tr class="c_bg" id="c_d_6">
-          <td class="compt_type">X</td>
-          <td class="compt_name">XXXXXXXXXXXXXXX</td>
-          <td class="compt_time">XXXXXXX</td>
-        </tr>
-        <tr class="c_bg" id="c_d_7">
-          <td class="compt_type">X</td>
-          <td class="compt_name">XXXXXXXXXXXXXXX</td>
-          <td class="compt_time">XXXXXXX</td>
-        </tr>
-        <tr class="c_bg" id="c_d_8">
-          <td class="compt_type">X</td>
-          <td class="compt_name">XXXXXXXXXXXXXXX</td>
-          <td class="compt_time">XXXXXXX</td>
-        </tr>
-        <tr class="c_bg" id="c_d_9">
-          <td class="compt_type">X</td>
-          <td class="compt_name">XXXXXXXXXXXXXXX</td>
-          <td class="compt_time">XXXXXXX</td>
-        </tr>
-        <tr class="c_bg" id="c_d_10">
-          <td class="compt_type">X</td>
-          <td class="compt_name">XXXXXXXXXXXXXXX</td>
-          <td class="compt_time">XXXXXXX</td>
-        </tr>
-        <tr class="c_bg" id="c_d_11">
-          <td class="compt_type">X</td>
-          <td class="compt_name">XXXXXXXXXXXXXXX</td>
-          <td class="compt_time">XXXXXXX</td>
-        </tr>
-        <tr class="c_bg" id="c_d_12">
-          <td class="compt_type">X</td>
-          <td class="compt_name">XXXXXXXXXXXXXXX</td>
-          <td class="compt_time">XXXXXXX</td>
-        </tr>
+
+
+      <table class="names_times" id="updateTable">
       </table>
     </div>
   </div>
@@ -168,15 +84,115 @@
   </footer>
 
 
-  <div id="venueDiv" class="hide">
+  <div id="eventSearch" class="hide">
     <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
-    <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950000da39d438ee94929ad77");}catch(v_e){;}</script>
-    <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950000da39d438ee94929ad77">
-      Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
-      <div id="cbaaa950000da39d438ee94929ad77"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
+  <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950005a69a22a2708474e9e6a");}catch(v_e){;}</script>
+  <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950005a69a22a2708474e9e6a">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
+  <div id="cbaaa950005a69a22a2708474e9e6a"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
     </div>
+<script src="Assets/javascript/getReportData.js" charset="utf-8"></script>
 
-  
+<script type="text/javascript">
+        var re = stripCaspioReport(document.getElementById('eventSearch'));
+        movefoward = 0;
+
+
+
+        function getEvents(){
+          var type = '';
+          var today = new Date();
+          var dd = today.getDate();
+          var mm = today.getMonth()+1; //January is 0!
+
+          var yyyy = today.getFullYear();
+          if(dd<10){
+              dd='0'+dd;
+          }
+          if(mm<10){
+              mm='0'+mm;
+          }
+          var today = dd+'/'+mm+'/'+yyyy;
+          document.getElementById("date").innerHTML = today;
+
+        for (var i = 0; i < re.length; i++) {
+            console.log(re[i]["event type"]);
+            if(re[i]["event type"] === 'Competitive')type = 'C';
+            else type = 'S'
+
+          var template = `<tr class="c_bg" id="c_d_1">
+          <td class="compt_type">${type}</td>
+          <td class="compt_name">${re[i]['name']}</td>
+          <td class="compt_time">${re[i]['event start time']}</td>
+        </tr>`
+        document.getElementById('updateTable').innerHTML += template;
+
+        }
+      }
+      function moveback(){
+            movefoward--;
+            if(movefoward < 0 )movefoward = re.length-1;
+            template = `  <th class="head" colspan="2">
+                  Event Details
+              </th>
+              <tr class="event_det type">
+                  <td><strong>TYPE:</strong> </td>
+                  <td class="info">${re[movefoward]['event type']}</td>
+              </tr>
+              <tr class="event_det sport">
+                  <td><strong>SPORT:</strong> </td>
+                  <td class="info">${re[movefoward]['sport']}</td>
+              </tr>
+              <tr class="event_det date">
+                  <td><strong>DATE:</strong> </td>
+                  <td class="info">${re[movefoward]['event date']}</td>
+              </tr>
+              <tr class="event_det time">
+                  <td><strong>TIME:</strong> </td>
+                  <td class="info">${re[movefoward]['event start time']}</td>
+              </tr>
+              <tr class="event_det place">
+                  <td><strong>PLACE:</strong> </td>
+                  <td class="info">${re[movefoward]['event venue']}</td>
+              </tr>`
+
+            document.getElementById('meee').innerHTML = template;
+      }
+      function eventsidebar(){
+
+
+                  if(movefoward > re.length-1) movefoward = 0;
+            template = `  <th class="head" colspan="2">
+                  Event Details
+              </th>
+              <tr class="event_det type">
+                  <td><strong>TYPE:</strong> </td>
+                  <td class="info">${re[movefoward]['event type']}</td>
+              </tr>
+              <tr class="event_det sport">
+                  <td><strong>SPORT:</strong> </td>
+                  <td class="info">${re[movefoward]['sport']}</td>
+              </tr>
+              <tr class="event_det date">
+                  <td><strong>DATE:</strong> </td>
+                  <td class="info">${re[movefoward]['event date']}</td>
+              </tr>
+              <tr class="event_det time">
+                  <td><strong>TIME:</strong> </td>
+                  <td class="info">${re[movefoward]['event start time']}</td>
+              </tr>
+              <tr class="event_det place">
+                  <td><strong>PLACE:</strong> </td>
+                  <td class="info">${re[movefoward]['event venue']}</td>
+              </tr>`
+
+            document.getElementById('meee').innerHTML = template;
+                movefoward++
+
+
+
+      }
+       eventsidebar()
+</script>
 
 
   </body>

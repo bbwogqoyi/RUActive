@@ -13,11 +13,11 @@ body {
     color: black;
 }
 
-body .add.fixture_score{
+body .add.non_fixture_score{
     width: 70%;
 }
 
-body .add.fixture_score .form.fixture_score{
+body .add.non_fixture_score .form.non_fixture_score{
     margin-left: auto;
     margin-right: auto;
 }
