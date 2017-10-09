@@ -26,7 +26,7 @@
 
   <!-- Report Section-->
   <div class = "add r_event">
-    
+
         <!-- Info -->
         <div class="info r_event">
           <h1 id = "something">Event: </h1>
@@ -41,43 +41,8 @@
 
         <!-- Report -->
         <div class="report r_event">
-          <table>
-            <tr>
-              <td class="left_side">Event</td>
-              <td class="right_side"></td>
-            </tr>
-            <tr>
-              <td class="left_side">Sports Code</td>
-              <td class="right_side"></td>
-            </tr>
-            <tr>
-              <td class="left_side">Date</td>
-              <td class="right_side"></td>
-            </tr>
-            <tr>
-              <td class="left_side">Venue</td>
-              <td class="right_side"></td>
-            </tr>
-            <tr>
-              <td class="left_side">Duration</td>
-              <td class="right_side"></td>
-            </tr>
-            <tr>
-              <td class="left_side">Registration</td>
-              <td class="right_side"></td>
-            </tr>
-            <tr>
-              <td class="left_side">Team Limit</td>
-              <td class="right_side"></td>
-            </tr>
-            <tr>
-              <td class="left_side">Maximum Team Players</td>
-              <td class="right_side"></td>
-            </tr>
-            <tr>
-              <td class="left_side">Description</td>
-              <td class="right_side"></td>
-            </tr>
+          <table id="addedEvent">
+
           </table>
         </div>
 
@@ -91,7 +56,52 @@
   <footer>
     <p>Copyright &copy 2017, Original Xception. All Rights Reserved.</p>
   </footer>
-  
+
+  <div class="hide" id="event">
+    <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
+  <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950005a69a22a2708474e9e6a");}catch(v_e){;}</script>
+  <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950005a69a22a2708474e9e6a">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
+  <div id="cbaaa950005a69a22a2708474e9e6a"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
+  </div>
+  <script src="Assets/javascript/getReportData.js" charset="utf-8"></script>
+  <script type="text/javascript">
+        var allevents = stripCaspioReport(document.getElementById('event'));
+        allevents.reverse();
+        var template = `<tr>
+          <td class="left_side">Event</td>
+          <td class="right_side">${allevents[0]['name']}</td>
+        </tr>
+        <tr>
+          <td class="left_side">Sports Code</td>
+          <td class="right_side">${allevents[0]['sport']}</td>
+        </tr>
+        <tr>
+          <td class="left_side">Date</td>
+          <td class="right_side">${allevents[0]['event date']}</td>
+        </tr>
+        <tr>
+          <td class="left_side">Venue</td>
+          <td class="right_side">${allevents[0]['event venue']}</td>
+        </tr>
+        <tr>
+          <td class="left_side">Duration</td>
+          <td class="right_side">${allevents[0]['event start time']}</td>
+        </tr>
+        <tr>
+          <td class="left_side">Registration</td>
+          <td class="right_side">${allevents[0]['Registration deadline']}</td>
+        </tr>
+        <tr>
+          <td class="left_side">Maximum Team Players</td>
+          <td class="right_side">${allevents[0]['maximum players']}</td>
+        </tr>
+        <tr>
+          <td class="left_side">Description</td>
+          <td class="right_side">${allevents[0]['description']}</td>
+        </tr>`
+
+        document.getElementById('addedEvent').innerHTML += template;
+  </script>
 
 </body>
 </html>
