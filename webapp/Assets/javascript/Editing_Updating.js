@@ -11,9 +11,6 @@ var modalShow = function(){
     
     modal = document.getElementsByClassName("Show")[0];
   
-   
-
-
     //Opening Trainer Info
     $('#adding').click(function(){
         //var trainerid = $(this).attr("id").split("_");
@@ -78,13 +75,8 @@ var CreateTeam = function(){
         l_player = players.length;
         if(l_player >= 1){
             var pos = "p_"+l_player;
-<<<<<<< HEAD
-            $("#"+pos).after('<div class="player_team" id="p_'+(l_player+1)+'"><div class="details" id="d_'+(l_player+1)+'"><p class="p_t" id="info_'+(l_player+1)+'">'+added_fragment+'</p></div><button type="button" class="btn btn-primary btn-sm Cancel" id="btn_'+(l_player+1)+'"><i class="fa fa-times" aria-hidden="true"></i> Remove</button></div>');
-=======
-            console.log(added_fragment);
-            console.log(pos);
-            $("#"+pos).after('<div class="player_team" id="p_'+(l_player+1)+'"><div class="details" id="d_'+(l_player+1)+'"><p class="p_t" id="info_'+(l_player+1)+'">'+added_fragment+'</p></div><button onclick="removePlayer('+(l_player+1)+')" type="button" class="btn btn-primary btn-sm Cancel" id="btn_'+(l_player+1)+'"><i class="fa fa-times" aria-hidden="true"></i> Remove</button></div>');
->>>>>>> b1df703e5b90957eacf651b9b9c71b8309876790
+            $("#"+pos).after('<div class="player_team" id="p_'+(l_player)+'"><div class="details" id="d_'+(l_player)+'"><p class="p_t" id="info_'+(l_player)+'">'+added_fragment+'</p></div><button onclick="removePlayer('+(l_player)+')" type="button" class="btn btn-primary btn-sm Cancel" id="btn_'+(l_player+1)+'"><i class="fa fa-times" aria-hidden="true"></i> Remove</button></div>');
+
             l_player = document.getElementsByClassName("player_team").length;
             pos = "p_"+l_player;
 
@@ -108,11 +100,7 @@ var CreateTeam = function(){
         var student_id = document.getElementById("student_id").value;
         var gender = document.getElementById("gender").value;
         var expr_id = document.getElementById("exp_id").value;
-<<<<<<< HEAD
 
-        var fragment = student_id + " " + f_name + " " + l_name + " " + gender + " " + expr_id;
-=======
-        
         var obj = {
           "student_id": student_id,
           "first_name": f_name,
@@ -120,20 +108,10 @@ var CreateTeam = function(){
           "gender": gender,
           "expertise": expr_id
         }
->>>>>>> b1df703e5b90957eacf651b9b9c71b8309876790
+
         var post = f_name + " " + l_name;
         AddPlayer(post);
-<<<<<<< HEAD
-        if (typeof(Storage) !== "undefined") {
-            localStorage.setItem("player"+l_player,fragment);
-        } else {
-            // Sorry! No Web Storage support..
-        }
-
-
-=======
         sessionStorage.setItem("player"+l_player, obj);
->>>>>>> b1df703e5b90957eacf651b9b9c71b8309876790
     });
 
     $('button').click(function(){
