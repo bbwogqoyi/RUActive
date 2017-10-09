@@ -8,20 +8,20 @@ var modalShow = function(){
     var Info_ID;
     var path = window.location.pathname;
     var page = path.split("/").pop();
-    
+
     modal = document.getElementsByClassName("Show")[0];
-  
-   
+
+
 
 
     //Opening Trainer Info
     $('#adding').click(function(){
         //var trainerid = $(this).attr("id").split("_");
         Opening('p_form');
-        
+
     });
 
-    //Opening Info 
+    //Opening Info
     function Opening(openingID){
         Info_ID = openingID;
         Info_Open = '#'+Info_ID;
@@ -36,7 +36,7 @@ var modalShow = function(){
    //closing modal
    function closing(){
         modal.style.display = "none";
-        
+
         $(Info_Open).css("display","none");
     }
 
@@ -70,14 +70,12 @@ var CreateTeam = function(){
         l_player = players.length;
         if(l_player >= 1){
             var pos = "p_"+l_player;
-            console.log(added_fragment);
-            console.log(pos);
             $("#"+pos).after('<div class="player_team" id="p_'+(l_player+1)+'"><div class="details" id="d_'+(l_player+1)+'"><p class="p_t" id="info_'+(l_player+1)+'">'+added_fragment+'</p></div><button type="button" class="btn btn-primary btn-sm Cancel" id="btn_'+(l_player+1)+'"><i class="fa fa-times" aria-hidden="true"></i> Remove</button></div>');
             l_player = document.getElementsByClassName("player_team").length;
-            pos = "p_"+l_player; 
-            
+            pos = "p_"+l_player;
+
             if(l_player%2 == 0){
-                document.getElementById(pos).style.background = "grey"; 
+                document.getElementById(pos).style.background = "grey";
             }
             else{
                 document.getElementById(pos).style.background = "#333";
@@ -96,7 +94,7 @@ var CreateTeam = function(){
         var student_id = document.getElementById("student_id").value;
         var gender = document.getElementById("gender").value;
         var expr_id = document.getElementById("exp_id").value;
-        
+
         var fragment = student_id + " " + f_name + " " + l_name + " " + gender + " " + expr_id;
         var post = f_name + " " + l_name;
         console.log(post);
@@ -106,7 +104,7 @@ var CreateTeam = function(){
         } else {
             // Sorry! No Web Storage support..
         }
-        
+
 
     });
 
@@ -120,5 +118,3 @@ var CreateTeam = function(){
 
 $(document).ready(modalShow);
 $(document).ready(CreateTeam);
-
-
