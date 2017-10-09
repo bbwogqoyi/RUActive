@@ -21,10 +21,10 @@
     <!-- Navigation -->
     <div class="ru_nav">
         <ul>
-            <li><a class="active" href="#home">RUACTIVE</a></li>
+            <li><a class="active" href="index.html">RUACTIVE</a></li>
             <li><a href="#schedule">Schedule</a></li>
             <li><a href="results_page.html">Results</a></li>
-            <li><a href="#ranking">Ranking</a></li>
+            <li><a href="ranking.html">Ranking</a></li>
             <li style="float:right"><a href="#help">Help</a></li>
         </ul>
     </div>
@@ -58,7 +58,7 @@
                         map: map,
                         label: 'S',
                         title: "King Field"
-                      });		
+                      });
                       var ProspectFields = new google.maps.Marker({
                         position: {lat: -33.312334, lng: 26.510986},
                         map: map,
@@ -76,7 +76,7 @@
                         map: map,
                         label: 'S',
                         title: "Tennis Courts"
-                      });		
+                      });
                       var MullinsHall = new google.maps.Marker({
                         position: {lat: -33.313069, lng: 26.512746},
                         map: map,
@@ -190,7 +190,7 @@
             chosenid = i;
         }
       }
-	  
+
       var template = `<tr class="event_upt name">
                         <td><strong>NAME:</strong> </td>
                         <td class="info">${alldata[chosenid]['name']}</td>
