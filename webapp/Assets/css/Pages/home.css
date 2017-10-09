@@ -1,12 +1,32 @@
+/* Font */
+@font-face {
+    font-family: "myFont";
+    src: url('../lemonmilk.otf');
+}
+
+.ru_nav, .logo_name, .head, .team_detail{
+    font-family: myFont;
+}
+
+/* Other */
+.Event_Image{
+    background-image: url('../../images/versus.png');
+    background-size: cover;
+}
+.wall{
+    background-image: url('../../images/homepage_background.png');
+    background-size: cover;
+}
+
 #home .wall{
     padding-top: 2%;
     text-align: center;
     margin:  0 auto;
 }
+
 #home .wall .logo_name{
     font-size: 45px;
     color: black;
-    font-weight: bold;
 }
 
 #home .wall img{
@@ -17,7 +37,7 @@
     border-color: transparent;
 }
 #home .message_board{
-    background-color: #333333;
+    background-color: #1a1a1a;
     padding: 10px;
     margin:  0 auto;
 }

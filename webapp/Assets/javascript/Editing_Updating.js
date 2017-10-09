@@ -8,20 +8,20 @@ var modalShow = function(){
     var Info_ID;
     var path = window.location.pathname;
     var page = path.split("/").pop();
-
+    
     modal = document.getElementsByClassName("Show")[0];
-
-
+  
+   
 
 
     //Opening Trainer Info
     $('#adding').click(function(){
         //var trainerid = $(this).attr("id").split("_");
         Opening('p_form');
-
+        
     });
 
-    //Opening Info
+    //Opening Info 
     function Opening(openingID){
         Info_ID = openingID;
         Info_Open = '#'+Info_ID;
@@ -65,12 +65,26 @@ var modalShow = function(){
 
 var CreateTeam = function(){
     var l_player = 0;
+    // if(document.getElementsByClassName("player_team").length <= 0){
+    //     document.getElementsByClassName("combo")[0].style.height = "700px"; 
+    //     console.log("IN");
+    // }
+    // else{
+    //     document.getElementsByClassName("combo")[0].style.height = "auto"; 
+    //     console.log("OUT");
+    // }
     function AddPlayer(added_fragment){
         var players = document.getElementsByClassName("player_team");
         l_player = players.length;
         if(l_player >= 1){
             var pos = "p_"+l_player;
+<<<<<<< HEAD
             $("#"+pos).after('<div class="player_team" id="p_'+(l_player+1)+'"><div class="details" id="d_'+(l_player+1)+'"><p class="p_t" id="info_'+(l_player+1)+'">'+added_fragment+'</p></div><button type="button" class="btn btn-primary btn-sm Cancel" id="btn_'+(l_player+1)+'"><i class="fa fa-times" aria-hidden="true"></i> Remove</button></div>');
+=======
+            console.log(added_fragment);
+            console.log(pos);
+            $("#"+pos).after('<div class="player_team" id="p_'+(l_player+1)+'"><div class="details" id="d_'+(l_player+1)+'"><p class="p_t" id="info_'+(l_player+1)+'">'+added_fragment+'</p></div><button onclick="removePlayer('+(l_player+1)+')" type="button" class="btn btn-primary btn-sm Cancel" id="btn_'+(l_player+1)+'"><i class="fa fa-times" aria-hidden="true"></i> Remove</button></div>');
+>>>>>>> b1df703e5b90957eacf651b9b9c71b8309876790
             l_player = document.getElementsByClassName("player_team").length;
             pos = "p_"+l_player;
 
@@ -83,7 +97,7 @@ var CreateTeam = function(){
         }
         else{
             var newPlayer = document.getElementsByClassName("added player")[0];
-            newPlayer.innerHTML = '<div class="player_team" id="p_1"><div class="details" id="d_1"><p class="p_t" id="info_1">'+added_fragment+'</p></div><button type="button" class="btn btn-primary btn-sm Cancel" id="btn_1"><i class="fa fa-times" aria-hidden="true"></i> Remove</button></div>';
+            newPlayer.innerHTML = '<div class="player_team" id="p_1"><div class="details" id="d_1"><p class="p_t" id="info_1">'+added_fragment+'</p></div><button onclick="removePlayer('+(l_player+1)+')" type="button" class="btn btn-primary btn-sm Cancel" id="btn_1"><i class="fa fa-times" aria-hidden="true"></i> Remove</button></div>';
             document.getElementById("p_1").style.background = "#333";
         }
     }
@@ -94,11 +108,22 @@ var CreateTeam = function(){
         var student_id = document.getElementById("student_id").value;
         var gender = document.getElementById("gender").value;
         var expr_id = document.getElementById("exp_id").value;
+<<<<<<< HEAD
 
         var fragment = student_id + " " + f_name + " " + l_name + " " + gender + " " + expr_id;
+=======
+        
+        var obj = {
+          "student_id": student_id,
+          "first_name": f_name,
+          "last_name": l_name,
+          "gender": gender,
+          "expertise": expr_id
+        }
+>>>>>>> b1df703e5b90957eacf651b9b9c71b8309876790
         var post = f_name + " " + l_name;
-        console.log(post);
         AddPlayer(post);
+<<<<<<< HEAD
         if (typeof(Storage) !== "undefined") {
             localStorage.setItem("player"+l_player,fragment);
         } else {
@@ -106,10 +131,12 @@ var CreateTeam = function(){
         }
 
 
+=======
+        sessionStorage.setItem("player"+l_player, obj);
+>>>>>>> b1df703e5b90957eacf651b9b9c71b8309876790
     });
 
     $('button').click(function(){
-        console.log("Why aren't you working?")
         var p_remove = $(this).attr("id").split("_");
         var pos = p_remove[1];
         if(p_remove[0] == "btn") $("#p_"+pos).remove();
