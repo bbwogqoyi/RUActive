@@ -19,11 +19,11 @@
   <!-- Navigation -->
   <div class="ru_nav">
     <ul>
-        <li><a href="#home">RUACTIVE</a></li>
-        <li><a class="active" href="#schedule">Schedule</a></li>
-        <li><a href="#results">Results</a></li>
-        <li><a href="#ranking">Ranking</a></li>
-        <li style="float:right"><a href="#help">Help</a></li>
+        <li><a href="#home" accesskey='u'>RUACTIVE</a></li>
+        <li><a class="active" href="schedule.html" accesskey='s'>Schedule</a></li>
+        <li><a href="results_page.html" accesskey='e'>Results</a></li>
+        <li><a href="#ranking" accesskey='r'>Ranking</a></li>
+        <li style="float:right" accesskey='h'><a href="#help">Help</a></li>
     </ul>
   </div>
 
@@ -33,69 +33,17 @@
     <table>
       <tr>
         <td class = "left_side">
-            <div class = "form-group row"> <!-- Event Name -->
-              <label for = "id_event_name" class = "col-sm-2 col-form-label">Event Name</label>
-              <div class = "col-sm-10">
-                <input type = "text" class = "form-control" id = "id_event_name" name = "#" placeholder = "Soccer Saga">
-              </div>
-            </div>
-        </td>
-        <td>
-          <!-- Empty -->
-        </td>
-      </tr>
-      <tr>
-        <td class = "left_side">
-          <div class = "form-group row"> <!-- Date -->
-            <label for = "id_event_name" class = "col-sm-2 col-form-label">Date</label>
-            <div class = "col-sm-10">
-              <input type = "date" class = "form-control" id = "id_event_name" name = "#" placeholder = "#">
-            </div>
-          </div>
-        </td>
-        <td>
-          <!-- Empty -->
-        </td>
-      </tr>
-      <tr>
-        <td class = "left_side">
-          <div class = "form-group row"> <!-- Sport -->
-            <label for = "id_event_name" class = "col-sm-2 col-form-label">Sport</label>
-            <div class = "col-sm-10">
-              <input type = "text" class = "form-control" id = "id_event_name" name = "#" placeholder = "Soccer">
-            </div>
-          </div>
-        </td>
-        <td>
-          <!-- Empty -->          
-        </td>
-      </tr>
-      <tr>
-        <td class = "left_side">
-          <div class = "form-group row"> <!-- Place -->
-            <label for = "id_event_name" class = "col-sm-2 col-form-label">Place</label>
-            <div class = "col-sm-10">
-              <input type = "text" class = "form-control" id = "id_event_name" name = "#" placeholder = "Great Field">
-            </div>
-          </div>
-        </td>
-        <td>
-          <!-- Empty -->    
-        </td>
-      </tr>
-      <tr>
-        <td class = "left_side">
           <div class = "form-group row"> <!-- Residence -->
-            <label for = "id_event_name" class = "col-sm-2 col-form-label">Residence</label>
+            <label for = "id_res" class = "col-sm-2 col-form-label">Event Name</label>
             <div class = "col-sm-10">
-              <input type = "text" class = "form-control" id = "id_event_name" name = "#" placeholder = "Chris Hani">
+              <input type = "text" class = "form-control" id = "id_res" name = "#" placeholder = "Event Name">
             </div>
           </div>
         </td>
         <td>
         <!-- Search Button -->
         <div class= "button player">
-          <button onclick="submitForm()" type="button" class="btn btn-primary btn-lg">Search</button>
+          <button onclick="submitForm()" type="button" class="btn btn-primary btn-lg Tool">Search</button>
         </div>
         </td>
       </tr>
@@ -103,56 +51,114 @@
     </form>
   </div>
 
-  <div class = "someWall">
-    <div class ="event_details">
-      <table class="meat">
-        <tr>
-          <td colspan="2"><h1>Monday 17 August</h1></td>
-        </tr>
-      </table>
-      <br>
-      <table id ="anotherid">
-        <tr>
-          <td class ="meat"colspan="2"><h1>Event Details</h1></td>
-        </tr>
-        <tr>
-          <td class="left_side">Type:</td>
-          <td>Some information</td>
-        </tr>
-        <tr>
-          <td class="left_side">Sport:</td>
-          <td>Some information</td>
-        </tr>
-        <tr>
-          <td class="left_side">Date:</td>
-          <td>Some information</td>
-        </tr>
-        <tr>
-          <td class="left_side">Time:</td>
-          <td>Some information</td>
-        </tr>
-        <tr>
-          <td class="left_side">Place:</td>
-          <td>Some information</td>
-        </tr>
-      </table>
-
-      <!-- Buttons -->
-      <div class="button player" id = "previous_button">
-        <button onclick="submitForm()" type="button" class="btn btn-primary btn-lg">Previous</button>
+  <div class="schedule_wall">
+    <div class="compt_info">
+      <div class="ev_cpt">
+        <div class="compt_date">
+          <h5 class="date head">XXXXXXXX</h5>
+        </div>
+        <div class="compt_details">
+          <table class="table_event">
+              <th class="head" colspan="2">
+                  Event Details
+              </th>
+              <tr class="event_det type">
+                  <td><strong>TYPE:</strong> </td>
+                  <td class="info">XXXX</td>
+              </tr>
+              <tr class="event_det sport">
+                  <td><strong>SPORT:</strong> </td>
+                  <td class="info">XXXXX</td>
+              </tr>
+              <tr class="event_det date">
+                  <td><strong>DATE:</strong> </td>
+                  <td class="info">XXXXX</td>
+              </tr>
+              <tr class="event_det time">
+                  <td><strong>TIME:</strong> </td>
+                  <td class="info">XXXXXX</td>
+              </tr>
+              <tr class="event_det place">
+                  <td><strong>PLACE:</strong> </td>
+                  <td class="info">XXXXX</td>
+              </tr>
+          </table>
+        </div>
+        <div class="nav_btn">
+          <table class="table_btn">
+            <tr>
+              <td colspan="2">
+                  <button type="button" class="btn btn-primary btn-lg Add" id="prev">PREVIOUS</button>
+                  <button type="button" class="btn btn-primary btn-lg Add" id="next">NEXT</button>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
-      <div class="button player" id = "next_button">
-        <button onclick="submitForm()" type="button" class="btn btn-primary btn-lg">Next</button>
-      </div>  
     </div>
-
-    <div class="event_list">
-      <table>
-
+    <div class="compt_list">
+      <table class="names_times">
+        <tr class="active c_bg" id="c_d_1">
+          <td class="compt_type">X</td>
+          <td class="compt_name">XXXXXXXXXXXXXXX</td>
+          <td class="compt_time">XXXXXXX</td>
+        </tr>
+        <tr class="c_bg" id="c_d_2">
+          <td class="compt_type">X</td>
+          <td class="compt_name">XXXXXXXXXXXXXXX</td>
+          <td class="compt_time">XXXXXXX</td>
+        </tr>
+        <tr class="c_bg" id="c_d_3">
+          <td class="compt_type">X</td>
+          <td class="compt_name">XXXXXXXXXXXXXXX</td>
+          <td class="compt_time">XXXXXXX</td>
+        </tr>
+        <tr class="c_bg" id="c_d_4">
+          <td class="compt_type">X</td>
+          <td class="compt_name">XXXXXXXXXXXXXXX</td>
+          <td class="compt_time">XXXXXXX</td>
+        </tr>
+        <tr class="c_bg" id="c_d_5">
+          <td class="compt_type">X</td>
+          <td class="compt_name">XXXXXXXXXXXXXXX</td>
+          <td class="compt_time">XXXXXXX</td>
+        </tr>
+        <tr class="c_bg" id="c_d_6">
+          <td class="compt_type">X</td>
+          <td class="compt_name">XXXXXXXXXXXXXXX</td>
+          <td class="compt_time">XXXXXXX</td>
+        </tr>
+        <tr class="c_bg" id="c_d_7">
+          <td class="compt_type">X</td>
+          <td class="compt_name">XXXXXXXXXXXXXXX</td>
+          <td class="compt_time">XXXXXXX</td>
+        </tr>
+        <tr class="c_bg" id="c_d_8">
+          <td class="compt_type">X</td>
+          <td class="compt_name">XXXXXXXXXXXXXXX</td>
+          <td class="compt_time">XXXXXXX</td>
+        </tr>
+        <tr class="c_bg" id="c_d_9">
+          <td class="compt_type">X</td>
+          <td class="compt_name">XXXXXXXXXXXXXXX</td>
+          <td class="compt_time">XXXXXXX</td>
+        </tr>
+        <tr class="c_bg" id="c_d_10">
+          <td class="compt_type">X</td>
+          <td class="compt_name">XXXXXXXXXXXXXXX</td>
+          <td class="compt_time">XXXXXXX</td>
+        </tr>
+        <tr class="c_bg" id="c_d_11">
+          <td class="compt_type">X</td>
+          <td class="compt_name">XXXXXXXXXXXXXXX</td>
+          <td class="compt_time">XXXXXXX</td>
+        </tr>
+        <tr class="c_bg" id="c_d_12">
+          <td class="compt_type">X</td>
+          <td class="compt_name">XXXXXXXXXXXXXXX</td>
+          <td class="compt_time">XXXXXXX</td>
+        </tr>
       </table>
-    </div>
-    <div>
-
     </div>
   </div>
 
@@ -170,74 +176,7 @@
       <div id="cbaaa950000da39d438ee94929ad77"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
     </div>
 
-    <div class="hide">
-      <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
-  <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950003a2237dd5b57437d821b");}catch(v_e){;}</script>
-  <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950003a2237dd5b57437d821b">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
-  <div id="cbaaa950003a2237dd5b57437d821b"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
-    </div>
-
-
-
-    <script src="Assets/javascript/getReportData.js">
-    </script>
-    <script type="text/javascript">
-    function getVenues(){
-      var type = document.getElementById('id_facility_type').value;
-      var isSportsVenue = type;
-      switch(type) {
-        case "Central Venues":
-        isSportsVenue = 'No';
-        break;
-        case "Sports Venues":
-        isSportsVenue = 'Yes';
-        break;
-      }
-      document.getElementById('id_event_venue').innerHTML ="";
-      var venueDiv = document.getElementById('venueDiv');
-      var allvenues = stripCaspioReport(venueDiv);
-      for (var i = 0; i < allvenues.length; i+=1) {
-        var elmOption = document.createElement('option');
-        if(allvenues[i]['issportvenue'] === isSportsVenue)
-        {elmOption.text = allvenues[i]['name'];
-        elmOption.value = allvenues[i]['venue id'];
-        document.getElementById('id_event_venue').add(elmOption);
-      }
-    }
-  }
-
-  function submitForm(){
-
-    var caspio_form = document.getElementById('caspioform');
-    var profile = ['id_event_name', 'id_event_desc', 'id_sports_code','id_event_date','id_reg_date','hasFixtures', 'id_event_type', 'id_event_venue','id_max_players'];
-    var caspioIds = ['InsertRecordName', 'InsertRecordDescription','InsertRecordSport','InsertRecordEvent_Date', 'InsertRecordRegistration_Deadline','InsertRecordhasFixtures'
-    ,'InsertRecordEvent_Type', 'InsertRecordEvent_Venue', 'InsertRecordMaximum_players'];
-
-     for(var i=0; i<caspioIds.length; i+=1){
-       var current_value = document.getElementById(profile[i]).value;
-       if(i === 5){
-         if(document.getElementById(profile[i]).checked){document.getElementById(caspioIds[i]).checked = 'true';
-           continue;
-          }
-         else {
-           document.getElementById(caspioIds[i]).checked = "false";
-           continue;
-        }
-       }
-       if(i ===3 ||i === 4)
-       {
-        current_value = current_value.split('-').reverse().join('/');
-       }
-
-       if(i == 6) current_value = eventTypeLookup(current_value);
-       document.getElementById(caspioIds[i]).value = current_value;
-     }
-
-   caspio_form.submit();
-   }
-
-
-    </script>
+  
 
 
   </body>
