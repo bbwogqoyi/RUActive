@@ -19,7 +19,7 @@
   <!-- Navigation -->
   <div class="ru_nav">
     <ul>
-        <li><a href="#home" accesskey='u'>RUACTIVE</a></li>
+        <li><a href="index.html" accesskey='u'>RUACTIVE</a></li>
         <li><a class="active" href="schedule.html" accesskey='s'>Schedule</a></li>
         <li><a href="results_page.html" accesskey='e'>Results</a></li>
         <li><a href="#ranking" accesskey='r'>Ranking</a></li>
@@ -34,16 +34,12 @@
       <tr>
         <td class = "left_side">
           <div class = "form-group row"> <!-- Residence -->
-            <label for = "id_res" class = "col-sm-2 col-form-label">Event Name</label>
-            <div class = "col-sm-10">
-              <input type = "text" class = "form-control" id = "id_res" name = "#" placeholder = "Event Name">
-            </div>
+
           </div>
         </td>
         <td>
         <!-- Search Button -->
         <div class= "button player">
-          <button onclick="submitForm()" type="button" class="btn btn-primary btn-lg Tool">Search</button>
         </div>
         </td>
       </tr>
@@ -133,8 +129,6 @@
         }
       }
       function moveback(){
-
-
             movefoward--;
             if(movefoward < 0 )movefoward = re.length-1;
             template = `  <th class="head" colspan="2">
@@ -198,8 +192,6 @@
 
       }
        eventsidebar()
-
-
 </script>
 
 
