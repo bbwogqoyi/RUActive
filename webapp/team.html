@@ -13,6 +13,7 @@
     <link rel="icon" href="Assets/images/2.png" type="image/png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="Assets/css/hideDiv.css"/>  <!-- Hide Divs -->
 </head>
 <body  onload="getInputFields()">
     <div class="ru_nav">
@@ -57,12 +58,12 @@
             </div>
         </div>
         <div class="added player">
-          <div class="player_team" id="p_1">
+          <!--<div class="player_team" id="p_1">
                 <div class="details" id="d_1">
                     <p class="p_t" id="info_1">Just testing my code. Don't say shit right about my shit.</p>
                 </div>
                 <button type="button" class="btn btn-primary btn-sm Cancel" id="btn_1"><i class="fa fa-times" aria-hidden="true"></i> Remove</button>
-            </div>
+            </div>-->
         </div>
         <div class="finalizing">
           <div class="final btn">
@@ -125,12 +126,18 @@
         </div>
     </div>
 
-    <div class="hide">
+    <div id="teamDiv"class="">
       <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
       <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950003295986d4518484cacf9");}catch(v_e){;}</script>
       <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950003295986d4518484cacf9">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
       <div id="cbaaa950003295986d4518484cacf9"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
+    </div>
 
+    <div id="playerDiv" class="">
+      <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
+      <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa95000d1f1f32e90554deeb9ee");}catch(v_e){;}</script>
+      <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa95000d1f1f32e90554deeb9ee">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
+      <div id="cbaaa95000d1f1f32e90554deeb9ee"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
     </div>
 
     <script type="text/javascript">
@@ -163,7 +170,10 @@
       function removePlayer(id){
         console.log("here");
         document.getElementById('p_'+id).remove();
-      }      
+      } 
+      
+
+      
     </script>
 
     <footer>
