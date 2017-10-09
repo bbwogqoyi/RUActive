@@ -1,0 +1,77 @@
+/* Font */
+@font-face {
+    font-family: "myFont";
+    src: url('../lemonmilk.otf');
+}
+
+.ru_nav{
+    font-family: myFont;
+}
+
+/* Others */
+body {
+    color: black;
+}
+
+body .add.team{
+    width: 70%;
+}
+
+body .add.team .form.team{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+body .add.event .info.event{
+    padding-left: 50px;
+}
+
+body .add.event .button.event{
+    right: 60px;
+}
+
+body .add .form .form-group .form-control#exp_id{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1017px){
+    body .add.event{
+        width: 80%;
+    }
+    body .add.event .form.event{
+        padding-left: 100px;
+    }
+    body .add.event .button.event{
+        right: 40px;
+    }
+    body .add.event .form.event .form-control{
+        margin-right: 1px;
+    }
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    padding: 10px;
+}
+
+.left_side {
+    text-align: right;
+    font-weight: bold;
+}
+
+.right_side {
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.create event_report{
+    width:100%
+}
