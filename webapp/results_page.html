@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="Assets/css/hideDiv.css"/>  <!-- Hide Divs -->
   <script src="Assets/javascript/RoleLookUp.js">  </script>
 </head>
-<body>
+<body onload="returnResult()">
   <!-- Navigation -->
   <div class="ru_nav">
     <ul>
@@ -40,71 +40,11 @@
               </div>
             </div>
         </td>
-        <td>
-          <!-- Empty -->
-        </td>
       </tr>
-      <tr>
-        <td class = "left_side">
-          <div class = "form-group row"> <!-- Date -->
-            <label for = "id_event_name" class = "col-sm-2 col-form-label">Date</label>
-            <div class = "col-sm-10">
-              <input type = "date" class = "form-control" id = "id_event_name" name = "#" placeholder = "#">
-            </div>
-          </div>
-        </td>
+
         <td>
-          <!-- Empty -->
-        </td>
-      </tr>
-      <tr>
-        <td class = "left_side">
-          <div class = "form-group row"> <!-- Sport -->
-            <label for = "id_event_name" class = "col-sm-2 col-form-label">Sport</label>
-            <div class = "col-sm-10">
-              <input type = "text" class = "form-control" id = "id_event_name" name = "#" placeholder = "Soccer">
-            </div>
-          </div>
-        </td>
-        <td>
-          <!-- Empty -->
-        </td>
-      </tr>
-      <tr>
-        <td class = "left_side">
-          <div class = "form-group row"> <!-- Place -->
-            <label for = "id_event_name" class = "col-sm-2 col-form-label">Place</label>
-            <div class = "col-sm-10">
-              <input type = "text" class = "form-control" id = "id_event_name" name = "#" placeholder = "Great Field">
-            </div>
-          </div>
-        </td>
-        <td>
-          <!-- Empty -->
-        </td>
-      </tr>
-      <tr>
-        <td class = "left_side">
-          <div class = "form-group row"> <!-- Residence -->
-            <label for = "id_event_name" class = "col-sm-2 col-form-label">Residence</label>
-            <div class = "col-sm-10">
-              <input type = "text" class = "form-control" id = "id_event_name" name = "#" placeholder = "Chris Hani">
-            </div>
-          </div>
-        </td>
-        <td>
-        <!-- Search Button -->
-		<script>
-					document.onkeydown = function (e) {
-						  e = e || window.event;
-						  switch (e.which || e.keyCode) {
-								case 13 : submitForm();
-									break;
-						  }
-						}
-					</script>
         <div class= "button player">
-          <button onclick="submitForm()" type="button" class="btn btn-primary btn-lg">Search</button>
+          <button onclick="searchbyName()" type="button" class="btn btn-primary btn-lg">Search</button>
         </div>
         </td>
       </tr>
@@ -112,36 +52,18 @@
     </form>
   </div>
 
-  <!-- Header -->
-  <div class ="header">
-    <h1>Results</h1>
-  </div>
-
-  <!-- Results -->
-  <div class = "add event">
-    <div class ="information">
-      <h1>Soccer</h1>
-      <br>
-      <p>Date:</p>
-      <br>
-      <p>Summary</p>
-      <p>Best Player:</p>
-    </div>
-    <div class ="img_results">
-      <img src="">
-      <p>Some results</p>
-      <img src="#">
-    </div>
-  </div>
-
-  <div class = "add event">
-      <div class="button player" id = "previous_button">
-          <button onclick="submitForm()" type="button" class="btn btn-primary btn-lg">Previous</button>
+  <div class = "ranking_list">
+      <div class="report r_event">
+          <table id="rankingTable">
+            <tr>
+              <th>Event Name</th>
+              <th>Residence</th>
+              <th>Position</th>
+            </tr>
+          </table>
         </div>
-        <div class="button player" id = "next_button">
-            <button onclick="submitForm()" type="button" class="btn btn-primary btn-lg">Next</button>
-          </div>
   </div>
+
 
 
   <!-- Footer -->
@@ -149,81 +71,60 @@
     <p>Copyright &copy 2017, Original Xception. All Rights Reserved.</p>
   </footer>
 
-
-  <div id="venueDiv" class="hide">
-    <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
-    <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950000da39d438ee94929ad77");}catch(v_e){;}</script>
-    <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950000da39d438ee94929ad77">
-      Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
-      <div id="cbaaa950000da39d438ee94929ad77"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
-    </div>
-
-    <div class="hide">
+    <div id="results" class="hide">
       <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
-  <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950003a2237dd5b57437d821b");}catch(v_e){;}</script>
-  <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950003a2237dd5b57437d821b">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
-  <div id="cbaaa950003a2237dd5b57437d821b"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
+  <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa95000c9cf29a4c8c6454b8dab");}catch(v_e){;}</script>
+  <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa95000c9cf29a4c8c6454b8dab">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
+  <div id="cbaaa95000c9cf29a4c8c6454b8dab"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
     </div>
-
 
 
     <script src="Assets/javascript/getReportData.js">
     </script>
+
     <script type="text/javascript">
-    function getVenues(){
-      var type = document.getElementById('id_facility_type').value;
-      var isSportsVenue = type;
-      switch(type) {
-        case "Central Venues":
-        isSportsVenue = 'No';
-        break;
-        case "Sports Venues":
-        isSportsVenue = 'Yes';
-        break;
+
+
+    function searchbyName() {
+      var re = stripCaspioReport(document.getElementById('results'));
+      var name = document.getElementById('id_event_name').value;
+      console.log(name);
+      document.getElementById('rankingTable').innerHTML = "";
+      var template = `<th>Event Name</th>
+                     <th>Residence</th>
+                     <th>Position</th>`
+      document.getElementById('rankingTable').innerHTML = template;
+      if(name === "") returnResult();
+      for (var i = 0; i < re.length; i++) {
+        //console.log(re[0]["team's residence"]);
+        if(re[i]['event name'].toLowerCase() === name.toLowerCase()){
+        var template = `<tr>
+        <td>${re[i]["event name"]}</td>
+        <td>${re[i]["team\'s residence"]}</td>
+        <td>${re[i]['competition position']}</td>
+        </tr>`
+
+
+        document.getElementById('rankingTable').innerHTML += template;
       }
-      document.getElementById('id_event_venue').innerHTML ="";
-      var venueDiv = document.getElementById('venueDiv');
-      var allvenues = stripCaspioReport(venueDiv);
-      for (var i = 0; i < allvenues.length; i+=1) {
-        var elmOption = document.createElement('option');
-        if(allvenues[i]['issportvenue'] === isSportsVenue)
-        {elmOption.text = allvenues[i]['name'];
-        elmOption.value = allvenues[i]['venue id'];
-        document.getElementById('id_event_venue').add(elmOption);
-      }
+
     }
+     document.getElementById('id_event_name').value =""
+    var name = document.getElementById('id_event_name').value;
   }
+    function returnResult(){
+      var re = stripCaspioReport(document.getElementById('results'));
+      for (var i = 0; i < re.length; i++) {
+        var template = `<tr>
+        <td>${re[i]["event name"]}</td>
+        <td>${re[i]["team\'s residence"]}</td>
+        <td>${re[i]['competition position']}</td>
+        </tr>`
+        document.getElementById('rankingTable').innerHTML += template;
 
-  function submitForm(){
+      }
 
-    var caspio_form = document.getElementById('caspioform');
-    var profile = ['id_event_name', 'id_event_desc', 'id_sports_code','id_event_date','id_reg_date','hasFixtures', 'id_event_type', 'id_event_venue','id_max_players'];
-    var caspioIds = ['InsertRecordName', 'InsertRecordDescription','InsertRecordSport','InsertRecordEvent_Date', 'InsertRecordRegistration_Deadline','InsertRecordhasFixtures'
-    ,'InsertRecordEvent_Type', 'InsertRecordEvent_Venue', 'InsertRecordMaximum_players'];
-
-     for(var i=0; i<caspioIds.length; i+=1){
-       var current_value = document.getElementById(profile[i]).value;
-       if(i === 5){
-         if(document.getElementById(profile[i]).checked){document.getElementById(caspioIds[i]).checked = 'true';
-           continue;
-          }
-         else {
-           document.getElementById(caspioIds[i]).checked = "false";
-           continue;
-        }
-       }
-       if(i ===3 ||i === 4)
-       {
-        current_value = current_value.split('-').reverse().join('/');
-       }
-
-       if(i == 6) current_value = eventTypeLookup(current_value);
-       document.getElementById(caspioIds[i]).value = current_value;
-     }
-
-   caspio_form.submit();
-   }
-
+    }
 
     </script>
 
