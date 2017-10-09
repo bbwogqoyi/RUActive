@@ -24,8 +24,8 @@
     <div class="add combo">
         <div class="team">
             <div class="info team">
-                <h3>Add Player</h3>
-                <p>This form serves to assist the user in the process of adding one or more players to a specific team</p>
+                <h3>Create Team</h3>
+                <p>This form serves to assist the user in the process of creating a team for a specific event and assigning players to it.</p>
             </div>
             <div class="form team">
                 <form>
@@ -57,13 +57,19 @@
             </div>
         </div>
         <div class="added player">
-            <div class="player_team" id="p_1">
+          <div class="player_team" id="p_1">
                 <div class="details" id="d_1">
                     <p class="p_t" id="info_1">Just testing my code. Don't say shit right about my shit.</p>
                 </div>
                 <button type="button" class="btn btn-primary btn-sm Cancel" id="btn_1"><i class="fa fa-times" aria-hidden="true"></i> Remove</button>
             </div>
         </div>
+        <div class="finalizing">
+          <div class="final btn">
+              <button type="button" class="btn btn-primary btn-lg Cancel" id="btn_1"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
+              <button type="button" class="btn btn-primary btn-lg Update" id="btn_1"><i class="fa fa-check" aria-hidden="true"></i> Finalize</button>
+          </div>
+      </div>
     </div>
 
     <div class="Show">
@@ -119,7 +125,7 @@
         </div>
     </div>
 
-    <div class="">
+    <div class="hide">
       <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
       <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950003295986d4518484cacf9");}catch(v_e){;}</script>
       <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950003295986d4518484cacf9">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
@@ -129,7 +135,6 @@
 
     <script type="text/javascript">
       $('button').click(function(){
-        console.log("Why aren't you working?")
         var p_remove = $(this).attr("id").split("_");
         var pos = p_remove[1];
         if(p_remove[0] == "btn") $("#p_"+pos).remove();

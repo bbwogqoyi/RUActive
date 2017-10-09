@@ -4,6 +4,12 @@ body .player{
 
 body .combo .team{
     margin: 10px;
+    margin-bottom: 50px;
+}
+body .combo{
+    height: 100%;
+    min-height:100%;
+	position:relative;
 }
 
 body .combo .added.player{
