@@ -1,0 +1,42 @@
+/* Font */
+@font-face {
+    font-family: "myFont";
+    src: url('../lemonmilk.otf');
+}
+
+.ru_nav{
+    font-family: myFont;
+}
+
+/* Others */
+body {
+    color: black;
+}
+
+body .add.fixture_score{
+    width: 70%;
+}
+
+body .add.fixture_score .form.fixture_score{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body .add .form .form-group .form-control#exp_id{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1017px){
+    body .add.event{
+        width: 80%;
+    }
+    body .add.event .form.event{
+        padding-left: 100px;
+    }
+    body .add.event .button.event{
+        right: 40px;
+    }
+    body .add.event .form.event .form-control{
+        margin-right: 1px;
+    }
+}

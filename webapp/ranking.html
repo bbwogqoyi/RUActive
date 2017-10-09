@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="Assets/css/hideDiv.css"/>  <!-- Hide Divs -->
   <script src="Assets/javascript/RoleLookUp.js">  </script>
 </head>
-<body>
+<body onload="showRanking()">
   <!-- Navigation -->
   <div class="ru_nav">
       <ul>
@@ -33,22 +33,22 @@
         <div class ="trans">
               <div class = "p_space">
                 <div class="second heading">
-                  <h1>Centinery</h1>
-                  <p class="point" id="p_2">xxx</p>
+                  <h1 id="second">Residence Name</h1>
+                  <p class="point" id="p_2">points</p>
                 </div>
                 <div class="rank second"><img src ="Assets/images/Ranking Silver.png"></div>
               </div>
               <div class ="p_space">
                 <div class="first heading">
-                  <h1>Calacha</h1>
+                  <h1 id="first">Residence Name</h1>
                   <p class="point" id="p_1">xxx</p>
                 </div>
                 <div class="rank first"><img src ="Assets/images/Ranking Gold.png"></div>
               </div>
               <div class ="p_space">
                 <div class="third heading">
-                  <h1>Sisulu</h1>
-                  <p class="point" id="p_3">xxx</p>
+                  <h1 id="third">Residence Name</h1>
+                  <p class="point" id="p_3">points</p>
                 </div>
                 <div class="rank third"><img src ="Assets/images/Ranking Bronze.png"></div>
               </div>
@@ -60,51 +60,11 @@
 
   <div class = "ranking_list">
       <div class="report r_event">
-          <table>
+          <table id="rankingTable">
             <tr>
               <th>Ranking</th>
               <th>Residence</th>
               <th>Points</th>
-            </tr>
-            <tr>
-              <td>Empty</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Empty</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Empty</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Empty</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Empty</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Empty</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Empty</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Empty</td>
-              <td></td>
-              <td></td>
             </tr>
           </table>
         </div>
@@ -115,6 +75,41 @@
     <p>Copyright &copy 2017, Original Xception. All Rights Reserved.</p>
   </footer>
 
+  <div id="rank" class="hide">
+    <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
+    <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa9500071140f3c4aab4c3097e6");}catch(v_e){;}</script>
+    <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa9500071140f3c4aab4c3097e6">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
+    <div id="cbaaa9500071140f3c4aab4c3097e6"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
+  </div>
+
+  <script src="Assets/javascript/getReportData.js" charset="utf-8"></script>
+
+  <script type="text/javascript">
+  function showRanking(){
+  var alldata = stripCaspioReport(document.getElementById('rank'));
+  alldata.reverse();
+
+  document.getElementById('first').innerHTML = alldata[0]['residence name'] ;
+  document.getElementById('p_1').innerHTML = alldata[0]['points'];
+
+  document.getElementById('second').innerHTML = alldata[1]['residence name'];
+  document.getElementById('p_2').innerHTML = alldata[1]['points'];
+
+  document.getElementById('third').innerHTML = alldata[2]['residence name'];
+  document.getElementById('p_3').innerHTML = alldata[2]['points'];
+
+  for (var i = 0; i < alldata.length; i++) {
+  var template = `<tr>
+                    <td>${i+1}</td>
+                    <td>${alldata[i]['residence name']}</td>
+                    <td>${alldata[i]['points']}</td>
+                </tr>`
+                document.getElementById('rankingTable').innerHTML += template;
+
+}
+
+}
+  </script>
 
 </body>
 </html>

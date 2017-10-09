@@ -7,14 +7,13 @@
   <title>RUActive | Add Event</title> <!-- Title -->
   <link rel="stylesheet" href="Assets/css/Modules/footer.css"/> <!-- Footer CSS -->
   <link rel="stylesheet" href="Assets/css/Modules/header.css"/> <!-- Header CSS -->
-  <link rel="stylesheet" href="Assets/css/Pages/event.css"/> <!-- Pages/Event CSS -->
+  <link rel="stylesheet" href="Assets/css/Pages/fixture_score.css"/> <!-- Pages/Event CSS -->
   <link rel="stylesheet" href="Assets/css/main.css"/> <!-- Main CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Font -->
   <link rel="icon" href="Assets/images/2.png" type="image/png"> <!-- Favicon -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"> <!-- Bootstrap -->
   <link rel="stylesheet" href="Assets/css/hideDiv.css"/>  <!-- Hide Divs -->
   <script src="Assets/javascript/RoleLookUp.js">  </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
   <!-- Navigation -->
@@ -26,110 +25,63 @@
   </div>
 
   <!-- Form Section-->
-  <div class = "add event">
+  <div class = "add fixture_score">
 
     <!-- Info -->
-    <div class="info event">
+    <div class="info fixture_score">
       <h3>ADD EVENTS</h3>
       <p>This form serves to assist the user in the process of adding one or more events to the Competition Schedule.</p>
     </div>
 
     <!-- Form -->
-    <div class = "form event">
+    <div class = "form fixture_score">
       <form>
         <div class = "form-group row"> <!-- Event Name -->
           <label for = "id_event_name" class = "col-sm-2 col-form-label">Event Name</label>
           <div class = "col-sm-10">
-            <input type = "text" class = "form-control" id = "id_event_name" name = "#" placeholder = "Soccer Saga">
-          </div>
-        </div>
-        <div class = "form-group row"> <!-- Event Type -->
-          <label for = "id_event_type" class = "col-sm-2 col-form-label">Event Type</label>
-          <div class = "col-sm-10">
-            <select class="form-control" id="id_event_type">
+            <select class="form-control" id="id_event_name">
               <option>Social</option>
               <option>Death Event</option>
               <option>Competitive</option>
             </select>
           </div>
         </div>
-        <div class = "form-group row"> <!-- Sports Code -->
-          <label for = "id_sports_code" class = "col-sm-2 col-form-label">Sports Code</label>
+        <div class = "form-group row"> <!-- Team Name -->
+          <label for = "id_team_name" class = "col-sm-2 col-form-label">Team Name</label>
           <div class = "col-sm-10">
-            <input disabled type = "text" class = "form-control" id = "id_sports_code" name = "#" placeholder = "#">
+            <select class="form-control" id="id_team_name">
+              <option>Social</option>
+              <option>Death Event</option>
+              <option>Competitive</option>
+            </select>
           </div>
         </div>
-        <div class = "form-group row"> <!-- Date -->
-          <label for = "id_event_date"  data-date-format="DD MMMM YYYY" class = "col-sm-2 col-form-label">Date</label>
+        <div class = "form-group row"> <!-- Team Name -->
+          <label for = "id_team_name" class = "col-sm-2 col-form-label">Team Name</label>
           <div class = "col-sm-10">
-            <input type = "date" class = "form-control" id = "id_event_date" name = "#" placeholder = "#">
+            <select class="form-control" id="id_team_name">
+              <option>Social</option>
+              <option>Death Event</option>
+              <option>Competitive</option>
+            </select>
+          </div>
+        </div>
+        <div class = "form-group row"> <!-- Score -->
+          <label for = "id_score" class = "col-sm-2 col-form-label">Score</label>
+          <div class = "col-sm-10">
+            <input disabled type = "text" class = "form-control" id = "id_score" name = "#" placeholder = "0">
+          </div>
+        </div>
+        <div class = "form-group row"> <!-- Score -->
+          <label for = "id_score" class = "col-sm-2 col-form-label">Score</label>
+          <div class = "col-sm-10">
+            <input disabled type = "text" class = "form-control" id = "id_score" name = "#" placeholder = "0">
           </div>
         </div>
 
-        <div class = "form-group row"> <!-- Date -->
-          <label for = "id_facility_type" class = "col-sm-2 col-form-label">Facility Types</label>
-          <div class = "col-sm-10">
-            <select onchange="getVenues()" class="form-control" id="id_facility_type">
-              <option>----None----</option>
-              <option>Sports Venues</option>
-              <option>Central Venues</option>
-            </select>
-          </div>
-        </div>
-
-        <div class = "form-group row"> <!-- Venue -->
-          <label for = "id_event_venue" class = "col-sm-2 col-form-label">Venue</label>
-          <div class = "col-sm-10">
-            <select class="form-control" id="id_event_venue">
-              <option >----None----</option>
-            </select>
-          </div>
-        </div>
-        <div class = "form-group row"> <!-- Duration -->
-          <label for = "id_event_duration" class = "col-sm-2 col-form-label">Start</label>
-          <div class = "col-sm-10">
-            <input type = "time" class = "form-control" id = "id_event_duration" name = "#" placeholder = "#">
-          </div>
-        </div>
-        <div class = "form-group row"> <!-- Registration Deadline -->
-          <label for = "id_reg_date"  data-date-format="DD MMMM YYYY" class = "col-sm-2 col-form-label">Registration Deadline</label>
-          <div class = "col-sm-10">
-            <input type = "date" class = "form-control" id = "id_reg_date" name = "#" placeholder = "#">
-          </div>
-        </div>
-        <div class = "form-group row"> <!-- Maximum Team Players -->
-          <label for = "id_max_players" class = "col-sm-2 col-form-label">Maximum Team Players</label>
-          <div class = "col-sm-10">
-            <input type = "text" class = "form-control" id = "id_max_players" name = "#" placeholder = "#">
-          </div>
-        </div>
-        <div class = "form-group row"> <!-- Description -->
-          <label for = "id_event_desc" class = "col-sm-2 col-form-label">Description</label>
-          <div class = "col-sm-10">
-            <textarea id="id_event_desc" class = "form-control" rows="4" cols="50"> </textarea>
-          </div>
-        </div>
-        <div class = "form-group row"> <!-- Fixtures -->
-          <label for = "id_fixtures" class = "col-sm-2 col-form-label">Fixture</label>
-          <div class = "col-sm-10">
-            <select class="form-control" id="id_fixtures">
-              <option >Yes</option>
-              <option>No</option>
-            </select>
-          </div>
-        </div>
-		<script>
-					document.onkeydown = function (e) {
-						  e = e || window.event;
-						  switch (e.which || e.keyCode) {
-								case 13 : submitForm();
-									break;
-						  }
-						}
-					</script>
         <!-- Button -->
         <div class="form-group">
-            <button type="button" class="btn btn-primary btn-lg Add" id="adding">Add Team</button>
+            <button type="button" class="btn btn-primary btn-lg Add" id="adding">Add Fixture Score</button>
         </div>
       </form>
     </div>
@@ -163,9 +115,6 @@
         var a = IsAuthenticated();
         if(!IsAuthenticated()) location.href = "login.html";
       });
-
-      var sport = getSessionUser()['EditRecordSports'];
-      document.getElementById('id_sports_code').value =sport
 
       function getVenues(){
         var type = document.getElementById('id_facility_type').value;
