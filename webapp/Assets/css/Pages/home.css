@@ -1,7 +1,21 @@
 #home .wall{
-    padding-top: 2%;
     text-align: center;
     margin:  0 auto;
+}
+
+#home .wall #map{
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 400px;
+}
+
+#home .wall .Logo_placement{
+    position: absolute;
+    z-index: 100;
+    top: 10%;
+    left: 2%;
 }
 #home .wall .logo_name{
     font-size: 45px;
@@ -46,8 +60,10 @@
 }
 
 #home .latest_event{
+    position: relative;
+    overflow: hidden;
     background-color: #58595B;
-    height: 200px;
+    width: 100%;
     margin:  0 auto;
 }
 #home .head{
@@ -105,6 +121,7 @@
     float: left;
     margin:  0 auto;
     width: 60%;
+    height: 100%;
 }
 
 #home .latest_event .Event_Update{
@@ -120,7 +137,7 @@
 #home .latest_event .Event_Image .team_1, #home .latest_event .Event_Image .team_detail, #home .latest_event .Event_Image .team_2{
     float: left; 
     width: 33.333%;
-    height: 200px;
+    height: 100%;
     text-align: center;
 }
 
@@ -172,19 +189,8 @@
 
 }
 
-@media only screen and (min-width: 1023px){
-    #home .wall{
-        padding-top: 3%;
-        height: 360px;
-    }
-
-}
-
 @media only screen and (min-width: 1440px){
-    #home .wall{
-        margin-top: 2%;
-        height: 500px;
-    }
+    
     #home .latest_event .Event_Image .team_1, #home .latest_event .Event_Image .team_2{
         padding-top: 1%;
     }
@@ -194,14 +200,3 @@
     }
 }
 
-@media only screen and (min-width: 1440px){
-    #home .wall{
-        margin-top: 3%;
-        height: 600px;
-    }
-    #home .wall img{
-        width: 350px;
-        height: 350px;
-    }
-
-}
