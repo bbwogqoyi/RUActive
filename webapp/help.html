@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RUActive | Help</title> <!-- Title -->
+    <link rel="stylesheet" href="Assets/css/Modules/footer.css"/> <!-- Footer CSS -->
+    <link rel="stylesheet" href="Assets/css/Modules/header.css"/> <!-- Header CSS -->
+    <link rel="stylesheet" href="Assets/css/Pages/help.css"/> <!-- Pages/Home CSS -->
+    <link rel="stylesheet" href="Assets/css/main.css"/> <!-- Main CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Font -->
+    <link rel="icon" href="Assets/images/2.png" type="image/png"> <!-- Favicon -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"> <!-- Bootstrap -->
+
+    <link rel="stylesheet" href="Assets/css/hideDiv.css"/> <!-- Hide Divs -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script src="Assets/javascript/getReportData.js"></script> <!-- JavaScript -->
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="ru_nav">
+        <ul>
+            <li class="Logo"><a href="#"><img src="Assets/images/logo.png"  alt="RUACTIVE Logo"></a></li>
+            <li style="float:right"><a href="#help">Help</a></li>
+        </ul>
+    </div>
+
+    <div class = "header">
+        <h1>Header</h1>
+    </div>
+    
+    <div class ="some">
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+            <h3 class="w3-bar-item">Menu</h3>
+            <a href="#" class="w3-bar-item w3-button">Welcome to RUActive</a>
+            <a href="#" class="w3-bar-item w3-button">FAQs</a>
+          </div>
+
+          
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>Copyright &copy 2017, Original Xception. All Rights Reserved.</p>
+  </footer>
+
+    <div id="announcement_div" class="hide">
+      <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
+      <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950007da10177fc3c461ca97c");}catch(v_e){;}</script>
+      <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950007da10177fc3c461ca97c">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
+      <div id="cbaaa950007da10177fc3c461ca97c"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
+    </div>
+
+    <div id="latest_event_div" class="hide">
+      <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
+      <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950005a69a22a2708474e9e6a");}catch(v_e){;}</script>
+      <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950005a69a22a2708474e9e6a">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
+      <div id="cbaaa950005a69a22a2708474e9e6a"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
+    </div>
+
+    <script>
+
+      var announcement_div = document.getElementById('announcement_div');
+      var latest_event_div = document.getElementById('latest_event_div');
+      var alldata = stripCaspioReport(announcement_div);
+
+      for (var idx=0; idx<alldata.length; idx+=1) {
+        var template = `<p><strong>${alldata[idx]['date posted']}</strong> - <strong>${alldata[idx]['sender']}</strong> </br>${alldata[idx]['message body']}</p>`;
+        document.getElementById('announcements_id').innerHTML += template;
+      }
+
+      var alldata = stripCaspioReport(latest_event_div)[0];
+
+	  var alldata = stripCaspioReport(latest_event_div);
+      var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      var currdate = new Date();
+      var currtime = currdate.getTime();
+      var tmp = new Date("01/01/3000");
+      var tmptime = tmp.getTime();
+      var chosenid = 0;
+      for(var i = 0;i<alldata.length;i++){
+        var tmp1 = alldata[i]['event date'];
+        var tmp1formatted = new Date((monthNames.indexOf(tmp1.substring(3, tmp1.length-5))+1)+'/'+tmp1.substring(0, 2)+'/'+tmp1.substring(tmp1.length-4, tmp1.length));//requires format mm/dd/yyyy
+        var tmp1time = tmp1formatted.getTime();
+        if(tmp1time >= currtime && tmp1time <= tmptime){
+            tmptime = tmp1time;
+            chosenid = i;
+        }
+      }
+
+      var template = `<tr class="event_upt name">
+                        <td><strong>NAME:</strong> </td>
+                        <td class="info">${alldata[chosenid]['name']}</td>
+                    </tr>
+                    <tr class="event_upt date">
+                        <td><strong>DATE:</strong> </td>
+                        <td class="info">${alldata[chosenid]['event date']}</td>
+                    </tr>
+                    <tr class="event_upt time">
+                        <td><strong>TIME:</strong> </td>
+                        <td class="info">${alldata[chosenid]['event start time']}</td>
+                    </tr>
+                    <tr class="event_upt place">
+                        <td><strong>PLACE:</strong> </td>
+                        <td class="info">${alldata[chosenid]['event venue']}</td>
+                    </tr>
+                    <tr class="event_upt sport">
+                        <td><strong>SPORT:</strong> </td>
+                        <td class="info">${alldata[chosenid]['sport']}</td>
+                    </tr>`;
+      document.getElementById('table_event').innerHTML = template;
+
+    </script>
+
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</body>
+</html>

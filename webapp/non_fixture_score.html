@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>RUActive | Fixture-Score</title> <!-- Title -->
+  <title>RUActive | Add Non-Fixture Score</title> <!-- Title -->
   <link rel="stylesheet" href="Assets/css/Modules/footer.css"/> <!-- Footer CSS -->
   <link rel="stylesheet" href="Assets/css/Modules/header.css"/> <!-- Header CSS -->
   <link rel="stylesheet" href="Assets/css/Pages/fixture_score.css"/> <!-- Pages/Event CSS -->
@@ -25,16 +25,16 @@
   </div>
 
   <!-- Form Section-->
-  <div class = "add fixture_score">
+  <div class = "add non_fixture_score">
 
     <!-- Info -->
-    <div class="info fixture_score">
-      <h3>ADD FIXTURE SCORE</h3>
-      <p>This form serves to assist the user in the process of adding the scores for an event between two teams.</p>
+    <div class="info non_fixture_score">
+      <h3>ADD NON-FIXTURE SCORE</h3>
+      <p>This form serves to assist the user in the process of allocating a position to a residence</p>
     </div>
 
     <!-- Form -->
-    <div class = "form fixture_score">
+    <div class = "form non_fixture_score">
       <form>
         <div class = "form-group row"> <!-- Event Name -->
           <label for = "id_event_name" class = "col-sm-2 col-form-label">Event Name</label>
@@ -46,8 +46,8 @@
             </select>
           </div>
         </div>
-        <div class = "form-group row"> <!-- Team Name -->
-          <label for = "id_team_name" class = "col-sm-2 col-form-label">Team Name</label>
+        <div class = "form-group row"> <!-- Residence-->
+          <label for = "id_team_name" class = "col-sm-2 col-form-label">Residence</label>
           <div class = "col-sm-10">
             <select class="form-control" id="id_team_name">
               <option>Social</option>
@@ -56,32 +56,17 @@
             </select>
           </div>
         </div>
-        <div class = "form-group row"> <!-- Team Name -->
-          <label for = "id_team_name" class = "col-sm-2 col-form-label">Team Name</label>
-          <div class = "col-sm-10">
-            <select class="form-control" id="id_team_name">
-              <option>Social</option>
-              <option>Death Event</option>
-              <option>Competitive</option>
-            </select>
-          </div>
-        </div>
-        <div class = "form-group row"> <!-- Score -->
-          <label for = "id_score" class = "col-sm-2 col-form-label">Score</label>
+        <div class = "form-group row"> <!-- Position -->
+          <label for = "id_score" class = "col-sm-2 col-form-label">Position</label>
           <div class = "col-sm-10">
             <input disabled type = "text" class = "form-control" id = "id_score" name = "#" placeholder = "0">
           </div>
-        </div>
-        <div class = "form-group row"> <!-- Score -->
-          <label for = "id_score" class = "col-sm-2 col-form-label">Score</label>
-          <div class = "col-sm-10">
-            <input disabled type = "text" class = "form-control" id = "id_score" name = "#" placeholder = "0">
           </div>
         </div>
 
         <!-- Button -->
         <div class="form-group">
-            <button type="button" class="btn btn-primary btn-lg Add" id="adding">Add Fixture Score</button>
+            <button type="button" class="btn btn-primary btn-lg Add" id="adding">Add Residence Position</button>
         </div>
       </form>
     </div>
