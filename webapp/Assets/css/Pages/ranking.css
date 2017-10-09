@@ -3,6 +3,14 @@
     src: url('../lemonmilk.otf');
 }
 
+.header{
+    font-family: myFont;
+}
+
+.p_space h1 {
+    font-size: 25px;
+}
+
 .ru_nav{
     font-family: myFont;
 }
@@ -31,6 +39,7 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    text-align: center;
 }
 
 .left_side {
@@ -86,7 +95,7 @@ p{
     font-weight: bold;
 }
 
-th{
+.report.r_event th{
     font-family: myFont;
     text-align: center;
 }
@@ -110,7 +119,7 @@ body .header {
     position: relative;
     overflow: hidden;
     width:100%;
-    background-color: green;
+    padding: 5px;
 }
 
 .ranking_list{
@@ -148,7 +157,6 @@ body .header {
     position: relative;
     overflow: hidden;
     width:100%;
-    background-color: grey;
     text-align: center;
     color: purple;
     height: 100%;
@@ -161,4 +169,10 @@ body .header {
 
 .heading p{
     display: block;
+}
+
+.rank img{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
 }
