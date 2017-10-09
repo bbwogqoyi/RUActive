@@ -94,7 +94,9 @@
                     <label for="gender" class="col-sm-2 col-form-label">Gender</label>
                     <div class="col-sm-10">
                         <select class="form-control slct" id="gender">
-
+                          <option>Male</option>
+                          <option>Female</option>
+                          <option>Other</option>
                         </select>
                     </div>
                 </div>
@@ -102,7 +104,10 @@
                     <label for="exp_id" class="col-sm-2 col-form-label">Expertise</label>
                     <div class="col-sm-10">
                         <select class="form-control slct" id="exp_id">
-
+                          <option>Novice Player</option>
+                          <option>Competent Player</option>
+                          <option>RU First Team Player</option>
+                          <option>Provincial/National Player</option>
                         </select>
                     </div>
                 </div>
@@ -137,7 +142,7 @@
         populate(w,ourside[0])
         var s =   document.getElementById(caspioIds[1]).options;
         populate(s,ourside[1])
-        document.getElementById(ourside[2]).value = 0;
+        //document.getElementById(ourside[2]).value = 0;
       }
 
       function populate (w, id){
@@ -149,9 +154,12 @@
           document.getElementById(id).add(elmOption);
         }
       }
+
+      function removePlayer(id){
+        console.log("here");
+        document.getElementById('p_'+id).remove();
+      }      
     </script>
-
-
 
     <footer>
         <p>Copyright &copy 2017, Original Xception. All Rights Reserved.</p>

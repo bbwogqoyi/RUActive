@@ -72,7 +72,7 @@ var CreateTeam = function(){
             var pos = "p_"+l_player;
             console.log(added_fragment);
             console.log(pos);
-            $("#"+pos).after('<div class="player_team" id="p_'+(l_player+1)+'"><div class="details" id="d_'+(l_player+1)+'"><p class="p_t" id="info_'+(l_player+1)+'">'+added_fragment+'</p></div><button type="button" class="btn btn-primary btn-sm Cancel" id="btn_'+(l_player+1)+'"><i class="fa fa-times" aria-hidden="true"></i> Remove</button></div>');
+            $("#"+pos).after('<div class="player_team" id="p_'+(l_player+1)+'"><div class="details" id="d_'+(l_player+1)+'"><p class="p_t" id="info_'+(l_player+1)+'">'+added_fragment+'</p></div><button onclick="removePlayer('+(l_player+1)+')" type="button" class="btn btn-primary btn-sm Cancel" id="btn_'+(l_player+1)+'"><i class="fa fa-times" aria-hidden="true"></i> Remove</button></div>');
             l_player = document.getElementsByClassName("player_team").length;
             pos = "p_"+l_player; 
             
@@ -85,7 +85,7 @@ var CreateTeam = function(){
         }
         else{
             var newPlayer = document.getElementsByClassName("added player")[0];
-            newPlayer.innerHTML = '<div class="player_team" id="p_1"><div class="details" id="d_1"><p class="p_t" id="info_1">'+added_fragment+'</p></div><button type="button" class="btn btn-primary btn-sm Cancel" id="btn_1"><i class="fa fa-times" aria-hidden="true"></i> Remove</button></div>';
+            newPlayer.innerHTML = '<div class="player_team" id="p_1"><div class="details" id="d_1"><p class="p_t" id="info_1">'+added_fragment+'</p></div><button onclick="removePlayer('+(l_player+1)+')" type="button" class="btn btn-primary btn-sm Cancel" id="btn_1"><i class="fa fa-times" aria-hidden="true"></i> Remove</button></div>';
             document.getElementById("p_1").style.background = "#333";
         }
     }
@@ -97,21 +97,19 @@ var CreateTeam = function(){
         var gender = document.getElementById("gender").value;
         var expr_id = document.getElementById("exp_id").value;
         
-        var fragment = student_id + " " + f_name + " " + l_name + " " + gender + " " + expr_id;
-        var post = f_name + " " + l_name;
-        console.log(post);
-        AddPlayer(post);
-        if (typeof(Storage) !== "undefined") {
-            localStorage.setItem("player"+l_player,fragment);
-        } else {
-            // Sorry! No Web Storage support..
+        var obj = {
+          "student_id": student_id,
+          "first_name": f_name,
+          "last_name": l_name,
+          "gender": gender,
+          "expertise": expr_id
         }
-        
-
+        var post = f_name + " " + l_name;
+        AddPlayer(post);
+        sessionStorage.setItem("player"+l_player, obj);
     });
 
     $('button').click(function(){
-        console.log("Why aren't you working?")
         var p_remove = $(this).attr("id").split("_");
         var pos = p_remove[1];
         if(p_remove[0] == "btn") $("#p_"+pos).remove();
