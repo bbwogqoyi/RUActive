@@ -65,6 +65,14 @@ var modalShow = function(){
 
 var CreateTeam = function(){
     var l_player = 0;
+    // if(document.getElementsByClassName("player_team").length <= 0){
+    //     document.getElementsByClassName("combo")[0].style.height = "700px"; 
+    //     console.log("IN");
+    // }
+    // else{
+    //     document.getElementsByClassName("combo")[0].style.height = "auto"; 
+    //     console.log("OUT");
+    // }
     function AddPlayer(added_fragment){
         var players = document.getElementsByClassName("player_team");
         l_player = players.length;
