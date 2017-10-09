@@ -55,13 +55,13 @@
                     <div class = "col-sm-10">
                         <input type = "text" class = "form-control" id = "id_subject" name = "#" placeholder = "Subject">
                     </div>
-                </div> 
+                </div>
                 <div class="form-group row"> <!-- Message -->
                     <label for = "id_message" class = "col-sm-2 col-form-label">Message</label>
                     <div class = "col-sm-10">
                         <textarea class="form-control" id="id_message" placeholder="Enter message here..."></textarea>
                     </div>
-                </div>         
+                </div>
             </form>
 
             <!-- Button -->
@@ -114,14 +114,24 @@
         document.getElementById('id_receiver').add(elmOption);
       }
 
+      function CheckErrors(f){
+        if(f[0].value === '' || f[0].value === null) return 1;
+        if(f[1].value === '' || f[0].value === null) return 2;
+        return 3;
+      }
+
       function submitForm(){
         var inputs = ['id_subject', 'id_message', 'id_receiver'];
+        var x = 0;
+        x = CheckErrors(inputs);
+        if(x == 1) alert("Please enter a subject."); return;
+        if(x == 2) alert("Please enter a message."); return;
         var caspio = ['InsertRecordSubject', 'InsertRecordMessage_Body', 'InsertRecordReciever'];
         for(var i=0; i<inputs.length; i+=1){
           document.getElementById(caspio[i]).value = document.getElementById(inputs[i]).value;
         }
         document.getElementById('InsertRecordSender').value = getSessionUser().EditRecordStaff_Student_ID;
-        //document.getElementById('caspioform').submit();
+        document.getElementById('caspioform').submit();
       }
     </script>
 </body>
