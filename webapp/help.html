@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>RUActive | Homepage</title> <!-- Title -->
+    <title>RUActive | Help</title> <!-- Title -->
     <link rel="stylesheet" href="Assets/css/Modules/footer.css"/> <!-- Footer CSS -->
     <link rel="stylesheet" href="Assets/css/Modules/header.css"/> <!-- Header CSS -->
-    <link rel="stylesheet" href="Assets/css/Pages/home.css"/> <!-- Pages/Home CSS -->
+    <link rel="stylesheet" href="Assets/css/Pages/help.css"/> <!-- Pages/Home CSS -->
     <link rel="stylesheet" href="Assets/css/main.css"/> <!-- Main CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Font -->
     <link rel="icon" href="Assets/images/2.png" type="image/png"> <!-- Favicon -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"> <!-- Bootstrap -->
 
     <link rel="stylesheet" href="Assets/css/hideDiv.css"/> <!-- Hide Divs -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <script src="Assets/javascript/getReportData.js"></script> <!-- JavaScript -->
 </head>
@@ -21,127 +22,26 @@
     <!-- Navigation -->
     <div class="ru_nav">
         <ul>
-            <li><a class="active" accesskey='u' href="index.html">RUACTIVE</a></li>
-            <li><a href="schedule.html" accesskey='s'>Schedule</a></li>
-            <li><a href="results_page.html" accesskey='e'>Results</a></li>
-            <li><a href="ranking.html" accesskey='r'>Ranking</a></li>
-            <li style="float:right" accesskey='h'><a href="#help">Help</a></li>
+            <li class="Logo"><a href="#"><img src="Assets/images/logo.png"  alt="RUACTIVE Logo"></a></li>
+            <li style="float:right"><a href="#help">Help</a></li>
         </ul>
     </div>
 
-    <div id="home">
-        <!-- Wallpaper (with Logo) -->
-        <div class="wall">
-            <div id="map"></div>
-            <script>
-                    function initMap() {
-                      var currentlocation = {lat: -33.312585, lng: 26.519333};
-                      var map = new google.maps.Map(document.getElementById('map'), {
-                        zoom: 16,
-                        center: currentlocation
-                      });
-                      var Hamilton = new google.maps.Marker({
-                        position: {lat: -33.312585, lng: 26.519333},
-                        map: map,
-                        //label: 'C',
-                        animation: google.maps.Animation.BOUNCE,
-                        title: "Hamilton Building"
-                      });
-                      var GreatField = new google.maps.Marker({
-                        position: {lat: -33.311755, lng: 26.516361},
-                        map: map,
-                        label: 'S',
-                        title: "Great Field"
-                      });
-                      var KingField = new google.maps.Marker({
-                        position: {lat: -33.313787, lng: 26.513861},
-                        map: map,
-                        label: 'S',
-                        title: "King Field"
-                      });
-                      var ProspectFields = new google.maps.Marker({
-                        position: {lat: -33.312334, lng: 26.510986},
-                        map: map,
-                        label: 'S',
-                        title: "Prospect Fields"
-                      });
-                      var AstroAtheltics = new google.maps.Marker({
-                        position: {lat: -33.312890, lng: 26.509763},
-                        map: map,
-                        label: 'S',
-                        title: "Astro & Athletics Track"
-                      });
-                      var TennisCourts = new google.maps.Marker({
-                        position: {lat: -33.313249, lng: 26.514741},
-                        map: map,
-                        label: 'S',
-                        title: "Tennis Courts"
-                      });
-                      var MullinsHall = new google.maps.Marker({
-                        position: {lat: -33.313069, lng: 26.512746},
-                        map: map,
-                        label: 'S',
-                        title: "Alec Mullins Hall"
-                      });
-                      var SwimmingPool = new google.maps.Marker({
-                        position: {lat: -33.313159, lng: 26.516565},
-                        map: map,
-                        label: 'S',
-                        title: "Swimming pool"
-                      });
-                      var Library = new google.maps.Marker({
-                        position: {lat: -33.314235, lng: 26.518947},
-                        map: map,
-                        label: 'C',
-                        title: "Library",
-                      });
-                      var EdenGrove = new google.maps.Marker({
-                        position: {lat: -33.314504, lng: 26.521865},
-                        map: map,
-                        label: 'C',
-                        title: "Eden Grove"
-                      });
-                    }
-            </script>
-            <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrOhCPmjp_C8rKgXU9cYeNvrB0-5L9Vxk&callback=initMap">
-            </script>
-            <div class="Logo_placement">
-                <img src="Assets/images/logo.png" alt="RUActive Logo"/>
-            </div>
-        </div>
-
-        <!-- Message Board -->
-        <div class="message_board">
-            <p class="head">Message Board</p>
-            <div id="announcements_id" class="announcements">
-            </div>
-        </div>
-
-        <!-- Latest Events -->
-        <div class="latest_event">
-            <div class="Event_Update">
-                <p class="head">Upcoming Event Details</p>
-                <table id='table_event'>
-                    <!-- -->
-                </table>
-            </div>
-            <div class="Event_Image">
-                <div class="team_1">
-                    <img src="Assets/images/team_1.png" alt="placeholder"/>
-                </div>
-                <div class="team_detail">
-                    <p class="name" id="team_1">Calacha</p>
-                    <p id="VS">VS</p>
-                    <p class="name" id="team_2">Joe Slovo</p>
-                </div>
-                <div class="team_2">
-                    <img src="Assets/images/team_2.png" alt="placeholder"/>
-                </div>
-            </div>
-        </div>
-
+    <div class = "header">
+        <h1>Header</h1>
     </div>
+    
+    <div class ="some">
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+            <h3 class="w3-bar-item">Menu</h3>
+            <a href="#" class="w3-bar-item w3-button">Welcome to RUActive</a>
+            <a href="#" class="w3-bar-item w3-button">FAQs</a>
+          </div>
+
+          
+    </div>
+
     <!-- Footer -->
     <footer>
       <p>Copyright &copy 2017, Original Xception. All Rights Reserved.</p>

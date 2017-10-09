@@ -35,6 +35,15 @@
                             <input type="password" class="form-control" id="lg_password" name="lg_password" placeholder="&#xf023;  Password">
                         </div>
                     </div>
+					<script>
+					document.onkeydown = function (e) {
+						  e = e || window.event;
+						  switch (e.which || e.keyCode) {
+								case 13 : login();
+									break;
+						  }
+						}
+					</script>
                     <button onclick="login()" type="button" class="btn btn-primary btn-lg">Login</button>
                 </div>
                 <div class="etc-login-form">

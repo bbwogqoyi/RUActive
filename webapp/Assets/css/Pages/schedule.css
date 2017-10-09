@@ -7,13 +7,135 @@
     font-family: myFont;
 }
 
+.search button{
+    border-radius: 30px;
+    width: 200px;
+}
+
+.search form table tr{
+    background-color: transparent;
+}
+
+.search form table label{
+    color: white;
+}
+
 .ru_nav{
     font-family: myFont;
 }
 
-.left_side{
+
+
+.schedule_wall{
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.schedule_wall .compt_info .event_det.type .info{
+    color: green;
+}
+
+.schedule_wall .active{
+    background-color: #652D90;
+}
+
+.schedule_wall{
     font-family: myFont;
 }
+
+.schedule_wall .head{
+    color: white;
+    font-weight: bold;
+    background-color: #652D90;
+}
+
+.schedule_wall .compt_info{
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: 40%;
+    float: left;
+}
+
+.schedule_wall .compt_info .info{
+    color: white;
+}
+
+.schedule_wall .compt_info .ev_cpt{
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: 50%;
+    margin-top: 40px;
+}
+
+.schedule_wall .compt_info .ev_cpt .compt_date{
+    background-color: #652D90;
+    text-align: center;
+    padding: 7px;
+    margin-bottom: 12px;
+}
+
+.schedule_wall .nav_btn{
+    margin-top: 30px;
+}
+
+
+.schedule_wall .nav_btn button#prev{
+    margin-right: 3px;
+}
+.schedule_wall .nav_btn button{
+    border-radius: 35px;
+    width: 130px;
+}
+@media only screen and (min-width: 1440px){
+    .schedule_wall .nav_btn button#prev{
+        margin-right: 40px;
+    }
+    .schedule_wall .nav_btn button{
+        border-radius: 35px;
+        width: 170px;
+    }
+}
+.schedule_wall .nav_btn table.table_btn td{
+    padding: 0;
+}
+
+.schedule_wall .nav_btn table.table_btn tr{
+    background-color: transparent;
+}
+
+.schedule_wall .compt_list{
+    margin: 0 auto;
+    width: 60%;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #333333;
+}
+
+.schedule_wall .compt_list .compt_name, .schedule_wall .compt_list .compt_time{
+    color: white;
+}
+
+.schedule_wall .compt_list .compt_type{
+    font-weight: bold;
+    color: black;
+}
+
+.schedule_wall .compt_list .compt_name{
+    border-right: 7px solid rgba(0, 0, 0, 0.5);
+}
+.schedule_wall .compt_list .compt_time{
+    border-left: 7px solid rgba(0, 0, 0, 0.5);
+}
+
+
 
 body .add.event{
     width: 70%;
@@ -51,8 +173,6 @@ body .add .form .form-group .form-control#exp_id{
 }
 
 table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
     width: 100%;
 }
 
@@ -73,9 +193,11 @@ td, th {
     position: relative;
     overflow: hidden;
     margin: 0 auto;
-    background-color: #4d4d4d;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
+
+.search
 .information{
     position: relative;
     overflow: hidden;
@@ -112,13 +234,13 @@ td, th {
     text-align: left;
     font-weight: bold;
     padding: 10px;
-    width: 40%;
+    width: 50%;
 }
 
 .right_side {
     text-align: left;
     padding: 10px;
-    width: 60%;
+    width: 50%;
 }
 
 .header{
@@ -145,20 +267,10 @@ td, th {
     float: left;
 }
 
-table#anotherid tr:nth-child(even) {
+table tr:nth-child(even) {
     background-color: #b3b3b3;
 }
 
-table#anotherid tr:nth-child(odd) {
+table tr:nth-child(odd) {
     background-color: #e6e6e6;
-}
-
-.meat{
-    background-color: purple;
-}
-
-.someWall{
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto;
 }
