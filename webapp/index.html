@@ -32,8 +32,83 @@
     <div id="home">
         <!-- Wallpaper (with Logo) -->
         <div class="wall">
-            <img src="Assets/images/logo.png" alt="RUActive Logo"/>
-            <p class="logo_name">RUACTIVE</p>
+            <div id="map"></div>
+            <script>
+                    function initMap() {
+                      var currentlocation = {lat: -33.312585, lng: 26.519333};
+                      var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 16,
+                        center: currentlocation
+                      });
+                      var Hamilton = new google.maps.Marker({
+                        position: {lat: -33.312585, lng: 26.519333},
+                        map: map,
+                        //label: 'C',
+                        animation: google.maps.Animation.BOUNCE,
+                        title: "Hamilton Building"
+                      });
+                      var GreatField = new google.maps.Marker({
+                        position: {lat: -33.311755, lng: 26.516361},
+                        map: map,
+                        label: 'S',
+                        title: "Great Field"
+                      });
+                      var KingField = new google.maps.Marker({
+                        position: {lat: -33.313787, lng: 26.513861},
+                        map: map,
+                        label: 'S',
+                        title: "King Field"
+                      });		
+                      var ProspectFields = new google.maps.Marker({
+                        position: {lat: -33.312334, lng: 26.510986},
+                        map: map,
+                        label: 'S',
+                        title: "Prospect Fields"
+                      });
+                      var AstroAtheltics = new google.maps.Marker({
+                        position: {lat: -33.312890, lng: 26.509763},
+                        map: map,
+                        label: 'S',
+                        title: "Astro & Athletics Track"
+                      });
+                      var TennisCourts = new google.maps.Marker({
+                        position: {lat: -33.313249, lng: 26.514741},
+                        map: map,
+                        label: 'S',
+                        title: "Tennis Courts"
+                      });		
+                      var MullinsHall = new google.maps.Marker({
+                        position: {lat: -33.313069, lng: 26.512746},
+                        map: map,
+                        label: 'S',
+                        title: "Alec Mullins Hall"
+                      });
+                      var SwimmingPool = new google.maps.Marker({
+                        position: {lat: -33.313159, lng: 26.516565},
+                        map: map,
+                        label: 'S',
+                        title: "Swimming pool"
+                      });
+                      var Library = new google.maps.Marker({
+                        position: {lat: -33.314235, lng: 26.518947},
+                        map: map,
+                        label: 'C',
+                        title: "Library",
+                      });
+                      var EdenGrove = new google.maps.Marker({
+                        position: {lat: -33.314504, lng: 26.521865},
+                        map: map,
+                        label: 'C',
+                        title: "Eden Grove"
+                      });
+                    }
+            </script>
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrOhCPmjp_C8rKgXU9cYeNvrB0-5L9Vxk&callback=initMap">
+            </script>
+            <div class="Logo_placement">
+                <img src="Assets/images/logo.png" alt="RUActive Logo"/>
+            </div>
         </div>
 
         <!-- Message Board -->
@@ -50,9 +125,6 @@
                 <table id='table_event'>
                     <!-- -->
                 </table>
-                <div class="status_update head">
-                    <p id="status">Status: <strong id="update" class="ongoing">XXXXXX</strong></p>
-                </div>
             </div>
             <div class="Event_Image">
                 <div class="team_1">
@@ -119,7 +191,7 @@
         }
       }
 	  
-      var template = `<tr class="event_upt date">
+      var template = `<tr class="event_upt name">
                         <td><strong>NAME:</strong> </td>
                         <td class="info">${alldata[chosenid]['name']}</td>
                     </tr>
