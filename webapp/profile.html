@@ -17,7 +17,7 @@
     <script src="Assets/javascript/RoleLookUp.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-<body>
+<body >
 	<div class="ru_nav">
         <ul>
 		    <li class="Logo"><a href="#home"><img src="Assets/images/2.png"  alt="RUACTIVE Logo"></a></li>
@@ -26,16 +26,13 @@
         </ul>
     </div>
     <div class="prof_nav">
-        <div class="ru_nav navigate">
-            <ul>
-                <li class="Logo"><a href="#home">XXXXXXXXX</a></li>
-                <li class="Logo"><a href="#home">XXXXXXXXX</a></li>
-                <li class="Logo"><a href="#home">XXXXXXXXX</a></li>
+        <div class="ru_nav navigate" id= 'localNav'>
+            <ul  id='localNavItem' class="naving1">
             </ul>
         </div>
         <div class="profile">
             <div class="propic top">
-                    <img src="Assets/images/2.png"  alt="trainer_2">
+                    <img src="Assets/images/logo.png"  alt="trainer_2">
             </div>
             <div class="personal_details">
                 <form>
@@ -71,7 +68,7 @@
                     <label id="confirmPwdLabel" for="confirmPwd">Confirm Password:</label>
                     <input type="text" class="form-control" id="confirmPwd">
                     </div>
-                    
+
                     <div class="form-group btns">
                         <!-- <button  onclick="submitForm()" type="button" class="btn btn-default" id="Update"><i class="fa fa-check" aria-hidden="true"></i> Update</button> -->
                         <button  onclick="submitForm()" type="button" class="btn btn-default Update" id="Update"><i class="fa fa-check" aria-hidden="true"></i> Update</button>
@@ -89,7 +86,7 @@
                 <h3>Add Player</h3>
                 <p>This form serves to assist the user in the process of adding one or more players to a specific team</p>
             <div class="Logged_Navigate">
-                <div class="Navigate">
+                <div  class="Navigate">
                     <div class="Navs" id="users">
                         <a href="manageUser.html"><img src="Assets/images/2.png" alt="placeholder"/></a>
                     </div>
@@ -123,6 +120,7 @@
  </div>
 
 
+
 <script>
   // if user is not authenticated redirect to login page
   $(document).ready(function(){
@@ -136,7 +134,7 @@
     var current = keys[i];
     document.getElementById(profile[i]).value = user[current];
   }
-     
+
   function submitForm(){
     var profile = ['f_name', 'l_name', 'email', 'phone', 'user_id', 'currentPwd', 'pwd', 'confirmPwd'];
     var caspioIds = ['EditRecordFirst_Name', 'EditRecordLast_Name', 'EditRecordEmail', 'EditRecordPhone', 'EditRecordUser_Role', 'EditRecordPassword@CurrentPassword', 'EditRecordPassword', 'EditRecordPassword@Confirm'];
@@ -148,6 +146,16 @@
     }
     caspio_form.submit();
   }
+</script>
+<script src="Assets/javascript/buildLocalNave.js" charset="utf-8"></script>
+<script type="text/javascript">
+    $(document).ready(buildNave())
+
+function buildNave(){
+    var role = document.getElementById('user_id').value;
+    buildNavBar(role,localNav);
+}
+
 </script>
 <script src="Assets/javascript/profileFunc.js" type="text/javascript"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

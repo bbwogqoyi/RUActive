@@ -33,7 +33,7 @@ var modalShow = function(){
    //closing modal
    function closing(){
         modal.style.display = "none";
-        
+
         $(Info_Open).css("display","none");
     }
 
@@ -75,14 +75,13 @@ var CreateTeam = function(){
         l_player = players.length;
         if(l_player >= 1){
             var pos = "p_"+l_player;
-            console.log(added_fragment);
-            console.log(pos);
             $("#"+pos).after('<div class="player_team" id="p_'+(l_player)+'"><div class="details" id="d_'+(l_player)+'"><p class="p_t" id="info_'+(l_player)+'">'+added_fragment+'</p></div><button onclick="removePlayer('+(l_player)+')" type="button" class="btn btn-primary btn-sm Cancel" id="btn_'+(l_player+1)+'"><i class="fa fa-times" aria-hidden="true"></i> Remove</button></div>');
+
             l_player = document.getElementsByClassName("player_team").length;
-            pos = "p_"+l_player; 
-            
+            pos = "p_"+l_player;
+
             if(l_player%2 == 0){
-                document.getElementById(pos).style.background = "grey"; 
+                document.getElementById(pos).style.background = "grey";
             }
             else{
                 document.getElementById(pos).style.background = "#333";
@@ -101,7 +100,7 @@ var CreateTeam = function(){
         var student_id = document.getElementById("student_id").value;
         var gender = document.getElementById("gender").value;
         var expr_id = document.getElementById("exp_id").value;
-        
+
         var obj = {
           "student_id": student_id,
           "first_name": f_name,
@@ -109,6 +108,7 @@ var CreateTeam = function(){
           "gender": gender,
           "expertise": expr_id
         }
+
         var post = f_name + " " + l_name;
         AddPlayer(post);
         sessionStorage.setItem("player"+l_player, obj);
@@ -123,5 +123,3 @@ var CreateTeam = function(){
 
 $(document).ready(modalShow);
 $(document).ready(CreateTeam);
-
-
