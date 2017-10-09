@@ -8,17 +8,17 @@ var modalShow = function(){
     var Info_ID;
     var path = window.location.pathname;
     var page = path.split("/").pop();
-    
+
     modal = document.getElementsByClassName("Show")[0];
-  
+
     //Opening Trainer Info
     $('#adding').click(function(){
         //var trainerid = $(this).attr("id").split("_");
         Opening('p_form');
-        
+
     });
 
-    //Opening Info 
+    //Opening Info
     function Opening(openingID){
         Info_ID = openingID;
         Info_Open = '#'+Info_ID;
@@ -63,11 +63,11 @@ var modalShow = function(){
 var CreateTeam = function(){
     var l_player = 0;
     // if(document.getElementsByClassName("player_team").length <= 0){
-    //     document.getElementsByClassName("combo")[0].style.height = "700px"; 
+    //     document.getElementsByClassName("combo")[0].style.height = "700px";
     //     console.log("IN");
     // }
     // else{
-    //     document.getElementsByClassName("combo")[0].style.height = "auto"; 
+    //     document.getElementsByClassName("combo")[0].style.height = "auto";
     //     console.log("OUT");
     // }
     function AddPlayer(added_fragment){

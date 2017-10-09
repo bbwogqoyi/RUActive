@@ -94,6 +94,15 @@
         </td>
         <td>
         <!-- Search Button -->
+		<script>
+					document.onkeydown = function (e) {
+						  e = e || window.event;
+						  switch (e.which || e.keyCode) {
+								case 13 : submitForm();
+									break;
+						  }
+						}
+					</script>
         <div class= "button player">
           <button onclick="submitForm()" type="button" class="btn btn-primary btn-lg">Search</button>
         </div>

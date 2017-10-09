@@ -118,7 +118,15 @@
             </select>
           </div>
         </div>
-
+		<script>
+					document.onkeydown = function (e) {
+						  e = e || window.event;
+						  switch (e.which || e.keyCode) {
+								case 13 : submitForm();
+									break;
+						  }
+						}
+					</script>
         <!-- Button -->
         <div class="form-group">
             <button type="button" class="btn btn-primary btn-lg Add" id="adding">Add Team</button>
