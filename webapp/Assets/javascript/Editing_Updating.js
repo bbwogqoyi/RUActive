@@ -36,7 +36,7 @@ var modalShow = function(){
    //closing modal
    function closing(){
         modal.style.display = "none";
-        
+
         $(Info_Open).css("display","none");
     }
 
@@ -78,14 +78,18 @@ var CreateTeam = function(){
         l_player = players.length;
         if(l_player >= 1){
             var pos = "p_"+l_player;
+<<<<<<< HEAD
+            $("#"+pos).after('<div class="player_team" id="p_'+(l_player+1)+'"><div class="details" id="d_'+(l_player+1)+'"><p class="p_t" id="info_'+(l_player+1)+'">'+added_fragment+'</p></div><button type="button" class="btn btn-primary btn-sm Cancel" id="btn_'+(l_player+1)+'"><i class="fa fa-times" aria-hidden="true"></i> Remove</button></div>');
+=======
             console.log(added_fragment);
             console.log(pos);
             $("#"+pos).after('<div class="player_team" id="p_'+(l_player+1)+'"><div class="details" id="d_'+(l_player+1)+'"><p class="p_t" id="info_'+(l_player+1)+'">'+added_fragment+'</p></div><button onclick="removePlayer('+(l_player+1)+')" type="button" class="btn btn-primary btn-sm Cancel" id="btn_'+(l_player+1)+'"><i class="fa fa-times" aria-hidden="true"></i> Remove</button></div>');
+>>>>>>> b1df703e5b90957eacf651b9b9c71b8309876790
             l_player = document.getElementsByClassName("player_team").length;
-            pos = "p_"+l_player; 
-            
+            pos = "p_"+l_player;
+
             if(l_player%2 == 0){
-                document.getElementById(pos).style.background = "grey"; 
+                document.getElementById(pos).style.background = "grey";
             }
             else{
                 document.getElementById(pos).style.background = "#333";
@@ -104,6 +108,10 @@ var CreateTeam = function(){
         var student_id = document.getElementById("student_id").value;
         var gender = document.getElementById("gender").value;
         var expr_id = document.getElementById("exp_id").value;
+<<<<<<< HEAD
+
+        var fragment = student_id + " " + f_name + " " + l_name + " " + gender + " " + expr_id;
+=======
         
         var obj = {
           "student_id": student_id,
@@ -112,9 +120,20 @@ var CreateTeam = function(){
           "gender": gender,
           "expertise": expr_id
         }
+>>>>>>> b1df703e5b90957eacf651b9b9c71b8309876790
         var post = f_name + " " + l_name;
         AddPlayer(post);
+<<<<<<< HEAD
+        if (typeof(Storage) !== "undefined") {
+            localStorage.setItem("player"+l_player,fragment);
+        } else {
+            // Sorry! No Web Storage support..
+        }
+
+
+=======
         sessionStorage.setItem("player"+l_player, obj);
+>>>>>>> b1df703e5b90957eacf651b9b9c71b8309876790
     });
 
     $('button').click(function(){
@@ -126,5 +145,3 @@ var CreateTeam = function(){
 
 $(document).ready(modalShow);
 $(document).ready(CreateTeam);
-
-

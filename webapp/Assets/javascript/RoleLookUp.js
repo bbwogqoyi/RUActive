@@ -5,13 +5,13 @@ function userRoleLookUp(num){
   var position = parseInt(num);
   switch(position){
     case 1:
-      role = 'Sport Admin '; break;
+    role = 'Sport Admin '; break;
     case 2:
-      role = 'Sport Code'; break;
+    role = 'Sport Code'; break;
     case 3:
-      role = 'Warden'; break;
+    role = 'Warden'; break;
     case 4:
-      role = 'Sport Rep'; break;
+    role = 'Sport Rep'; break;
   }
   return role;
 }
@@ -20,13 +20,13 @@ function userRoleLookUp_Rev(num){
   var role = 'unknown';
   switch(num){
     case 'Sports Admin':
-      role = 1 ; break;
+    role = 1 ; break;
     case 'Sports Code':
-      role = 2 ; break;
+    role = 2 ; break;
     case 'Warden' :
-      role = 3; break;
+    role = 3; break;
     case 'Sport Rep':
-      role = 4; break;
+    role = 4; break;
   }
   return role;
 }
@@ -36,13 +36,13 @@ function expertiseLookup(exp){
   //position = parseInt(num);
   switch(exp){
     case "Novice Player":
-      role = 1; break;
+    role = 1; break;
     case "Competent Playe":
-      role  = 2; break;
+    role  = 2; break;
     case "RU First Team Player":
-      role = 3; break;
+    role = 3; break;
     case "Provincial/National Player":
-      role = 4; break;
+    role = 4; break;
   }
   return role;
 }
@@ -52,9 +52,9 @@ function eventTypeLookup(exp){
   //position = parseInt(num);
   switch(exp){
     case "Social":
-      role = 1; break;
+    role = 1; break;
     case "Competitive":
-      role  = 2; break;
+    role  = 2; break;
   }
   return role;
 }
