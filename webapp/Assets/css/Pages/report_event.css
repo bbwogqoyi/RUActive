@@ -3,6 +3,10 @@
     src: url('../lemonmilk.otf');
 }
 
+.report.r_event{
+    height: 500px;
+}
+
 .ru_nav{
     font-family: myFont;
 }
