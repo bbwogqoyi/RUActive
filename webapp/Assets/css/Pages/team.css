@@ -18,16 +18,8 @@ body .add.team{
 }
 
 body .add.team .form.team{
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-body .add.event .info.event{
-    padding-left: 50px;
-}
-
-body .add.event .button.event{
-    right: 60px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 body .add .form .form-group .form-control#exp_id{
@@ -47,31 +39,4 @@ body .add .form .form-group .form-control#exp_id{
     body .add.event .form.event .form-control{
         margin-right: 1px;
     }
-}
-
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    padding: 10px;
-}
-
-.left_side {
-    text-align: right;
-    font-weight: bold;
-}
-
-.right_side {
-    text-align: left;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-
-.create event_report{
-    width:100%
 }
