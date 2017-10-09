@@ -8,6 +8,13 @@
     font-family: myFont;
 }
 
+.latest_event{
+    font-family: Helvetica;
+}
+.event_upt .info{
+    color: white;
+}
+
 /* Other */
 
 #home .wall #map{
@@ -158,11 +165,11 @@
 }
 
 #home .latest_event .Event_Image .team_detail #team_1{
-    color: orange;
+    color: #fbb03b;
 }
 
 #home .latest_event .Event_Image .team_detail #team_2{
-    color: blue;
+    color: #44788d;
 }
 
 #home .latest_event .Event_Image .team_1, #home .latest_event .Event_Image .team_2{
