@@ -11,9 +11,6 @@ var modalShow = function(){
     
     modal = document.getElementsByClassName("Show")[0];
   
-   
-
-
     //Opening Trainer Info
     $('#adding').click(function(){
         //var trainerid = $(this).attr("id").split("_");
@@ -80,7 +77,7 @@ var CreateTeam = function(){
             var pos = "p_"+l_player;
             console.log(added_fragment);
             console.log(pos);
-            $("#"+pos).after('<div class="player_team" id="p_'+(l_player+1)+'"><div class="details" id="d_'+(l_player+1)+'"><p class="p_t" id="info_'+(l_player+1)+'">'+added_fragment+'</p></div><button onclick="removePlayer('+(l_player+1)+')" type="button" class="btn btn-primary btn-sm Cancel" id="btn_'+(l_player+1)+'"><i class="fa fa-times" aria-hidden="true"></i> Remove</button></div>');
+            $("#"+pos).after('<div class="player_team" id="p_'+(l_player)+'"><div class="details" id="d_'+(l_player)+'"><p class="p_t" id="info_'+(l_player)+'">'+added_fragment+'</p></div><button onclick="removePlayer('+(l_player)+')" type="button" class="btn btn-primary btn-sm Cancel" id="btn_'+(l_player+1)+'"><i class="fa fa-times" aria-hidden="true"></i> Remove</button></div>');
             l_player = document.getElementsByClassName("player_team").length;
             pos = "p_"+l_player; 
             
