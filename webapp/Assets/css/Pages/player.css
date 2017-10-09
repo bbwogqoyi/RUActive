@@ -11,6 +11,8 @@
 /* Others */
 body .add.player{
     width: 70%;
+    padding-top: 12%;
+    height: 1000px;
 }
 
 body .add.player .form.player{
