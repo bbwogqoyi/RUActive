@@ -9,7 +9,7 @@
  */
 function stripCaspioReport(div){
   var table_id = div.querySelector('[id^="cbTable_"]').id;
-  var table = document.getElementById(table_id)
+  var table = document.getElementById(table_id);
   var numRows = table.rows.length;
   var numCols = table.rows[0].cells.length;
   
