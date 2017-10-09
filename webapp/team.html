@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>RUACTIVE</title>
+    <title>RUACTIVE | Add Team</title>
     <link rel="stylesheet" href="Assets/css/Modules/header.css"/>
     <link rel="stylesheet" href="Assets/css/Modules/footer.css"/>
     <link rel="stylesheet" href="Assets/css/Pages/createteam.css"/>
@@ -16,126 +16,59 @@
     <link rel="stylesheet" href="Assets/css/hideDiv.css"/>  <!-- Hide Divs -->
 </head>
 <body  onload="getInputFields()">
+    <!-- Navigation -->
     <div class="ru_nav">
         <ul>
             <li class="Logo"><a href="#home"><img src="Assets/images/2.png"  alt="RUACTIVE Logo"></a></li>
             <li style="float:right"><a href="#help">Help</a></li>
         </ul>
     </div>
-    <div class="add combo">
-        <div class="team">
-            <div class="info team">
-                <h3>Create Team</h3>
-                <p>This form serves to assist the user in the process of creating a team for a specific event and assigning players to it.</p>
-            </div>
+
+    <!-- Form Section -->
+    <div class="add team">
+        <!-- Info -->
+        <div class="info team">
+            <h3>ADD TEAM</h3>
+            <p>This form serves to assist the user in the process of adding a team for a specific event and either sbumitting the team, or submitting the team and assigning players to the team.</p>
+        </div>
+
+        <!-- Form -->
             <div class="form team">
                 <form>
-                    <div class="form-group row">
+                    <div class="form-group row"> <!-- Team Name -->
                         <label for="team_name" class="col-sm-2 col-form-label">Team Name</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="team_name" placeholder="Team Name">
                         </div>
                     </div>
-                    <div class="form-group row">
-                      <label for="id_event" class="col-sm-2 col-form-label">Event</label>
+                    <div class="form-group row"> <!-- Event Name -->
+                      <label for="id_event" class="col-sm-2 col-form-label">Event Name</label>
                       <div class="col-sm-10">
                         <select class="form-control" id="id_event">
-
-<<<<<<< HEAD
-    <!-- Form Section -->
-    <div class="add team">
-
-        <!-- Info -->
-        <div class="info team">
-            <h3>ADD TEAM</h3>
-            <p>This form serves to assist the user in the process of creating a team for a specific event and assigning players to it.</p>
-=======
+                            <option>-</option>
                         </select>
                       </div>
                     </div>
-                    <div class="form-group row">
-                      <label for="id_res" class="col-sm-2 col-form-label">Residence</label>
-                      <div class="col-sm-10">
-                        <select class="form-control" id="id_res">
-                        </select>
+                    <div class="form-group row"> <!-- Residence -->
+                        <label for="id_event" class="col-sm-2 col-form-label">Residence</label>
+                        <div class="col-sm-10">
+                          <select class="form-control" id="id_event">
+                              <option>-</option>
+                          </select>
+                        </div>
                       </div>
+
+                    <!-- Button -->
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary btn-lg Add" id="adding">Sumbit</button>
                     </div>
                     <div class="form-group">
-                        <button type="button" class="btn btn-primary btn-lg Add" id="adding"><i class="fa fa-plus" aria-hidden="true"></i> Add Player</button>
+                        <button type="button" class="btn btn-primary btn-lg Add" id="adding">Assign Players</button>
                     </div>
                 </form>
-            </div>
->>>>>>> b77e72e6938eb957b51d1a3dca52b7207314f02e
-        </div>
-        <div class="added player">
-          <!--<div class="player_team" id="p_1">
-                <div class="details" id="d_1">
-                    <p class="p_t" id="info_1">Just testing my code. Don't say shit right about my shit.</p>
-                </div>
-                <button type="button" class="btn btn-primary btn-sm Cancel" id="btn_1"><i class="fa fa-times" aria-hidden="true"></i> Remove</button>
-            </div>-->
-        </div>
-        <div class="finalizing">
-          <div class="final btn">
-              <button type="button" class="btn btn-primary btn-lg Cancel" id="btn_1"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
-              <button type="button" class="btn btn-primary btn-lg Update" id="btn_1"><i class="fa fa-check" aria-hidden="true"></i> Finalize</button>
-          </div>
-      </div>
-    </div>
 
-    <div class="Show">
-        <div class="show_info player" id="p_form">
-            <span class="close">&times;</span>
-                <h3>Add Player</h3>
-                <p>This form serves to assist the user in the process of adding one or more players to a specific team</p>
-            <form class="add_forms">
-                <div class="form-group row">
-                    <label for="student_id" class="col-sm-2 col-form-label">Student ID</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="student_id" placeholder="Student ID">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="pf_name" class="col-sm-2 col-form-label">First Name</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="pf_name" placeholder="First Name">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="pl_name" class="col-sm-2 col-form-label">Last Name</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="pl_name" placeholder="Last Name">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="gender" class="col-sm-2 col-form-label">Gender</label>
-                    <div class="col-sm-10">
-                        <select class="form-control slct" id="gender">
-                          <option>Male</option>
-                          <option>Female</option>
-                          <option>Other</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="exp_id" class="col-sm-2 col-form-label">Expertise</label>
-                    <div class="col-sm-10">
-                        <select class="form-control slct" id="exp_id">
-                          <option>Novice Player</option>
-                          <option>Competent Player</option>
-                          <option>RU First Team Player</option>
-                          <option>Provincial/National Player</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <button type="button" class="btn btn-primary btn-lg Add" id="add_player"><i class="fa fa-plus" aria-hidden="true"></i> Add Player</button>
-                    <button type="button" class="btn btn-primary btn-lg Cancel" id="cancel_add"><i class="fa fa-times" aria-hidden="true"></i> Cancel</button>
-                </div>
-            </form>
-        </div>
-    </div>
 
+    <!-- JavaScript -->
     <div id="teamDiv"class="">
       <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
       <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950003295986d4518484cacf9");}catch(v_e){;}</script>
@@ -179,6 +112,7 @@
       
     </script>
 
+    <!-- Footer -->
     <footer>
         <p>Copyright &copy 2017, Original Xception. All Rights Reserved.</p>
     </footer>
