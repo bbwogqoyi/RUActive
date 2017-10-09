@@ -1,0 +1,134 @@
+@font-face {
+    font-family: "myFont";
+    src: url('../lemonmilk.otf');
+}
+
+.Overall{
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    font-family: 'myFont';
+}
+
+.Overall .c_heading{
+    text-align: center;
+    color: white;
+    height: 90px;
+    padding-top: 14px;
+    background-color: #333333;
+}
+
+.Overall .c_convo{
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.Overall .c_convo .convo_titles{
+    margin: 0 auto;
+    width: 25%;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    float: left;
+}
+
+.Overall .c_convo .convo_titles .titles{
+    height: 707px;
+    padding: 10px;
+}
+
+.Overall .c_convo .convo_titles .add_title{
+    background-color: #4d4d4d;
+    height: 100%;
+    padding: 1px;
+    text-align: center;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.Overall .c_convo .convo_info{
+    background-color: white;
+    margin: 0 auto;
+    width: 75%;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    color: black;
+    height: 100%;
+}
+
+.Overall .convo_info .convo_info_heading{
+    background-color: grey;
+    height: 70px;
+    color: #652D90;
+}
+
+.Overall .convo_info .convo_info_heading{
+    text-align: right;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+
+.Overall .convo_info .convo_message .message_date{
+    text-align: center;    
+}
+
+.Overall .convo_info .convo_message{
+    height: 100%;
+    padding-top: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.Overall .convo_info .convo_message .c_m{
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 25px;
+
+}
+
+.Overall .convo_info .convo_message .c_m .user{
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px; 
+    float: left;
+    background-color: #652D90;
+    border-color: #652D90; 
+}
+
+.Overall .convo_info .convo_message .c_m .user_message{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    padding: 7px;
+    float: left;
+    font-family: Helvetica, sans-serif;
+}
+
+.Overall .convo_info .convo_message .c_m .user_message .name_date{
+    color: #652D90;
+    font-family: "myFont";
+}
+
+.Overall .convo_info .convo_message .c_m .user_message .time{
+    font-size: 13px;
+    font-style: normal;
+    color: grey;
+    font-family: Helvetica, sans-serif;
+}
+
+.Overall .convo_info .convo_message .c_m .user_message .message{
+    font-size: 20px;
+}
+

@@ -19,9 +19,9 @@
   <!-- Navigation -->
   <div class="ru_nav">
     <ul>
-      <li><a class="active" href="index.html">RUACTIVE</a></li>
+      <li><a href="index.html">RUACTIVE</a></li>
       <li><a href="#schedule">Schedule</a></li>
-      <li><a href="results_page.html">Results</a></li>
+      <li><a class="active" href="results_page.html">Results</a></li>
       <li><a href="ranking.html">Ranking</a></li>
       <li style="float:right"><a href="#help">Help</a></li>
     </ul>
@@ -44,7 +44,7 @@
 
         <td>
         <div class= "button player">
-          <button onclick="searchbyName()" type="button" class="btn btn-primary btn-lg">Search</button>
+          <button onclick="searchbyName()" type="button" class="btn btn-primary btn-lg Add">Search</button>
         </div>
         </td>
       </tr>
@@ -52,17 +52,21 @@
     </form>
   </div>
 
-  <div class = "ranking_list">
-      <div class="report r_event">
-          <table id="rankingTable">
-            <tr>
-              <th>Event Name</th>
-              <th>Residence</th>
-              <th>Position</th>
-            </tr>
-          </table>
-        </div>
+  <div class = "add event">
+      <div class = "ranking_list">
+          <div class="report r_event">
+              <table id="rankingTable">
+                <tr>
+                  <th>Event Name</th>
+                  <th>Residence</th>
+                  <th>Position</th>
+                </tr>
+              </table>
+            </div>
+      </div>
   </div>
+
+
 
 
 
@@ -83,8 +87,6 @@
     </script>
 
     <script type="text/javascript">
-
-
     function searchbyName() {
       var re = stripCaspioReport(document.getElementById('results'));
       var name = document.getElementById('id_event_name').value;
@@ -127,6 +129,8 @@
     }
 
     </script>
+
+
 
 
   </body>

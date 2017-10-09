@@ -9,17 +9,20 @@
 }
 
 /* Others */
-body {
-    color: black;
-}
-
-body .add.non_fixture_score{
+body .add.chat{
     width: 70%;
 }
 
-body .add.non_fixture_score .form.non_fixture_score{
-    margin-left: auto;
-    margin-right: auto;
+body .add.chat .form.chat{
+    padding-left: 150px;
+}
+
+body .add.chat .info.chat{
+    padding-left: 50px;
+}
+
+body .add.chat .button.chat{
+    right: 60px;
 }
 
 body .add .form .form-group .form-control#exp_id{
@@ -27,16 +30,19 @@ body .add .form .form-group .form-control#exp_id{
 }
 
 @media only screen and (max-width: 1017px){
-    body .add.event{
+    body .add.messageBoard{
         width: 80%;
     }
-    body .add.event .form.event{
+    body .add.messageBoard .form.messageBoard{
         padding-left: 100px;
     }
-    body .add.event .button.event{
+    body .add.messageBoard .button.messageBoard{
         right: 40px;
     }
-    body .add.event .form.event .form-control{
+    body .add.messageBoard .form.messageBoard .form-control{
         margin-right: 1px;
     }
+    
+
+
 }

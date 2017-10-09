@@ -20,7 +20,13 @@ body .add.r_event{
     padding: 0px;
     height: auto;
 }
+.heading{
+    height: 50%;
+}
 
+.rank{
+    height: 50%;
+}
 body .add.r_event .form.r_event{
     padding-left: 150px;
 }
