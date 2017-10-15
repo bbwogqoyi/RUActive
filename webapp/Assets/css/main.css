@@ -81,6 +81,7 @@ body .add{
     width: 80%;
     background-color: rgba(0,0,0,0.4);
     padding: 15px 30px 15px 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 body .add .form{
@@ -104,15 +105,11 @@ body .add .button{
     overflow: hidden;
     position: relative;
     margin: 0 auto;
-    text-align: center;
 }
 
 body .add .button button{
-    width: 400px;
+    width: 200px;
     cursor: pointer;
-    background-color: #652D90;
-    color: white;
-    border-color: #652D90;
 }
 
 body .Tool{
@@ -165,6 +162,35 @@ body .add .added{
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+}
+
+body .add .info{
+    color: black;
+    font-weight: bolder;
+}
+
+body .add .info h3{
+    font-style: italic;
+}
+
+body .add .info h3{
+    color:white;
+    -webkit-animation: flash linear 1s infinite;
+    animation: flash linear 1s infinite;
+}
+@-webkit-keyframes flash {
+    0% { opacity: 1; } 
+    50% { opacity: .1; } 
+    100% { opacity: 1; }
+}
+@keyframes flash {
+    0% { opacity: 1; } 
+    50% { opacity: .1; } 
+    100% { opacity: 1; }
+}
+
+body .add h1{
+    color: white;
 }
 
 body .add .added .details{

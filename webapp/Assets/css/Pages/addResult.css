@@ -1,0 +1,54 @@
+@font-face {
+    font-family: "myFont";
+    src: url('../lemonmilk.otf');
+}
+
+.add .form.result{
+    width: 40%;
+}
+.add .form.result .form-group .form-control{
+    width: 230px;
+    display: inline-flex;
+}
+
+
+.add .button.result button{
+    margin: 7px;
+}
+
+.add .button.result{
+    margin-bottom: 50px;
+}
+
+.ranking_list{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    width:100%;
+    border: 2px solid #652D90;
+    border-radius: 25px;
+}
+
+tr:nth-child(even) {
+    background-color: #b3b3b3;
+}
+
+tr:nth-child(odd) {
+    background-color: #e6e6e6;
+}
+
+.report.r_event{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    width:100%
+}
+
+.report.r_event th{
+    font-family: myFont;
+    text-align: center;
+}
+
+.ranking_list table{
+    width: 100%;
+}
