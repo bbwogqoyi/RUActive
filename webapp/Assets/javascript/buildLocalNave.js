@@ -6,7 +6,7 @@ function buildNavBar(role,appendDiv) {
   switch (role.trim()) {
     case 'Sport Admin':
     ability =['Manage Users', 'Manage Venue', 'Communication Center']
-    pages =['users.html','venue.html', 'chat.html' ];
+    pages =['user.html','venue.html', 'chat.html' ];
       buildTemplate(appendDiv)
     break;
     case 'Sport Code':
