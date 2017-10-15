@@ -120,11 +120,11 @@
 
 
 .schedule_wall .nav_btn button#prev{
-    margin-right: 3px;
+    margin-right: 1px;
 }
 .schedule_wall .nav_btn button{
     border-radius: 35px;
-    width: 130px;
+    width: 120px;
 }
 @media only screen and (min-width: 1440px){
     .schedule_wall .nav_btn button#prev{
@@ -132,7 +132,7 @@
     }
     .schedule_wall .nav_btn button{
         border-radius: 35px;
-        width: 170px;
+        width: 120px;
     }
 }
 .schedule_wall .nav_btn table.table_btn td{
