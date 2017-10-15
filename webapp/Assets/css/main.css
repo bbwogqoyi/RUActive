@@ -59,6 +59,14 @@ body label{
     display: block;
 } */
 
+
+body a{
+    text-decoration: none;
+}
+
+body a:hover{
+    text-decoration: none;
+}
 body p{
     word-wrap: break-word;
 }

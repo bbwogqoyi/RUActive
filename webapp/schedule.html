@@ -10,10 +10,11 @@
   <link rel="stylesheet" href="Assets/css/Pages/schedule.css"/> <!-- Pages/Schedule CSS -->
   <link rel="stylesheet" href="Assets/css/main.css"/> <!-- Main CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Font -->
-  <link rel="icon" href="Assets/images/2.png" type="image/png"> <!-- Favicon -->
+  <link rel="icon" href="Assets/images/logo.png" type="image/png"> <!-- Favicon -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"> <!-- Bootstrap -->
   <link rel="stylesheet" href="Assets/css/hideDiv.css"/>  <!-- Hide Divs -->
-  <script src="Assets/javascript/RoleLookUp.js">  </script>
+  <script src="Assets/javascript/RoleLookUp.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body onload="getEvents()">
   <!-- Navigation -->
@@ -28,27 +29,91 @@
   </div>
 
   <!-- Search -->
-  <div class ="search">
-    <form>
-    <table>
-      <tr>
-        <td class = "left_side">
-          <div class = "form-group row"> <!-- Residence -->
-
-          </div>
-        </td>
-        <td>
-        <!-- Search Button -->
-        <div class= "button player">
-        </div>
-        </td>
-      </tr>
-    </table>
-    </form>
-  </div>
+  <div class="wall">
+    <div id="map"></div>
+    <script>
+            function initMap() {
+              var currentlocation = {lat: -33.312585, lng: 26.519333};
+              var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 16,
+                center: currentlocation
+              });
+              var Hamilton = new google.maps.Marker({
+                position: {lat: -33.312585, lng: 26.519333},
+                map: map,
+                //label: 'C',
+                animation: google.maps.Animation.BOUNCE,
+                title: "Hamilton Building"
+              });
+              var GreatField = new google.maps.Marker({
+                position: {lat: -33.311755, lng: 26.516361},
+                map: map,
+                label: 'S',
+                title: "Great Field"
+              });
+              var KingField = new google.maps.Marker({
+                position: {lat: -33.313787, lng: 26.513861},
+                map: map,
+                label: 'S',
+                title: "King Field"
+              });
+              var ProspectFields = new google.maps.Marker({
+                position: {lat: -33.312334, lng: 26.510986},
+                map: map,
+                label: 'S',
+                title: "Prospect Fields"
+              });
+              var AstroAtheltics = new google.maps.Marker({
+                position: {lat: -33.312890, lng: 26.509763},
+                map: map,
+                label: 'S',
+                title: "Astro & Athletics Track"
+              });
+              var TennisCourts = new google.maps.Marker({
+                position: {lat: -33.313249, lng: 26.514741},
+                map: map,
+                label: 'S',
+                title: "Tennis Courts"
+              });
+              var MullinsHall = new google.maps.Marker({
+                position: {lat: -33.313069, lng: 26.512746},
+                map: map,
+                label: 'S',
+                title: "Alec Mullins Hall"
+              });
+              var SwimmingPool = new google.maps.Marker({
+                position: {lat: -33.313159, lng: 26.516565},
+                map: map,
+                label: 'S',
+                title: "Swimming pool"
+              });
+              var Library = new google.maps.Marker({
+                position: {lat: -33.314235, lng: 26.518947},
+                map: map,
+                label: 'C',
+                title: "Library",
+              });
+              var EdenGrove = new google.maps.Marker({
+                position: {lat: -33.314504, lng: 26.521865},
+                map: map,
+                label: 'C',
+                title: "Eden Grove"
+              });
+            }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrOhCPmjp_C8rKgXU9cYeNvrB0-5L9Vxk&callback=initMap">
+    </script>
+    <div class="Logo_placement">
+        <img src="Assets/images/logo.png" alt="RUActive Logo"/>
+    </div>
+</div>
 
   <div class="schedule_wall">
     <div class="compt_info">
+        <a href="#search"><div class="search Add">
+        Search...
+      </div></a>
       <div class="ev_cpt">
         <div class="compt_date">
           <h5 class="date head" id="date"></h5>
@@ -73,10 +138,21 @@
     <div class="compt_list">
 
 
-      <table class="names_times" id="updateTable">
+      <table class="names_times">
+        <tbody id="updateTable">
+
+        </tbody>
       </table>
     </div>
   </div>
+
+  <div id="search">
+    <button type="button" class="close">×</button>
+    <form>
+        <input type="search" value="" placeholder="type keyword(s) here" />
+        <button type="submit" class="btn btn-primary Update">Search</button>
+    </form>
+</div>
 
   <!-- Footer -->
   <footer>
