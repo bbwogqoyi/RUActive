@@ -20,6 +20,13 @@ body .add.r_event{
     padding: 0px;
     height: auto;
 }
+
+.ranking_list{
+    border: 4px solid #652D90;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-radius: 25px;
+}
 .heading{
     height: 50%;
 }

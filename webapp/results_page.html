@@ -10,10 +10,11 @@
   <link rel="stylesheet" href="Assets/css/Pages/results_page.css"/> <!-- Pages/Event CSS -->
   <link rel="stylesheet" href="Assets/css/main.css"/> <!-- Main CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Font -->
-  <link rel="icon" href="Assets/images/2.png" type="image/png"> <!-- Favicon -->
+  <link rel="icon" href="Assets/images/logo.png" type="image/png"> <!-- Favicon -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"> <!-- Bootstrap -->
   <link rel="stylesheet" href="Assets/css/hideDiv.css"/>  <!-- Hide Divs -->
   <script src="Assets/javascript/RoleLookUp.js">  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body onload="returnResult()">
   <!-- Navigation -->
@@ -23,33 +24,15 @@
       <li><a href="schedule.html">Schedule</a></li>
       <li><a class="active" href="results_page.html">Results</a></li>
       <li><a href="ranking.html">Ranking</a></li>
-      <li style="float:right"><a href="#help">Help</a></li>
+      <li style="float:right"><a href="Assets/manual.pdf">Help</a></li>
     </ul>
   </div>
 
   <!-- Search -->
   <div class ="search">
-    <form>
-    <table>
-      <tr>
-        <td class = "left_side">
-            <div class = "form-group row"> <!-- Event Name -->
-              <label for = "id_event_name" class = "col-sm-2 col-form-label">Event Name</label>
-              <div class = "col-sm-10">
-                <input type = "text" class = "form-control" id = "id_event_name" name = "#" placeholder = "Soccer Saga">
-              </div>
-            </div>
-        </td>
-      </tr>
-
-        <td>
-        <div class= "button player">
-          <button onclick="searchbyName()" type="button" class="btn btn-primary btn-lg Add">Search</button>
-        </div>
-        </td>
-      </tr>
-    </table>
-    </form>
+    <a href="#search"><div class="Add">
+        Search...
+      </div></a>
   </div>
 
   <div class = "add event">
@@ -67,8 +50,13 @@
       </div>
   </div>
 
-
-
+  <div id="search">
+      <button type="button" class="close">×</button>
+      <form>
+          <input type="search" value="" placeholder="type event name here" />
+          <button type="submit" class="btn btn-primary Update">Search</button>
+      </form>
+  </div>
 
 
   <!-- Footer -->
