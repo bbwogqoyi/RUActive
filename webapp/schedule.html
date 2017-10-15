@@ -149,8 +149,8 @@
   <div id="search">
     <button type="button" class="close">×</button>
     <form>
-        <input type="search" value="" placeholder="type event name here" />
-        <button type="submit" class="btn btn-primary Update">Search</button>
+        <input type="search" id="searchEvent" value="" placeholder="type event name here" />
+        <button type="button" id="searchBtn"onclick="searchForEvent()"  class="btn btn-primary Update">Search</button>
     </form>
 </div>
 
@@ -172,7 +172,49 @@
         var re = stripCaspioReport(document.getElementById('eventSearch'));
         movefoward = 0;
 
+        function returnSearched(n){
+          for (var i = 0; i < re.length; i++) {
+            console.log(re[i]['name'].toLowerCase())
+            if(re[i]['name'].toLowerCase() === n) return i;
+          }
+          return -1;
+        }
+        function searchForEvent() {
+            var eventn = document.getElementById('searchEvent').value;
+            var idx =returnSearched( eventn.toLowerCase());
 
+            if(idx !== -1){
+            var template = ` <th class="head" colspan="2">
+                  Event Details
+              </th>
+              <tr class="event_det type">
+                  <td><strong>TYPE:</strong> </td>
+                  <td class="info">${re[idx]['event type']}</td>
+              </tr>
+              <tr class="event_det sport">
+                  <td><strong>SPORT:</strong> </td>
+                  <td class="info">${re[idx]['sport']}</td>
+              </tr>
+              <tr class="event_det date">
+                  <td><strong>DATE:</strong> </td>
+                  <td class="info">${re[idx]['event date']}</td>
+              </tr>
+              <tr class="event_det time">
+                  <td><strong>TIME:</strong> </td>
+                  <td class="info">${re[idx]['event start time']}</td>
+              </tr>
+              <tr class="event_det place">
+                  <td><strong>PLACE:</strong> </td>
+                  <td class="info">${re[idx]['event venue']}</td>
+              </tr>`
+
+            document.getElementById('meee').innerHTML = template;
+          }
+          else {
+            alert('event name not found');
+          }
+
+        }
 
         function getEvents(){
           var type = '';
@@ -189,7 +231,6 @@
           }
           var today = dd+'/'+mm+'/'+yyyy;
           document.getElementById("date").innerHTML = today;
-
         for (var i = 0; i < re.length; i++) {
             console.log(re[i]["event type"]);
             if(re[i]["event type"] === 'Competitive')type = 'C';
