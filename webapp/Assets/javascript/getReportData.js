@@ -1,19 +1,19 @@
 'use strict';
 
 /**
- * @description strips data from caspio reports by iterating each row and constructing 
+ * @description strips data from caspio reports by iterating each row and constructing
  *              an object with columns as keys and values being the table's row content
- * 
- * @param {HTML - div element} div 
- * @returns {array} aggregated 
+ *
+ * @param {HTML - div element} div
+ * @returns {array} aggregated
  */
 function stripCaspioReport(div){
   var table_id = div.querySelector('[id^="cbTable_"]').id;
   var table = document.getElementById(table_id);
   var numRows = table.rows.length;
   var numCols = table.rows[0].cells.length;
-  
-  var colNames = []; 
+
+  var colNames = [];
   for(var i=0; i<numCols; i+=1)
     colNames.push(table.rows[0].cells[i].innerText.toLowerCase());
 
@@ -37,11 +37,14 @@ $(function () {
       $('#search').addClass('open');
       $('#search > form > input[type="search"]').focus();
   });
-  
+
   $('#search, #search button.close').on('click keyup', function(event) {
       if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
           $(this).removeClass('open');
       }
   });
-});
 
+  $('#searchBtn').click(function(){
+      $('#search').removeClass('open');
+  });
+});
