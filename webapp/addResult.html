@@ -13,9 +13,9 @@
     <link rel="icon" href="Assets/images/logo.png" type="image/png"> <!-- Favicon -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"> <!-- Bootstrap -->
     <link rel="stylesheet" href="Assets/css/hideDiv.css"/>  <!-- Hide Divs -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-<body>
+<body onload="showRanking()">
     <!-- Navigation -->
     <div class="ru_nav">
         <ul>
@@ -36,6 +36,14 @@
         <!-- Form -->
         <div class = "form result">
             <form>
+              <div class = "form-group row"> <!-- Sports Representative -->
+                  <label for = "id_team_name" class = "col-sm-5 col-form-label">Team Name</label>
+                  <div class="col-sm-5">
+                      <select class="form-control" id="id_team_name">
+
+                      </select>
+                  </div>
+              </div>
                 <div class = "form-group row"> <!-- Warden -->
                     <label for = "id_event_name" class = "col-sm-5 col-form-label">Event Name</label>
                     <div class="col-sm-5">
@@ -44,21 +52,14 @@
                         </select>
                     </div>
                 </div>
-                <div class = "form-group row"> <!-- Sports Representative -->
-                    <label for = "id_team_name" class = "col-sm-5 col-form-label">Team Name</label>
-                    <div class="col-sm-5">
-                        <select class="form-control" id="id_team_name">
 
-                        </select>
-                    </div>
-                </div>
                 <div class = "form-group row"> <!-- Name -->
                     <label for = "id_point" class = "col-sm-5 col-form-label">Point</label>
                     <div class = "col-sm-5">
                         <input type = "number" class = "form-control" id = "id_point" name = "#" placeholder = "0">
                     </div>
                 </div>
-                
+
             </form>
         </div>
         <div class="button result">
@@ -94,7 +95,12 @@
         <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa9500071140f3c4aab4c3097e6">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
         <div id="cbaaa9500071140f3c4aab4c3097e6"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
     </div>
-
+    <div id="submitResults"class="">
+      <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
+      <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa9500012faebd03f8f4b03b8b2");}catch(v_e){;}</script>
+      <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa9500012faebd03f8f4b03b8b2">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
+      <div id="cbaaa9500012faebd03f8f4b03b8b2"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
+    </div>
     <script src="Assets/javascript/getReportData.js" charset="utf-8"></script>
 
 <script type="text/javascript">
@@ -111,6 +117,34 @@
                     document.getElementById('rankingTable').innerHTML += template;
 
         }
+/*
+        var w =   document.getElementById('Value1_1').options;
+        populate(w,'id_team_name');
+
+        function populate (w, id){
+          for (var i = 0; i < w.length; i+=1) {
+            var elmOption = document.createElement('option');
+            elmOption.text = w[i].text;
+            elmOption.value = w[i].value;
+            document.getElementById(id).add(elmOption);
+          }
+        }
+
+        $(document).on('change',"#id_team_name", function() {
+          document.getElementById('Value1_1').value =document.getElementById('id_team_name').value;
+          var caspio_form = document.getElementById('caspioform');
+          document.getElementById('searchID').setAttribute('type','text').click();
+
+
+          var w =   document.getElementById('EditRecordEvent_Name').options;
+          populate(w,'id_event_name');
+        });
+
+        function submitForm(){
+
+
+
+        }*/
 
     }
 </script>
