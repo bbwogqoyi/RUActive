@@ -128,11 +128,11 @@
 }
 @media only screen and (min-width: 1440px){
     .schedule_wall .nav_btn button#prev{
-        margin-right: 20px;
+        margin-right: 10px;
     }
     .schedule_wall .nav_btn button{
         border-radius: 35px;
-        width: 120px;
+        width: 180px;
     }
 }
 .schedule_wall .nav_btn table.table_btn td{
