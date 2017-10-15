@@ -10,7 +10,7 @@ function buildNavBar(role,appendDiv) {
       buildTemplate(appendDiv)
     break;
     case 'Sport Code':
-         ability =['Manage Event', 'Communication Center']
+         ability =['Manage Event', 'Communication Center', '']
          pages =['event.html','chat.html' ];
       buildTemplate(appendDiv)
     break;

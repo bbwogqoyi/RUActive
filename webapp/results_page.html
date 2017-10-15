@@ -58,6 +58,7 @@
               <table id="rankingTable">
                 <tr>
                   <th>Event Name</th>
+                  <th>Team</th>
                   <th>Residence</th>
                   <th>Position</th>
                 </tr>
@@ -102,6 +103,7 @@
         if(re[i]['event name'].toLowerCase() === name.toLowerCase()){
         var template = `<tr>
         <td>${re[i]["event name"]}</td>
+        <td>${re[i]["team id"]}</td>
         <td>${re[i]["team\'s residence"]}</td>
         <td>${re[i]['competition position']}</td>
         </tr>`
@@ -119,6 +121,7 @@
       for (var i = 0; i < re.length; i++) {
         var template = `<tr>
         <td>${re[i]["event name"]}</td>
+        <td>${re[i]["team id"]}</td>
         <td>${re[i]["team\'s residence"]}</td>
         <td>${re[i]['competition position']}</td>
         </tr>`

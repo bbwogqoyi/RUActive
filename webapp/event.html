@@ -120,18 +120,10 @@
             </select>
           </div>
         </div>
-		<script>
-					document.onkeydown = function (e) {
-						  e = e || window.event;
-						  switch (e.which || e.keyCode) {
-								case 13 : submitForm();
-									break;
-						  }
-						}
-					</script>
+
         <!-- Button -->
         <div class="form-group">
-            <button type="button" class="btn btn-primary btn-lg Add" id="adding">Add Event</button>
+            <button type="button" onclick="submitForm()" class="btn btn-primary btn-lg Add" id="adding">Add Event</button>
         </div>
       </form>
     </div>
@@ -199,7 +191,7 @@
         for(var i=0; i<caspioIds.length; i+=1){
           var current_value = document.getElementById(profile[i]).value;
         }
-        if(document.getElementById('hasFixtures').checked){
+        if(document.getElementById('id_fixtures').value = 'Yes'){
           document.getElementById('InsertRecordhasFixtures').checked = 'true';
         } else {
           document.getElementById('InsertRecordhasFixtures').checked = 'false';
@@ -207,7 +199,7 @@
 
         var input_dates = ['id_event_date','id_reg_date'];
         var new_dates = ['InsertRecordEvent_Date', 'InsertRecordRegistration_Deadline'];
-        for (var i=0; i<event_dates.length; i+=1) //(i ===3 ||i === 4)
+        for (var i=0; i<input_dates.length; i+=1) //(i ===3 ||i === 4)
         {
           var current_value = document.getElementById(input_dates[i]).value;
           current_value = current_value.split('-').reverse().join('/');
