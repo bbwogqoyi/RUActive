@@ -53,8 +53,8 @@
   <div id="search">
       <button type="button" class="close">×</button>
       <form>
-          <input type="search" value="" placeholder="type event name here" />
-          <button type="submit" class="btn btn-primary Update">Search</button>
+          <input type="search" id="searchE"value="" placeholder="type event name here" />
+          <button type="button" onclick="searchbyName()"class="btn btn-primary Update">Search</button>
       </form>
   </div>
 
@@ -78,7 +78,7 @@
     <script type="text/javascript">
     function searchbyName() {
       var re = stripCaspioReport(document.getElementById('results'));
-      var name = document.getElementById('id_event_name').value;
+      var name = document.getElementById('searchE').value;
       console.log(name);
       document.getElementById('rankingTable').innerHTML = "";
       var template = `<th>Event Name</th>
