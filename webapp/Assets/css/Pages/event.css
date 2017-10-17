@@ -15,15 +15,56 @@ body {
 
 body .add.event{
     width: 70%;
+    border: 3px solid #652D90;
+    border-top: 0px;
+    border-bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-family: myFont;
+
+}
+
+body .add.event .info.event p{
+    font-family: Helvetica, sans-serif;    
 }
 
 body .add.event .form.event{
     margin-left: auto;
     margin-right: auto;
+    color: black;
+    font-family: Helvetica, sans-serif;
+}
+
+.form.event .form-control{
+    display: inline-flex;
 }
 
 body .add .form .form-group .form-control#exp_id{
     cursor: pointer;
+}
+.form.event button{
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.form.event .button .form-control{
+    background-color: transparent;
+    border: 0px;
+    padding: 0px;
+}
+
+.form.event button.Cancel{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.form.event button.Add{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 
@@ -33,9 +74,6 @@ body .add .form .form-group .form-control#exp_id{
     }
     body .add.event .form.event{
         padding-left: 100px;
-    }
-    body .add.event .button.event{
-        right: 40px;
     }
     body .add.event .form.event .form-control{
         margin-right: 1px;

@@ -5,10 +5,19 @@
 
 .header{
     font-family: myFont;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+    border: 4px solid #652D90;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
 }
 
 .p_space h1 {
     font-size: 25px;
+    font-family: myFont;
 }
 
 .ru_nav{
@@ -19,13 +28,37 @@ body .add.r_event{
     width: 50%;
     padding: 0px;
     height: auto;
-}
-
-.ranking_list{
+    background-color: transparent;
+    margin-top: 110px;
     border: 4px solid #652D90;
     border-top: 0px;
     border-bottom: 0px;
-    border-radius: 25px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-transition: width 4s; /* For Safari 3.1 to 6.0 */
+    transition: width 4s;
+}
+
+.add.r_event.preload{
+    width: 0%;
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+}
+
+.ranking_list{
+    color: black;
+    font-family: myFont;
+}
+
+
+.ranking_list table{
+    font-family: myFont;
 }
 .heading{
     height: 50%;
@@ -49,32 +82,42 @@ body .add.r_event .info.r_event{
 }
 
 table {
-    font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    text-align: center;
 }
-
-.left_side {
-    text-align: right;
-    font-weight: bold;
-    text-align: right;
-    padding: 10px;
-    width: 40%;
-}
-
-.right_side {
+#rankingTable .h_left{
     text-align: left;
-    padding: 10px;
-    width: 60%;
+    padding-left: 40px;
 }
+
+
 
 tr:nth-child(even) {
     background-color: #b3b3b3;
+    height: 30px;
 }
 
 tr:nth-child(odd) {
     background-color: #e6e6e6;
+    height: 40px;
+}
+
+
+tr.heading{
+    background-color: #333;
+    height: 47px;
+    color: white;
+}
+
+#rankingTable td, #rankingTable th{
+    border: 1px solid black;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+}
+
+table #ranking{
+    text-align: center;
 }
 
 .report.r_event{
@@ -161,8 +204,9 @@ body .header {
     text-align: center;
 }
 
-.p_space .heading .points{
+.p_space .heading .point{
     color: grey;
+    font-family: myFont;
 }
 
 .p_space .rank{
