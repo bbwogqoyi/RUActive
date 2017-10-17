@@ -16,7 +16,7 @@
   <script src="Assets/javascript/RoleLookUp.js">  </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-<body onload="returnResult()">
+<body>
   <!-- Navigation -->
   <div class="ru_nav">
     <ul>
@@ -33,28 +33,101 @@
     <a href="#search"><div class="Add">
         Search...
       </div></a>
+      <div class="search_intro">
+        <p>Looking for a specific event? Use the Search bar tool to find the information you need!</p>
+        <p class="note">Note: If you wish to view all events, <strong id="allEvents">Click here.</strong></p>
+      </div>
   </div>
-
-  <div class = "add event">
-      <div class = "ranking_list">
-          <div class="report r_event">
-              <table id="rankingTable">
-                <tr>
-                  <th>Event Name</th>
-                  <th>Team Name</th>
-                  <th>Residence</th>
-                  <th>Position</th>
-                </tr>
-              </table>
-            </div>
+  <div class="Ev_Heading">
+    <h1>Event Results</h1>
+  </div>
+  <div class="event_update">
+    <div class = "event_result" id="e_r_1">
+      <div class="Event_name_img">
+        <div class="Event_img">
+          <img src="Assets/images/propic.png"  alt="trainer_2">
+        </div>
+        <div class="Event_name" id="e_name_1">
+    
+        </div>
+      </div>
+      <div class="e_result" id="e_t_r_1">
+        <table id="rankingTable_1">
+             
+        </table>
+      </div>
+    </div>
+    
+    <div class = "event_result" id="e_r_2">
+      <div class="Event_name_img">
+        <div class="Event_img">
+          <img src="Assets/images/propic.png"  alt="trainer_2">
+        </div>
+        <div class="Event_name" id="e_name_2">
+          
+        </div>
+      </div>
+      <div class="e_result" id="e_t_r_2">
+        <table id="rankingTable_2">
+  
+        </table>
+      </div>   
+    </div>
+    <div class = "event_result" id="e_r_3">
+      <div class="Event_name_img">
+        <div class="Event_img">
+          <img src="Assets/images/propic.png"  alt="trainer_2">
+        </div>
+        <div class="Event_name" id="e_name_3">
+            
+        </div>
+      </div>
+      <div class="e_result" id="e_t_r_3">
+        <table id="rankingTable_3">
+  
+        </table>
+      </div>
+    </div>
+    <div class="nav_event">
+      <button type="button" class="btn btn-primary btn-lg Add" id="prev">PREVIOUS</button><button type="button" class="btn btn-primary btn-lg Add" id="next" onclick="NExt()">NEXT</button>
+    </div>
+  </div>
+  <div class="Show Result">
+      <div class="show_info" id="ev_info">
+          <span class="close">&times;</span>
+          <h4>All Results</h4>
+          <div class = "ranking_list">
+              <div class="report r_event">
+                  <table id="rankingTable_all">
+                    <tr>
+                      <th>Event Name</th>
+                      <th>Team Name</th>
+                      <th>Residence</th>
+                      <th>Position</th>
+                    </tr>
+                  </table>
+                </div>
+          </div>
       </div>
   </div>
 
   <div id="search">
       <button type="button" class="close">×</button>
       <form>
-          <input type="search" value="" placeholder="type event name here" />
-          <button type="submit" class="btn btn-primary Update">Search</button>
+        <input type="search" id="id_event_name" placeholder="type event name here" />
+        <button type="button" onclick="searchbyName()"  class="btn btn-primary Update">Search</button>
+        <br>
+        <div class="Search_list">
+            <div class = "ranking_list">
+                <div class="report r_event">
+                    <table id="rankingTable_search">
+                      <tr>
+    
+                      </tr>
+                    </table>
+                  </div>
+            </div>
+        </div>
       </form>
   </div>
 
@@ -71,55 +144,45 @@
   <div id="cbaaa95000c9cf29a4c8c6454b8dab"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
     </div>
 
-
+    <script src="Assets/javascript/Editing_Updating.js"></script>
     <script src="Assets/javascript/getReportData.js">
     </script>
-
+<!-- 
     <script type="text/javascript">
-    function searchbyName() {
-      var re = stripCaspioReport(document.getElementById('results'));
-      var name = document.getElementById('id_event_name').value;
-      console.log(name);
-      document.getElementById('rankingTable').innerHTML = "";
-      var template = `<th>Event Name</th>
-                     <th>Residence</th>
-                     <th>Position</th>`
-      document.getElementById('rankingTable').innerHTML = template;
-      if(name === "") returnResult();
-      for (var i = 0; i < re.length; i++) {
-        //console.log(re[0]["team's residence"]);
-        if(re[i]['event name'].toLowerCase() === name.toLowerCase()){
-        var template = `<tr>
-        <td>${re[i]["event name"]}</td>
-        <td>${re[i]["team id"]}</td>
-        <td>${re[i]["team\'s residence"]}</td>
-        <td>${re[i]['competition position']}</td>
-        </tr>`
+    
 
-
-        document.getElementById('rankingTable').innerHTML += template;
-      }
-
-    }
-     document.getElementById('id_event_name').value =""
-    var name = document.getElementById('id_event_name').value;
-  }
-    function returnResult(){
-      var re = stripCaspioReport(document.getElementById('results'));
-      for (var i = 0; i < re.length; i++) {
-        var template = `<tr>
-        <td>${re[i]["event name"]}</td>
-        <td>${re[i]["team id"]}</td>
-        <td>${re[i]["team\'s residence"]}</td>
-        <td>${re[i]['competition position']}</td>
-        </tr>`
-        document.getElementById('rankingTable').innerHTML += template;
-
-      }
+    // function next(){
+    //   // var re = stripCaspioReport(document.getElementById('results'));
+    //   // var counter = 1;
+    //   // var pos = 1;
+    //   // for (var i = 0; i < re.length; i++){
+    //   //   // if(counter == re.length) counter = 1;
+    //   //   if(counter%3 == 0) break;
+    //   //   else{
+    //   //     counter++;
+    //   //     var current = re[i]['event name'].toLowerCase();
+    //   //     var heading = `<h3>${re[i]['event name']}</h3>`;
+    //   //     document.getElementById('e_name_'+pos).innerHTML = template;
+    //   //     for (var j = 0; j < 4; j++){
+    //   //       if(re[j]['event name'].toLowerCase() === current){
+    //   //         var template = `<tr>
+    //   //                       <td class="pos">${re[j]['competition position']}</td>
+    //   //                       <td class="t_name">${re[j]["team id"]}</td>
+    //   //                       <td class="r_name">${re[j]["team\'s residence"]}</td>
+    //   //                     </tr>`;
+    //   //         document.getElementById('rankingTable_'+pos).innerHTML += template;
+    //   //         continue;
+    //   //       }
+    //   //       document.getElementById('rankingTable_'+pos).innerHTML +=`<tr>
+    //   //       <td colspan="3"><button type="button" class="btn btn-primary btn-lg Tool" id="seeAll_ev_`+pos+`">SEE ALL</button></td></tr>`; 
+    //   //     }
+    //   //     pos++;
+    //   //   }
+    //   }
 
     }
 
-    </script>
+    </script> -->
 
 
 

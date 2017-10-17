@@ -24,6 +24,133 @@ body .add.event{
     border-bottom: 0px;
     border-radius: 25px;
 }
+.Ev_Heading{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: myFont;
+}
+
+.event_update{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%; 
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 5px solid #652D90;
+    border-top-left-radius: 27px;
+    border-top-right-radius: 27px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 0px;  
+}
+
+.event_update .nav_event{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    width: 60%;
+    margin-bottom: 30px;
+    font-family: Helvetica, sans-serif;   
+}
+
+.event_update .event_result{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    width: 60%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 5px solid #652D90;
+    border-bottom-right-radius: 27px;
+    border-top-left-radius: 27px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-right: 0px;
+    border-left: 0px;
+}
+
+.event_update .event_result .Event_name_img{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    width: 40%;
+    float: left;
+    text-align: center;
+    padding: 30px;
+}
+
+.event_update .event_result .Event_name_img .Event_img{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+.event_update .event_result .Event_name_img .Event_img img{
+    width: 100%;
+    height: 100%;
+}
+
+.event_update .event_result .e_result{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    width: 60%;
+    float: left;
+    height: 100%;
+    padding: 30px;
+}
+.event_update .event_result table{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    color: #FAF0E6;
+    font-family: Helvetica, sans-serif;
+}
+
+.event_update .event_result table .pos{
+    color: #652D90;
+    font-weight: bold;
+}
+
+.event_update .event_result table button{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.event_update .nav_event button#prev{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-right-color: white; 
+}
+
+.event_update .nav_event button{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    width: 50%;
+    border: 1px solid #652D90;
+}
+
+.event_update .nav_event button#next{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-left-color: white;
+}
 
 body .add.event th{
     color: #FAF0E6;
@@ -85,14 +212,38 @@ td, th {
     overflow: hidden;
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.6);
-    height: 200px;
     padding: 50px;
+    padding-bottom: 20px;
     border: 6px solid #652D90;
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px; 
+}
+
+.search .search_intro{
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 50%;
+    color: white;
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+}
+
+.search .search_intro .note{
+    font-size: 13px;
+}
+
+.search .search_intro .note strong{
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.search .search_intro .note strong:hover{
+    color: red;
 }
 
 .search .Add{
@@ -228,6 +379,35 @@ td, th {
 
 #search .close:hover{
     color: #652D90;
+    cursor: pointer;
+}
+
+#search .Search_list{
+    position: absolute;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 60%;
+    bottom: 0;
+    left: 20%;
+}
+
+#search .Search_list .ranking_list{
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    color: white;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 2px solid #652D90;
+    border-radius: 15px;
+}
+
+
+.Show.Result .show_info{
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 2px solid #652D90;
+    border-radius: 15px;
+    color: white;
 }
 
 

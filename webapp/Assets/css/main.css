@@ -251,6 +251,10 @@ body select option:hover{
     
 }
 
+.show_info#ev_info{
+    display: none;
+}
+
 .show_info .close {
     color: #fcfcfc;
     float: right;

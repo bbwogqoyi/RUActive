@@ -3,26 +3,69 @@
     src: url('../lemonmilk.otf');
 }
 
+.wall{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+}
 
+.wall .directions{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    width: 30%;
+    float: left;
+    height: 520px;
+    border: 5px solid #652D90;
+    border-bottom-left-radius: 27px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+
+}
+
+.wall .directions .d_info h1{
+    font-family: myFont;
+    color: #652D90;
+}
+
+.wall .directions .d_info{
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    font-family: Helvetica, sans-serif;
+    width: 85%;
+    margin-top: 12%;
+}
 
 .wall #map{
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    width: 70%;
+    float: left;
     height: 520px;
+    border-bottom-right-radius: 27px;
+    background-color: #652D90;
+    border: 5px solid #652D90;
+    border-top: 0px;
+    border-right: 0px;
 }
 
 .wall .Logo_placement{
     position: absolute;
     z-index: 100;
-    top: 50%;
-    left: 2%;
-    opacity: 0.7;
+    top: 65%;
+    left: 24.5%;
+    opacity: 0.9;
 }
 
 @media only screen and (min-width: 1440px){
     .wall .Logo_placement{
-        top: 35%;
+        top: 37%;
     }
 }
 
@@ -45,9 +88,9 @@
     width: 50%;
     cursor: pointer;
     padding: 20px;
-    background-color: #652D90;
     margin-bottom: 20px;
     margin-top: 30px;
+    border: 3px solid #652D90; 
 }
 
 .search a{
@@ -86,6 +129,8 @@
     color: white;
     font-weight: bold;
     background-color: #652D90;
+    font-family: myFont;
+    padding-left: 20px;
 }
 
 .schedule_wall .compt_info{
@@ -97,7 +142,7 @@
 }
 
 .schedule_wall .compt_info .info{
-    color: white;
+    color: black;
 }
 
 .schedule_wall .compt_info .ev_cpt{
@@ -105,7 +150,14 @@
     overflow: hidden;
     position: relative;
     width: 50%;
+    margin-top: 30px;
 }
+.schedule_wall .compt_info .ev_cpt .table_event td{
+    font-family: Helvetica, sans-serif;
+    padding-left: 20px;
+}
+
+
 
 .schedule_wall .compt_info .ev_cpt .compt_date{
     background-color: #652D90;
@@ -120,20 +172,21 @@
 
 
 .schedule_wall .nav_btn button#prev{
-    margin-right: 1px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.schedule_wall .nav_btn button#next{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 .schedule_wall .nav_btn button{
-    border-radius: 35px;
-    width: 120px;
+    width: 134px;
+    border-radius: 0px;
 }
 @media only screen and (min-width: 1440px){
-    .schedule_wall .nav_btn button#prev{
-        margin-right: 10px;
-    }
-    .schedule_wall .nav_btn button{
-        border-radius: 35px;
-        width: 180px;
-    }
+   
+
 }
 .schedule_wall .nav_btn table.table_btn td{
     padding: 0;
@@ -152,15 +205,18 @@
     padding-top: 40px;
     padding-bottom: 40px;
     background-color: #333333;
+    font-family: Helvetica, sans-serif;
+    text-transform: uppercase;
 }
 
 .schedule_wall .compt_list .compt_name, .schedule_wall .compt_list .compt_time{
-    color: white;
+    color: black;
 }
 
 .schedule_wall .compt_list .compt_type{
     font-weight: bold;
-    color: black;
+    color: #652D90;
+    font-family: myFont;
 }
 
 .schedule_wall .compt_list .compt_name{

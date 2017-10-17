@@ -30,6 +30,13 @@
 
   <!-- Search -->
   <div class="wall">
+    <div class="directions">
+      <div class="d_info">
+        <h1>RULOST?</h1>
+        <p>"The Great-Field, where's that?"</p>
+        <p>It seems like everyone's talking about it, but you don't seem to have a clue what it is, or where it is? First Year or Post-Graduate, we're at your rescue! Use this interactive map and the associated details below to find and locate any of the listed venues on the Competition Schedule. Getting directions has never been easier!</p>
+      </div>
+    </div>
     <div id="map"></div>
     <script>
             function initMap() {
@@ -112,9 +119,6 @@
 
   <div class="schedule_wall">
     <div class="compt_info">
-        <a href="#search"><div class="search Add">
-        Search...
-      </div></a>
       <div class="ev_cpt">
         <div class="compt_date">
           <h5 class="date head" id="date"></h5>
@@ -128,13 +132,15 @@
           <table class="table_btn">
             <tr>
               <td colspan="2">
-                  <button type="button" class="btn btn-primary btn-lg Add" id="prev" onclick="moveback()">PREVIOUS</button>
-                  <button type="button" class="btn btn-primary btn-lg Add" id="next" onclick="eventsidebar()">NEXT</button>
+                  <button type="button" class="btn btn-primary btn-lg Add" id="prev" onclick="moveback()">PREVIOUS</button><button type="button" class="btn btn-primary btn-lg Add" id="next" onclick="eventsidebar()">NEXT</button>
               </td>
             </tr>
           </table>
         </div>
       </div>
+      <a href="#search"><div class="search Tool">
+        Search...
+      </div></a>
     </div>
     <div class="compt_list">
 
@@ -188,8 +194,8 @@
             var template = ` <th class="head" colspan="2">
                   Event Details
               </th>
-              <tr class="event_det type">
-                  <td><strong>Name:</strong> </td>
+              <tr class="event_det sport">
+                  <td><strong>NAME:</strong> </td>
                   <td class="info">${re[idx]['name']}</td>
               </tr>
               <tr class="event_det type">
@@ -256,8 +262,8 @@
             template = `  <th class="head" colspan="2">
                   Event Details
               </th>
-              <tr class="event_det type">
-                  <td><strong>Name:</strong> </td>
+              <tr class="event_det sport">
+                  <td><strong>NAME:</strong> </td>
                   <td class="info">${re[movefoward]['name']}</td>
               </tr>
               <tr class="event_det type">
@@ -290,8 +296,8 @@
             template = `  <th class="head" colspan="2">
                   Event Details
               </th>
-              <tr class="event_det type">
-                  <td><strong>Name:</strong> </td>
+              <tr class="event_det sport">
+                  <td><strong>NAME:</strong> </td>
                   <td class="info">${re[movefoward]['name']}</td>
               </tr>
               <tr class="event_det type">
