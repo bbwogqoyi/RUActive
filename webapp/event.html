@@ -190,8 +190,8 @@
 
       function submitForm(){
         var caspio_form = document.getElementById('caspioform');
-        var profile = ['id_event_name', 'id_event_desc', 'id_event_venue','id_max_players'];
-        var caspioIds = ['InsertRecordName', 'InsertRecordDescription', 'InsertRecordEvent_Venue', 'InsertRecordMaximum_players'];
+        var profile = ['id_event_name', 'id_event_desc', 'id_event_venue','id_max_players','id_event_duration'];
+        var caspioIds = ['InsertRecordName', 'InsertRecordDescription', 'InsertRecordEvent_Venue', 'InsertRecordMaximum_players','InsertRecordEvent_Start_Time'];
 
         for(var i=0; i<caspioIds.length; i+=1){
           var current_value = document.getElementById(profile[i]).value;
