@@ -20,11 +20,11 @@
   <!-- Navigation -->
   <div class="ru_nav">
     <ul>
-        <li><a href="index.html" accesskey='u'>RUACTIVE</a></li>
-        <li><a class="active" href="schedule.html" accesskey='s'>Schedule</a></li>
-        <li><a href="results_page.html" accesskey='e'>Results</a></li>
-        <li><a href="ranking.html" accesskey='r'>Ranking</a></li>
-        <li style="float:right" accesskey='h'><a href="Assets/manual.pdf">Help</a></li>
+      <li><a href="index.html" accesskey='u'>RUACTIVE</a></li>
+      <li><a class="active" href="schedule.html" accesskey='s'>Schedule</a></li>
+      <li><a href="results_page.html" accesskey='e'>Results</a></li>
+      <li><a href="ranking.html" accesskey='r'>Ranking</a></li>
+      <li style="float:right" accesskey='h'><a href="Assets/manual.pdf">Help</a></li>
     </ul>
   </div>
 
@@ -39,83 +39,95 @@
     </div>
     <div id="map"></div>
     <script>
-            function initMap() {
-              var currentlocation = {lat: -33.312585, lng: 26.519333};
-              var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 16,
-                center: currentlocation
-              });
-              var Hamilton = new google.maps.Marker({
-                position: {lat: -33.312585, lng: 26.519333},
-                map: map,
-                label: 'C',
-                //animation: google.maps.Animation.BOUNCE,
-                title: "Hamilton Building"
-              });
-              var GreatField = new google.maps.Marker({
-                position: {lat: -33.311755, lng: 26.516361},
-                map: map,
-                label: 'S',
-                title: "Great Field"
-              });
-              var KingField = new google.maps.Marker({
-                position: {lat: -33.313787, lng: 26.513861},
-                map: map,
-                label: 'S',
-                title: "King Field"
-              });
-              var ProspectFields = new google.maps.Marker({
-                position: {lat: -33.312334, lng: 26.510986},
-                map: map,
-                label: 'S',
-                title: "Prospect Fields"
-              });
-              var AstroAtheltics = new google.maps.Marker({
-                position: {lat: -33.312890, lng: 26.509763},
-                map: map,
-                label: 'S',
-                title: "Astro & Athletics Track"
-              });
-              var TennisCourts = new google.maps.Marker({
-                position: {lat: -33.313249, lng: 26.514741},
-                map: map,
-                label: 'S',
-                title: "Tennis Courts"
-              });
-              var MullinsHall = new google.maps.Marker({
-                position: {lat: -33.313069, lng: 26.512746},
-                map: map,
-                label: 'S',
-                title: "Alec Mullins Hall"
-              });
-              var SwimmingPool = new google.maps.Marker({
-                position: {lat: -33.313159, lng: 26.516565},
-                map: map,
-                label: 'S',
-                title: "Swimming pool"
-              });
-              var Library = new google.maps.Marker({
-                position: {lat: -33.314235, lng: 26.518947},
-                map: map,
-                label: 'C',
-                title: "Library",
-              });
-              var EdenGrove = new google.maps.Marker({
-                position: {lat: -33.314504, lng: 26.521865},
-                map: map,
-                animation: google.maps.Animation.BOUNCE,
-                //label: 'C',
-                title: "Eden Grove"
-              });
-            }
+    function initMap() {
+      var currentlocation = {lat: -33.312585, lng: 26.519333};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        center: currentlocation
+      });
+      var Hamilton = new google.maps.Marker({
+        position: {lat: -33.312585, lng: 26.519333},
+        map: map,
+        label: 'C',
+        //animation: google.maps.Animation.BOUNCE,
+        title: "Hamilton Building"
+      });
+      var GreatField = new google.maps.Marker({
+        position: {lat: -33.311755, lng: 26.516361},
+        map: map,
+        label: 'S',
+        title: "Great Field"
+      });
+      var KingField = new google.maps.Marker({
+        position: {lat: -33.313787, lng: 26.513861},
+        map: map,
+        label: 'S',
+        title: "King Field"
+      });
+      var ProspectFields = new google.maps.Marker({
+        position: {lat: -33.312334, lng: 26.510986},
+        map: map,
+        label: 'S',
+        title: "Prospect Fields"
+      });
+      var AstroAtheltics = new google.maps.Marker({
+        position: {lat: -33.312890, lng: 26.509763},
+        map: map,
+        label: 'S',
+        title: "Astro & Athletics Track"
+      });
+      var TennisCourts = new google.maps.Marker({
+        position: {lat: -33.313249, lng: 26.514741},
+        map: map,
+        label: 'S',
+        title: "Tennis Courts"
+      });
+      var MullinsHall = new google.maps.Marker({
+        position: {lat: -33.313069, lng: 26.512746},
+        map: map,
+        label: 'S',
+        title: "Alec Mullins Hall"
+      });
+      var SwimmingPool = new google.maps.Marker({
+        position: {lat: -33.313159, lng: 26.516565},
+        map: map,
+        label: 'S',
+        title: "Swimming pool"
+      });
+      var Library = new google.maps.Marker({
+        position: {lat: -33.314235, lng: 26.518947},
+        map: map,
+        label: 'C',
+        title: "Library",
+      });
+      var EdenGrove = new google.maps.Marker({
+        position: {lat: -33.314504, lng: 26.521865},
+        map: map,
+        animation: google.maps.Animation.BOUNCE,
+        //label: 'C',
+        title: "Eden Grove"
+      });
+      var Barratt = new google.maps.Marker({
+        position: {lat: -33.312517510256875, lng: 26.517562866210938},
+        map: map,
+        label: 'C',
+        title: "Barratt"
+      });
+      var ArtsMajor = new google.maps.Marker({
+        position: {lat: -33.31337823750199, lng: 26.520084142684937},
+        map: map,
+        label: 'C',
+        title: "Arts Major"
+      });
+    }
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrOhCPmjp_C8rKgXU9cYeNvrB0-5L9Vxk&callback=initMap">
     </script>
     <div class="Logo_placement">
-        <img src="Assets/images/logo.png" alt="RUActive Logo"/>
+      <img src="Assets/images/logo.png" alt="RUActive Logo"/>
     </div>
-</div>
+  </div>
 
   <div class="schedule_wall">
     <div class="compt_info">
@@ -135,7 +147,7 @@
           <table class="table_btn">
             <tr>
               <td colspan="2">
-                  <button type="button" class="btn btn-primary btn-lg Add" id="prev" onclick="moveback()">PREVIOUS</button><button type="button" class="btn btn-primary btn-lg Add" id="next" onclick="eventsidebar()">NEXT</button>
+                <button type="button" class="btn btn-primary btn-lg Add" id="prev" onclick="moveback()">PREVIOUS</button><button type="button" class="btn btn-primary btn-lg Add" id="next" onclick="eventsidebar()">NEXT</button>
               </td>
             </tr>
           </table>
@@ -161,10 +173,10 @@
   <div id="search">
     <button type="button" class="close">×</button>
     <form>
-        <input type="search" id="searchEvent" value="" placeholder="type event name here" />
-        <button type="button" id="searchBtn"onclick="searchForEvent()"  class="btn btn-primary Update">Search</button>
+      <input type="search" id="searchEvent" value="" placeholder="type event name here" />
+      <button type="button" id="searchBtn"onclick="searchForEvent()"  class="btn btn-primary Update">Search</button>
     </form>
-</div>
+  </div>
 
   <!-- Footer -->
   <footer>
@@ -174,166 +186,166 @@
 
   <div id="eventSearch" class="hide">
     <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
-  <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950005a69a22a2708474e9e6a");}catch(v_e){;}</script>
-  <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950005a69a22a2708474e9e6a">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
-  <div id="cbaaa950005a69a22a2708474e9e6a"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
-    </div>
-<script src="Assets/javascript/getReportData.js" charset="utf-8"></script>
+    <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950005a69a22a2708474e9e6a");}catch(v_e){;}</script>
+    <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950005a69a22a2708474e9e6a">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
+    <div id="cbaaa950005a69a22a2708474e9e6a"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
+  </div>
+  <script src="Assets/javascript/getReportData.js" charset="utf-8"></script>
 
-<script type="text/javascript">
-        var re = stripCaspioReport(document.getElementById('eventSearch'));
-        movefoward = 0;
+  <script type="text/javascript">
+  var re = stripCaspioReport(document.getElementById('eventSearch'));
+  movefoward = 0;
 
-        function returnSearched(n){
-          for (var i = 0; i < re.length; i++) {
-            if(re[i]['name'].toLowerCase() === n) return i;
-          }
-          return -1;
-        }
-        function searchForEvent() {
-            var eventn = document.getElementById('searchEvent').value;
-            var idx =returnSearched( eventn.toLowerCase());
+  function returnSearched(n){
+    for (var i = 0; i < re.length; i++) {
+      if(re[i]['name'].toLowerCase() === n) return i;
+    }
+    return -1;
+  }
+  function searchForEvent() {
+    var eventn = document.getElementById('searchEvent').value;
+    var idx =returnSearched( eventn.toLowerCase());
 
-            if(idx !== -1){
-            var template = ` <th class="head" colspan="2">
-                  Event Details
-              </th>
-              <tr class="event_det sport">
-                  <td><strong>NAME:</strong> </td>
-                  <td class="info">${re[idx]['name']}</td>
-              </tr>
-              <tr class="event_det type">
-                  <td><strong>TYPE:</strong> </td>
-                  <td class="info">${re[idx]['event type']}</td>
-              </tr>
-              <tr class="event_det sport">
-                  <td><strong>SPORT:</strong> </td>
-                  <td class="info">${re[idx]['sport']}</td>
-              </tr>
-              <tr class="event_det date">
-                  <td><strong>DATE:</strong> </td>
-                  <td class="info">${re[idx]['event date']}</td>
-              </tr>
-              <tr class="event_det time">
-                  <td><strong>TIME:</strong> </td>
-                  <td class="info">${re[idx]['event start time']}</td>
-              </tr>
-              <tr class="event_det place">
-                  <td><strong>PLACE:</strong> </td>
-                  <td class="info">${re[idx]['event venue']}</td>
-              </tr>`
+    if(idx !== -1){
+      var template = ` <th class="head" colspan="2">
+      Event Details
+      </th>
+      <tr class="event_det sport">
+      <td><strong>NAME:</strong> </td>
+      <td class="info">${re[idx]['name']}</td>
+      </tr>
+      <tr class="event_det type">
+      <td><strong>TYPE:</strong> </td>
+      <td class="info">${re[idx]['event type']}</td>
+      </tr>
+      <tr class="event_det sport">
+      <td><strong>SPORT:</strong> </td>
+      <td class="info">${re[idx]['sport']}</td>
+      </tr>
+      <tr class="event_det date">
+      <td><strong>DATE:</strong> </td>
+      <td class="info">${re[idx]['event date']}</td>
+      </tr>
+      <tr class="event_det time">
+      <td><strong>TIME:</strong> </td>
+      <td class="info">${re[idx]['event start time']}</td>
+      </tr>
+      <tr class="event_det place">
+      <td><strong>PLACE:</strong> </td>
+      <td class="info">${re[idx]['event venue']}</td>
+      </tr>`
 
-            document.getElementById('meee').innerHTML = template;
-          }
-          else {
-            alert('event name not found');
-          }
+      document.getElementById('meee').innerHTML = template;
+    }
+    else {
+      alert('event name not found');
+    }
 
-        }
+  }
 
-        function getEvents(){
-          var type = '';
-          var today = new Date();
-          var dd = today.getDate();
-          var mm = today.getMonth()+1; //January is 0!
+  function getEvents(){
+    var type = '';
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
 
-          var yyyy = today.getFullYear();
-          if(dd<10){
-              dd='0'+dd;
-          }
-          if(mm<10){
-              mm='0'+mm;
-          }
-          var today = dd+'/'+mm+'/'+yyyy;
-          document.getElementById("date").innerHTML = today;
-        for (var i = 0; i < re.length; i++) {
-            console.log(re[i]["event type"]);
-            if(re[i]["event type"] === 'Competitive')type = 'C';
-            else type = 'S'
+    var yyyy = today.getFullYear();
+    if(dd<10){
+      dd='0'+dd;
+    }
+    if(mm<10){
+      mm='0'+mm;
+    }
+    var today = dd+'/'+mm+'/'+yyyy;
+    document.getElementById("date").innerHTML = today;
+    for (var i = 0; i < re.length; i++) {
+      console.log(re[i]["event type"]);
+      if(re[i]["event type"] === 'Competitive')type = 'C';
+      else type = 'S'
 
-          var template = `<tr class="c_bg" id="c_d_1">
-          <td class="compt_type">${type}</td>
-          <td class="compt_name">${re[i]['name']}</td>
-          <td class="compt_time">${re[i]['event start time']}</td>
-        </tr>`
-        document.getElementById('updateTable').innerHTML += template;
+      var template = `<tr class="c_bg" id="c_d_1">
+      <td class="compt_type">${type}</td>
+      <td class="compt_name">${re[i]['name']}</td>
+      <td class="compt_time">${re[i]['event start time']}</td>
+      </tr>`
+      document.getElementById('updateTable').innerHTML += template;
 
-        }
-      }
-      function moveback(){
-            movefoward--;
-            if(movefoward < 0 )movefoward = re.length-1;
-            template = `  <th class="head" colspan="2">
-                  Event Details
-              </th>
-              <tr class="event_det sport">
-                  <td><strong>NAME:</strong> </td>
-                  <td class="info">${re[movefoward]['name']}</td>
-              </tr>
-              <tr class="event_det type">
-                  <td><strong>TYPE:</strong> </td>
-                  <td class="info">${re[movefoward]['event type']}</td>
-              </tr>
-              <tr class="event_det sport">
-                  <td><strong>SPORT:</strong> </td>
-                  <td class="info">${re[movefoward]['sport']}</td>
-              </tr>
-              <tr class="event_det date">
-                  <td><strong>DATE:</strong> </td>
-                  <td class="info">${re[movefoward]['event date']}</td>
-              </tr>
-              <tr class="event_det time">
-                  <td><strong>TIME:</strong> </td>
-                  <td class="info">${re[movefoward]['event start time']}</td>
-              </tr>
-              <tr class="event_det place">
-                  <td><strong>PLACE:</strong> </td>
-                  <td class="info">${re[movefoward]['event venue']}</td>
-              </tr>`
+    }
+  }
+  function moveback(){
+    movefoward--;
+    if(movefoward < 0 )movefoward = re.length-1;
+    template = `  <th class="head" colspan="2">
+    Event Details
+    </th>
+    <tr class="event_det sport">
+    <td><strong>NAME:</strong> </td>
+    <td class="info">${re[movefoward]['name']}</td>
+    </tr>
+    <tr class="event_det type">
+    <td><strong>TYPE:</strong> </td>
+    <td class="info">${re[movefoward]['event type']}</td>
+    </tr>
+    <tr class="event_det sport">
+    <td><strong>SPORT:</strong> </td>
+    <td class="info">${re[movefoward]['sport']}</td>
+    </tr>
+    <tr class="event_det date">
+    <td><strong>DATE:</strong> </td>
+    <td class="info">${re[movefoward]['event date']}</td>
+    </tr>
+    <tr class="event_det time">
+    <td><strong>TIME:</strong> </td>
+    <td class="info">${re[movefoward]['event start time']}</td>
+    </tr>
+    <tr class="event_det place">
+    <td><strong>PLACE:</strong> </td>
+    <td class="info">${re[movefoward]['event venue']}</td>
+    </tr>`
 
-            document.getElementById('meee').innerHTML = template;
-      }
-      function eventsidebar(){
-
-
-                  if(movefoward > re.length-1) movefoward = 0;
-            template = `  <th class="head" colspan="2">
-                  Event Details
-              </th>
-              <tr class="event_det sport">
-                  <td><strong>NAME:</strong> </td>
-                  <td class="info">${re[movefoward]['name']}</td>
-              </tr>
-              <tr class="event_det type">
-                  <td><strong>TYPE:</strong> </td>
-                  <td class="info">${re[movefoward]['event type']}</td>
-              </tr>
-              <tr class="event_det sport">
-                  <td><strong>SPORT:</strong> </td>
-                  <td class="info">${re[movefoward]['sport']}</td>
-              </tr>
-              <tr class="event_det date">
-                  <td><strong>DATE:</strong> </td>
-                  <td class="info">${re[movefoward]['event date']}</td>
-              </tr>
-              <tr class="event_det time">
-                  <td><strong>TIME:</strong> </td>
-                  <td class="info">${re[movefoward]['event start time']}</td>
-              </tr>
-              <tr class="event_det place">
-                  <td><strong>PLACE:</strong> </td>
-                  <td class="info">${re[movefoward]['event venue']}</td>
-              </tr>`
-
-            document.getElementById('meee').innerHTML = template;
-                movefoward++
+    document.getElementById('meee').innerHTML = template;
+  }
+  function eventsidebar(){
 
 
+    if(movefoward > re.length-1) movefoward = 0;
+    template = `  <th class="head" colspan="2">
+    Event Details
+    </th>
+    <tr class="event_det sport">
+    <td><strong>NAME:</strong> </td>
+    <td class="info">${re[movefoward]['name']}</td>
+    </tr>
+    <tr class="event_det type">
+    <td><strong>TYPE:</strong> </td>
+    <td class="info">${re[movefoward]['event type']}</td>
+    </tr>
+    <tr class="event_det sport">
+    <td><strong>SPORT:</strong> </td>
+    <td class="info">${re[movefoward]['sport']}</td>
+    </tr>
+    <tr class="event_det date">
+    <td><strong>DATE:</strong> </td>
+    <td class="info">${re[movefoward]['event date']}</td>
+    </tr>
+    <tr class="event_det time">
+    <td><strong>TIME:</strong> </td>
+    <td class="info">${re[movefoward]['event start time']}</td>
+    </tr>
+    <tr class="event_det place">
+    <td><strong>PLACE:</strong> </td>
+    <td class="info">${re[movefoward]['event venue']}</td>
+    </tr>`
 
-      }
-       eventsidebar()
-</script>
+    document.getElementById('meee').innerHTML = template;
+    movefoward++
 
 
-  </body>
-  </html>
+
+  }
+  eventsidebar()
+  </script>
+
+
+</body>
+</html>
