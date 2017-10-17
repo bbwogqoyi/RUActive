@@ -64,6 +64,7 @@ body .add.event{
     position: relative;
     overflow: hidden;
     width: 60%;
+    height: 340px;
     margin-top: 30px;
     margin-bottom: 30px;
     background-color: rgba(0, 0, 0, 0.7);
@@ -73,6 +74,17 @@ body .add.event{
     background-color: rgba(0, 0, 0, 0.7);
     border-right: 0px;
     border-left: 0px;
+    -webkit-transition: height 2s; /* For Safari 3.1 to 6.0 */
+    transition: height 2s;
+}
+
+.event_result.trans{
+    height: 0px;
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
 }
 
 .event_update .event_result .Event_name_img{

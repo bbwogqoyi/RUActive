@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"> <!-- Bootstrap -->
   <link rel="stylesheet" href="Assets/css/hideDiv.css"/>  <!-- Hide Divs -->
   <script src="Assets/javascript/RoleLookUp.js">  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body onload="showRanking()">
   <!-- Navigation -->
@@ -29,7 +30,7 @@
 
   <!-- Ranking Section-->
   <div class = "header">
-    <div class="add r_event"> <!-- Inner -->
+    <div class="add r_event preload" id="top_res"> <!-- Inner -->
         <div class ="trans">
               <div class = "p_space">
                 <div class="second heading">
@@ -53,19 +54,20 @@
                 <div class="rank third"><img src ="Assets/images/Ranking Bronze.png"></div>
               </div>
         </div>
-        <div class ="stand">
-        </div>
+        
       </div>
   </div>
 
   <div class = "ranking_list">
       <div class="report r_event">
-          <table id="rankingTable">
-            <tr>
-              <th>Ranking</th>
-              <th>Residence</th>
-              <th>Points</th>
-            </tr>
+          <table>
+            <tbody id="rankingTable">
+                <tr class="heading">
+                  <th id="ranking">Ranking</th>
+                  <th class="h_left">Residence</th>
+                  <th class="h_left">Points</th>
+                </tr>
+            </tbody>
           </table>
         </div>
   </div>
@@ -81,7 +83,7 @@
     <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa9500071140f3c4aab4c3097e6">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
     <div id="cbaaa9500071140f3c4aab4c3097e6"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
   </div>
-
+  <script src="Assets/javascript/transit.js"></script>
   <script src="Assets/javascript/getReportData.js" charset="utf-8"></script>
 
   <script type="text/javascript">
@@ -100,9 +102,9 @@
 
   for (var i = 0; i < alldata.length; i++) {
   var template = `<tr>
-                    <td>${i+1}</td>
-                    <td>${alldata[i]['residence name']}</td>
-                    <td>${alldata[i]['points']}</td>
+                    <td id="ranking">${i+1}</td>
+                    <td class="h_left">${alldata[i]['residence name']}</td>
+                    <td class="h_left">${alldata[i]['points']}</td>
                 </tr>`
                 document.getElementById('rankingTable').innerHTML += template;
 
