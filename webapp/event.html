@@ -136,6 +136,12 @@
   </footer>
 
 <!-- JavaScript -->
+<div class="hide" id="submit_event">
+<script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
+<script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950003a2237dd5b57437d821b");}catch(v_e){;}</script>
+<div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950003a2237dd5b57437d821b">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
+<div id="cbaaa950003a2237dd5b57437d821b"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
+</div>
   <div id="venueDiv" class="hide">
     <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
     <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950000da39d438ee94929ad77");}catch(v_e){;}</script>
@@ -143,13 +149,8 @@
       Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
       <div id="cbaaa950000da39d438ee94929ad77"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
     </div>
+	<br><br><br><br><br>
 
-    <div class="hide">
-      <script type="text/javascript" src="https://c0abd423.caspio.com/scripts/embed.js"></script>
-      <script type="text/javascript">try{f_cbload(true, "c0abd423.caspio.com", "aaa950003a2237dd5b57437d821b");}catch(v_e){;}</script>
-      <div class="cxkg"><a href="https://c0abd423.caspio.com/dp.asp?AppKey=aaa950003a2237dd5b57437d821b">Click here</a> to load this Caspio <a href="http://www.caspio.com" target="_blank" title="Cloud Database">Cloud Database</a></div>
-      <div id="cbaaa950003a2237dd5b57437d821b"><a href="https://www.caspio.com" target="_blank">Cloud Database</a> by Caspio</div>
-    </div>
 
     <script src="Assets/javascript/getReportData.js"></script>
     <script type="text/javascript">
@@ -191,11 +192,12 @@
 
         for(var i=0; i<caspioIds.length; i+=1){
           var current_value = document.getElementById(profile[i]).value;
+          document.getElementById(caspioIds[i]).value = current_value;
         }
-        if(document.getElementById('id_fixtures').value = 'Yes'){
-          document.getElementById('InsertRecordhasFixtures').checked = 'true';
+        if(document.getElementById('id_fixtures').value == 'Yes'){
+          document.getElementById('InsertRecordhasFixtures').checked = true;
         } else {
-          document.getElementById('InsertRecordhasFixtures').checked = 'false';
+          document.getElementById('InsertRecordhasFixtures').checked = false;
         }
 
         var input_dates = ['id_event_date','id_reg_date'];
@@ -210,8 +212,8 @@
         current_value = eventTypeLookup(current_value);
         document.getElementById('InsertRecordEvent_Type').value = current_value;
 
-        //var user = getSessionUser();
-        //document.getElementById('InsertRecordSport').value=;
+        var user = getSessionUser();
+        document.getElementById('InsertRecordSport').value= user.EditRecordSports;
 
         caspio_form.submit();
       }
