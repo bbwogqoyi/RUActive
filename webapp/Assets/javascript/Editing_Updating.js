@@ -154,8 +154,6 @@ var setUp =function(){
           else{ amount=1; break;}
         } 
       }
-      document.getElementById('rankingTable_'+pos).innerHTML +=`<tr>
-        <td colspan="3"><button type="button" class="btn btn-primary btn-lg Tool" id="seeAll_ev_`+pos+`">SEE ALL</button></td></tr>`;
       counter++;
       console.log(counter);
       console.log(pos);

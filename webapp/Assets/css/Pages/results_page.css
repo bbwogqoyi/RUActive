@@ -97,6 +97,10 @@ body .add.event{
     padding: 30px;
 }
 
+.event_update .event_result .Event_name_img .Event_name h3{
+    font-family: myFont;
+}
+
 .event_update .event_result .Event_name_img .Event_img{
     margin: 0 auto;
     position: relative;

@@ -79,7 +79,7 @@ body #login-form input:focus{
 }
 body .form-control::placeholder{
     color: white;
-    font-family: FontAwesome;
-    font-size: 20px;
+    font-family: Helvetica, sans-serif;
+    font-size: 15px;
 }
 

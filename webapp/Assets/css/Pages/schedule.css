@@ -202,9 +202,8 @@
     position: relative;
     overflow: hidden;
     float: left;
-    padding-top: 40px;
     padding-bottom: 40px;
-    background-color: #333333;
+    background-color: rgba(0, 0, 0, 0.6);
     font-family: Helvetica, sans-serif;
     text-transform: uppercase;
 }
@@ -219,11 +218,18 @@
     font-family: myFont;
 }
 
-.schedule_wall .compt_list .compt_name{
-    border-right: 7px solid rgba(0, 0, 0, 0.5);
+table.names_times tr.heading{
+    background-color: #333;
+    height: 47px;
+    color: white;
+    font-family: myFont;
 }
-.schedule_wall .compt_list .compt_time{
-    border-left: 7px solid rgba(0, 0, 0, 0.5);
+
+table.names_times td, table.names_times th{
+    border: 1px solid black;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
 }
 
 
